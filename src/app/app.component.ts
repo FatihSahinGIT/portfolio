@@ -1,48 +1,35 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import Lenis from '@studio-freight/lenis';
-import {gsap} from 'gsap';
+import Lenis from 'lenis';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-
+export class AppComponent implements OnInit, OnDestroy {
   #lenis!: Lenis;
   #rafId!: number;
 
-
-  ngOnInit(): void {
-    gsap.to('.test', {x: 20, duration: 1});
-  }
-
-  ngAfterViewInit(): void {
+  ngOnInit() {
     this.#lenis = new Lenis({
+      // Customize options as needed
       lerp: 0.1,
       smoothWheel: true,
-    })
+      orientation: 'vertical',
+    });
 
-    const raf = (time: number ) => {
+    const raf = (time: number) => {
       this.#lenis.raf(time);
       this.#rafId = requestAnimationFrame(raf);
-    }
-
+    };
     this.#rafId = requestAnimationFrame(raf);
   }
 
-
-
-  ngOnDestroy(): void {
-    if (this.#rafId) {
-      cancelAnimationFrame(this.#rafId);
-    }
-
-    if (this.#lenis) {
-      this.#lenis.destroy();
-    }
+  ngOnDestroy() {
+    cancelAnimationFrame(this.#rafId);
+    this.#lenis.destroy();
   }
-
-
 }
