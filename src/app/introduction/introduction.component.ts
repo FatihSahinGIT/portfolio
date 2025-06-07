@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, inject, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { gsap } from 'gsap/gsap-core';
 
 @Component({
@@ -10,6 +17,7 @@ import { gsap } from 'gsap/gsap-core';
 export class IntroductionComponent implements OnInit, AfterViewInit {
   public greetingHeadline: string = 'Hello';
   readonly #el: ElementRef = inject(ElementRef);
+  @ViewChild('introContainer') introContainer!: ElementRef<HTMLElement>;
 
   ngOnInit(): void {
     this.getGreetingTime();
@@ -50,9 +58,24 @@ export class IntroductionComponent implements OnInit, AfterViewInit {
       opacity: 0,
       delay: 1,
       y: 5,
-      duration: 3,
+      duration: 5,
       stagger: 0.5,
       ease: 'expo.out',
+    });
+
+    // gsap.fromTo(
+    //   this.introContainer.nativeElement,
+    //   { borderBottomWidth: '0px' },
+    //   { borderBottomWidth: '1px', duration: 0.5, ease: 'power1.out' }
+    // );
+
+    const border =
+      this.introContainer.nativeElement.querySelector('.border-anim');
+    gsap.to(border, {
+      scaleX: 1,
+      duration: 2.5,
+      delay: 2,
+      ease: 'power3.out',
     });
   }
 }

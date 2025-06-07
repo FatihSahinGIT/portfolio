@@ -15,7 +15,7 @@ export class NavbarComponent implements AfterViewInit {
     gsap.from(this.#el.nativeElement.querySelectorAll('.fade-in'), {
       opacity: 0,
       y: 10,
-      duration: 3,
+      duration: 5,
       ease: 'power3.out'
     })
   }
