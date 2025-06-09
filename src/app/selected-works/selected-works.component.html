@@ -1,0 +1,16 @@
+<div class="overflow-x-auto w-full py-8">
+    <h1>hello</h1>
+  <ul class="flex space-x-6 min-w-max">
+    @for(project of projects; track project.company) {
+    <li class="flex-shrink-0 w-[460px] h-[697px] bg-white rounded-lg shadow">
+      <img
+        [src]="project.image"
+        [alt]="project.title"
+        class="w-full h-max object-cover rounded-md"
+      />
+      <h3 class="text-lg font-semibold">{{ project.title }}</h3>
+      <p class="text-sm text-gray-500">{{ project.description }}</p>
+    </li>
+    }
+  </ul>
+</div>

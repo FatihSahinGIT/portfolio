@@ -7,10 +7,11 @@ import {
 } from '@angular/core';
 import { gsap } from 'gsap/gsap-core';
 import { IntroductionComponent } from '../introduction/introduction.component';
+import { SelectedWorksComponent } from "../selected-works/selected-works.component";
 
 @Component({
   selector: 'app-landing',
-  imports: [IntroductionComponent],
+  imports: [IntroductionComponent, SelectedWorksComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })

@@ -1,0 +1,26 @@
+[
+  {
+    "company": "Interval GmbH",
+    "image": "project-images/interval/interval-mobile.webp",
+    "alt-text": "Screenshot of AI-Powered Analytics Dashboard project",
+    "tools": ["Angular", "Tailwind CSS v4", "TypeScript", "Node.js"]
+  },
+  {
+    "company": "kv.digital",
+    "image": "project-images/kv.digital/kv.digital.webp",
+    "alt-text": "Homepage of redesigned e-commerce platform",
+    "tools": ["React", "Tailwind CSS v4", "Redux", "Express.js"]
+  },
+  {
+    "company": "Avant",
+    "image": "project-images/avant/avant.webp",
+    "alt-text": "Dashboard view of Sustainable Energy Tracker application",
+    "tools": ["Vue.js", "Tailwind CSS v4", "Firebase", "D3.js"]
+  },
+  {
+    "company": "Mindful Minds",
+    "image": "project-images/mindful-minds/mindful-minds.webp",
+    "alt-text": "Dashboard view of Sustainable Energy Tracker application",
+    "tools": ["Vue.js", "Tailwind CSS v4", "Firebase", "D3.js"]
+  }
+]

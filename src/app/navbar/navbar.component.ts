@@ -3,7 +3,6 @@ import { gsap } from 'gsap/gsap-core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -11,12 +10,11 @@ export class NavbarComponent implements AfterViewInit {
   readonly #el: ElementRef = inject(ElementRef);
 
   ngAfterViewInit(): void {
-
     gsap.from(this.#el.nativeElement.querySelectorAll('.fade-in'), {
       opacity: 0,
       y: 10,
       duration: 5,
-      ease: 'power3.out'
-    })
+      ease: 'power3.out',
+    });
   }
 }
