@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-
 @theme {
   --color-primary: #0000;
-  --color-secondary: #ACACAC;
+  --color-secondary: #acacac;
+
+  --breakpoint-3xl: 120rem;
 }
 
 @layer utilities {
@@ -35,4 +36,3 @@
   background: #000;
   color: #fff;
 }
-

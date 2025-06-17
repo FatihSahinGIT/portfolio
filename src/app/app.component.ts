@@ -1,11 +1,14 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import Lenis from 'lenis';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { bootstrapArrowRight, bootstrapArrowLeft } from '@ng-icons/bootstrap-icons';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, NgIcon],
+  providers: [provideIcons({ bootstrapArrowRight, bootstrapArrowLeft })],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -15,7 +18,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.#lenis = new Lenis({
-      // Customize options as needed
       lerp: 0.1,
       smoothWheel: true,
       orientation: 'vertical',

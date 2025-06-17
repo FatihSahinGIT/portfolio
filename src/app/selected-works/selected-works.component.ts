@@ -1,12 +1,38 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
+import { gsap } from 'gsap/gsap-core';
 import * as PROJECT_DATA from './projects.json';
 
 @Component({
   selector: 'app-selected-works',
-  imports: [],
+  imports: [NgIcon],
+  providers: [provideIcons({ bootstrapAlarm, bootstrapApp })],
   templateUrl: './selected-works.component.html',
   styleUrl: './selected-works.component.css',
 })
-export class SelectedWorksComponent {
+export class SelectedWorksComponent implements AfterViewInit {
+  @ViewChild('scrollContainer', {static: false}) scrollContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('selectedWorks', { static: false }) selectedWorks!: ElementRef<HTMLElement>;
+
   public projects = (PROJECT_DATA as any).default;
+
+  ngAfterViewInit(): void {
+    gsap.from(this.selectedWorks.nativeElement, {
+      opacity: 0,
+      y: 20,
+      delay: 2.5,
+      duration: 2,
+      ease: 'power2.out',
+    });
+  }
+
+
+  public scrollLeft(): void {
+    this.scrollContainer.nativeElement.scrollBy({left: -300, behavior: 'smooth'})
+  }
+
+    public scrollRight(): void {
+    this.scrollContainer.nativeElement.scrollBy({left: 300, behavior: 'smooth'})
+  }
 }
