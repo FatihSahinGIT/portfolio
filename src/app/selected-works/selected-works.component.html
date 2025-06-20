@@ -1,17 +1,30 @@
-<div #selectedWorks>
+<div #selectedWorks class="mb-12">
   <h2 class="text-sm text-secondary mb-2">Selected Work</h2>
-    <div class="flex justify-start my-4 space-x-3">
-    <ng-icon name="bootstrapArrowLeft" color="#00000" class="cursor-pointer" (click)="scrollLeft()"></ng-icon>
-    <ng-icon name="bootstrapArrowRight" color="#00000" class="cursor-pointer" (click)="scrollRight()"></ng-icon>
+  <div class="flex justify-start my-4 space-x-3">
+    <ng-icon
+      name="bootstrapArrowLeft"
+      color="#00000"
+      class="cursor-pointer"
+      (click)="scrollLeft()"
+    ></ng-icon>
+    <ng-icon
+      name="bootstrapArrowRight"
+      color="#00000"
+      class="cursor-pointer"
+      (click)="scrollRight()"
+    ></ng-icon>
   </div>
   <div class="overflow-x-auto w-full py-2" #scrollContainer>
     <ul class="flex space-x-6 min-w-max">
       @for(project of projects; track project.company) {
-      <li class="flex-shrink-0 w-[460px] 3xl:w-[670px] h-[697px] 3xl:h-max overflow-hidden">
+      <li
+        class="flex-shrink-0 w-[460px] 3xl:w-[670px] h-[697px] 3xl:h-max overflow-hidden"
+      >
         <img
+          loading="lazy"
           [src]="project.image"
           [alt]="project.title"
-          class="w-full h-[620px] 3xl:h-max object-cover cursor-pointer rounded-sm"
+          class="w-full h-[620px] 3xl:h-max object-cover cursor-pointer rounded-sm fade-in"
         />
         <h3 class="text-sm font-normal mt-2">{{ project.company }}</h3>
         <p class="text-xs text-secondary">{{ project.tools }}</p>

@@ -4,10 +4,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapArrowRight, bootstrapArrowLeft } from '@ng-icons/bootstrap-icons';
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, NgIcon],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   providers: [provideIcons({ bootstrapArrowRight, bootstrapArrowLeft })],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

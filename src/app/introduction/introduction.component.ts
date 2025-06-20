@@ -56,18 +56,12 @@ export class IntroductionComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     gsap.from(this.#el.nativeElement.querySelectorAll('.fade-in'), {
       opacity: 0,
-      delay: 1,
-      y: 5,
-      duration: 5,
+      delay: 0.5,
+      y: 2,
+      duration: 2,
       stagger: 0.5,
       ease: 'expo.out',
     });
-
-    // gsap.fromTo(
-    //   this.introContainer.nativeElement,
-    //   { borderBottomWidth: '0px' },
-    //   { borderBottomWidth: '1px', duration: 0.5, ease: 'power1.out' }
-    // );
 
     const border =
       this.introContainer.nativeElement.querySelector('.border-anim');
