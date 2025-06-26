@@ -9,10 +9,11 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
 import { gsap } from 'gsap/gsap-core';
 import * as PROJECT_DATA from './projects.json';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-selected-works',
-  imports: [NgIcon],
+  imports: [NgIcon, NgOptimizedImage],
   providers: [provideIcons({ bootstrapAlarm, bootstrapApp })],
   templateUrl: './selected-works.component.html',
   styleUrl: './selected-works.component.css',
@@ -31,8 +32,8 @@ export class SelectedWorksComponent implements AfterViewInit {
     gsap.from(this.selectedWorks.nativeElement, {
       opacity: 0,
       y: 10,
-      delay: 4,
-      duration: 4,
+      delay: 2.5,
+      duration: 1,
       ease: 'power2.out',
     });
   }
