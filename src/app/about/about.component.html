@@ -1,90 +1,82 @@
 <div
   #imagesAbout
-  class="max-w-[100%] 3xl:max-w-[70%] mx-8 grid grid-cols-1 md:grid-cols-3 gap-4 my-4"
+  class="max-w-[96%] 3xl:max-w-[70%] mx-6 md:mx-auto mb-12 md:mb-4 3xl:mb-8 grid grid-cols-1 md:grid-cols-3 grid-rows-none md:[grid-template-rows:max-content_max-content_max-content] gap-4 md:gap-y-10"
 >
-  <div class="float-image flex flex-col items-center text-left">
+  <!-- First image + intro -->
+  <div class="float-image flex flex-col items-start">
     <img
       src="about-images/balls.jpg"
       alt="Fatih in ball pit"
-      class="w-full h-max object-cover"
+      class="w-full h-[90%] object-cover"
     />
-    <p class="mt-4 text-sm">
+    <p class="pt-4 text-sm">
       I’m Fatih Sahin, a 25-year-old frontend developer based in Berlin,
       Germany. I specialize in building modern, responsive web applications with
       a strong focus on usability, performance, and design collaboration.
     </p>
+    <a href="#" class="mt-2 text-xs text-secondary underline hover:text-black"
+      >Read Resumé</a
+    >
   </div>
 
+  <!-- Second image -->
   <div class="float-image flex flex-col items-center">
     <img
       src="about-images/azula.jpg"
       alt="Sleeping cat"
-      class="rounded-lg w-full h-max object-cover"
+      class="rounded-lg w-full h-[90%] object-cover"
     />
   </div>
 
+  <!-- Third image (Rome) -->
   <div class="float-image flex flex-col items-start text-left">
     <img
       src="about-images/rome.jpg"
       alt="Fatih in Rome"
       class="rounded-lg w-full h-[90%] object-cover"
     />
-    <p class="mt-4 text-sm">
-      Motivated by curiosity and a love for learning, I’m always exploring new
-      tools, frameworks, and techniques to expand my knowledge and stay up to
-      date with the latest in web development.
-      <br /><br />
-      I approach every project with a problem-solving mindset, aiming to craft
-      solutions that are both innovative and practical.
-    </p>
-    <a href="#" class="mt-2 text-xs text-secondary underline hover:text-black"
-      >Read Resumé</a
-    >
-  </div>
-</div>
-
-<hr class="mx-8 my-2 text-secondary" />
-
-<div class="education mx-8 my-10 flex flex-col md:flex-row justify-between">
-  <div class="education-headline">
-    <h4 class="text-xs text-secondary">Education</h4>
   </div>
 
-  <div class="education-text md:w-[37.725%] flex gap-6 flex-col">
-    <div class="education-bht">
-      <div class="education-bht__headline ">
-        <h5 class="text-sm">Bachelor of Science at Berliner Hochschule für Technik</h5>
-        <span class="text-secondary text-xs">October 2017 - March 2023</span>
+  <!-- Education headline under balls.jpg (first column, second row on desktop) -->
 
-        <p class="text-xs">
-          At kv.digital, I work on both B2B and B2C web applications using
-          Angular and TypeScript. I stay in close contact with the design team
-          to create intuitive and visually appealing user interfaces based on
-          Figma designs. <br />
+  <div class="education-block my-12 md:col-start-1 md:row-start-2">
+    <h4 class="text-xs text-secondary mb-2">Education</h4>
+  </div>
 
-          My workflow includes writing robust tests with Jest, contributing to
-          CI/CD pipelines via Jenkins, and using Bitbucket for code
-          collaboration and reviews.
-        </p>
-      </div>
+  <!-- Education content under rome.jpg (third column, second row on desktop) -->
+  <div class="education-block md:col-start-3 md:row-start-2">
+    <div class="education-bht__headline">
+      <h5 class="text-sm">
+        Bachelor of Science at Berliner Hochschule für Technik
+      </h5>
+      <span class="text-secondary text-xs">October 2017 - March 2023</span>
+      <p class="text-xs mt-2">
+        At kv.digital, I work on both B2B and B2C web applications using Angular
+        and TypeScript. I stay in close contact with the design team to create
+        intuitive and visually appealing user interfaces based on Figma
+        designs.<br />
+        My workflow includes writing robust tests with Jest, contributing to
+        CI/CD pipelines via Jenkins, and using Bitbucket for code collaboration
+        and reviews.
+      </p>
     </div>
+  </div>
 
-    <div class="education-bht">
-      <div class="education-bht__headline ">
-        <h5 class="text-sm">Bachelor of Science at Berliner Hochschule für Technik</h5>
-        <span class="text-secondary text-xs">October 2017 - March 2023</span>
-
-        <p class="text-xs">
-          At kv.digital, I work on both B2B and B2C web applications using
-          Angular and TypeScript. I stay in close contact with the design team
-          to create intuitive and visually appealing user interfaces based on
-          Figma designs. <br />
-
-          My workflow includes writing robust tests with Jest, contributing to
-          CI/CD pipelines via Jenkins, and using Bitbucket for code
-          collaboration and reviews.
-        </p>
-      </div>
+  <div class="education-block md:col-start-3 md:row-start-3">
+    <div class="education-bht__headline">
+      <h5 class="text-sm">
+        Bachelor of Science at Berliner Hochschule für Technik
+      </h5>
+      <span class="text-secondary text-xs">October 2017 - March 2023</span>
+      <p class="text-xs mt-2">
+        At kv.digital, I work on both B2B and B2C web applications using Angular
+        and TypeScript. I stay in close contact with the design team to create
+        intuitive and visually appealing user interfaces based on Figma
+        designs.<br />
+        My workflow includes writing robust tests with Jest, contributing to
+        CI/CD pipelines via Jenkins, and using Bitbucket for code collaboration
+        and reviews.
+      </p>
     </div>
   </div>
 </div>
