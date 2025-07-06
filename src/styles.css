@@ -1,47 +1,46 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-primary: #0000;
-  --color-secondary: #acacac;
+    --color-primary: #0000;
+    --color-secondary: #acacac;
 
-  --breakpoint-3xl: 120rem;
+    --breakpoint-3xl: 120rem;
 }
 
 @layer utilities {
-  .fade-in-text {
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
+    .fade-in-text {
+        animation: fadeIn 0.5s ease-out forwards;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-  }
 }
 
 .grid > * {
-  @apply px-4 md:px-8;
-  /* border: 1px solid red; */
+    @apply px-4 md:px-8;
+    /* border: 1px solid red; */
 }
 
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ::selection {
-  background: #000;
-  color: #fff;
+    background: #000;
+    color: #fff;
 }
 
 .liquid-glass {
-  @apply bg-neutral-300/20 backdrop-blur-[1px] border border-neutral-400/20 rounded-xl shadow-sm p-2 transition-colors duration-500;
+    @apply rounded-xl border border-neutral-400/20 bg-neutral-300/20 p-2 shadow-sm backdrop-blur-[1px] transition-colors duration-500;
 }
 
 .liquid-glass:hover {
-  @apply bg-neutral-300/60;
+    @apply bg-neutral-300/60;
 }
-

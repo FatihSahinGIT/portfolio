@@ -1,18 +1,18 @@
 import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  inject,
-  OnInit,
+    AfterViewInit,
+    Component,
+    ElementRef,
+    inject,
+    OnInit
 } from '@angular/core';
 import { gsap } from 'gsap/gsap-core';
 import { IntroductionComponent } from '../introduction/introduction.component';
-import { SelectedWorksComponent } from "../selected-works/selected-works.component";
+import { SelectedWorksComponent } from '../selected-works/selected-works.component';
 
 @Component({
-  selector: 'app-landing',
-  imports: [IntroductionComponent, SelectedWorksComponent],
-  templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css',
+    selector: 'app-landing',
+    imports: [IntroductionComponent, SelectedWorksComponent],
+    templateUrl: './landing.component.html',
+    styleUrl: './landing.component.css'
 })
-export class LandingComponent  {}
+export class LandingComponent {}

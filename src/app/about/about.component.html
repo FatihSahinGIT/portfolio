@@ -1,13 +1,13 @@
 <div
     #imagesAbout
-    class="max-w-[96%] 3xl:max-w-[70%] mx-6 md:mx-auto mb-20 md:mb-4 3xl:mb-8 grid grid-cols-1 md:grid-cols-3 grid-rows-none md:[grid-template-rows:max-content_max-content_max-content] gap-4 md:gap-y-10"
+    class="3xl:max-w-[70%] 3xl:mb-8 mx-6 mb-20 grid max-w-[96%] grid-cols-1 grid-rows-none gap-4 md:mx-auto md:mb-4 md:grid-cols-3 md:gap-y-10 md:[grid-template-rows:max-content_max-content_max-content]"
 >
     <!-- First image + intro -->
     <div class="float-image flex flex-col items-start">
         <img
             src="about-images/balls.jpg"
             alt="Fatih in ball pit"
-            class="w-full h-[90%] object-cover"
+            class="h-[90%] w-full object-cover"
         />
         <p class="pt-4 text-sm">
             I’m Fatih Sahin, a 25-year-old frontend developer based in Berlin,
@@ -17,7 +17,7 @@
         </p>
         <a
             href="#"
-            class="mt-2 text-xs text-secondary underline hover:text-black"
+            class="text-secondary mt-2 text-xs underline hover:text-black"
             >Read Resumé</a
         >
     </div>
@@ -27,7 +27,7 @@
         <img
             src="about-images/azula.jpg"
             alt="Sleeping cat"
-            class="rounded-lg w-full h-[90%] object-cover"
+            class="h-[90%] w-full rounded-lg object-cover"
         />
     </div>
 
@@ -36,16 +36,16 @@
         <img
             src="about-images/rome.jpg"
             alt="Fatih in Rome"
-            class="rounded-lg w-full h-[90%] object-cover"
+            class="h-[90%] w-full rounded-lg object-cover"
         />
     </div>
 </div>
 
 <div
-    class="max-w-[96%] 3xl:max-w-[70%] my-20 grid grid-cols-1 mx-6 md:grid-cols-3 md:mx-auto gap-6"
+    class="3xl:max-w-[70%] mx-6 my-20 grid max-w-[96%] grid-cols-1 gap-6 md:mx-auto md:grid-cols-3"
 >
     <div class="education-block md:col-start-1 md:row-start-1">
-        <h4 class="text-xs text-secondary mb-2">Education</h4>
+        <h4 class="text-secondary mb-2 text-xs">Education</h4>
     </div>
 
     <!-- Education content under rome.jpg (third column, second row on desktop) -->
@@ -57,7 +57,7 @@
             <span class="text-secondary text-xs"
                 >October 2017 - March 2023</span
             >
-            <p class="text-xs mt-2">
+            <p class="mt-2 text-xs">
                 At kv.digital, I work on both B2B and B2C web applications using
                 Angular and TypeScript. I stay in close contact with the design
                 team to create intuitive and visually appealing user interfaces
@@ -77,7 +77,7 @@
             <span class="text-secondary text-xs"
                 >October 2017 - March 2023</span
             >
-            <p class="text-xs mt-2">
+            <p class="mt-2 text-xs">
                 At kv.digital, I work on both B2B and B2C web applications using
                 Angular and TypeScript. I stay in close contact with the design
                 team to create intuitive and visually appealing user interfaces
@@ -91,87 +91,99 @@
 </div>
 
 <div
-    class="work-experience md:mx-auto max-w-[96%] my-20 3xl:max-w-[70%] grid grid-cols-1 mx-6 gap-4 md:gap-y-6"
+    class="work-experience 3xl:max-w-[70%] mx-6 my-20 grid max-w-[96%] grid-cols-1 gap-4 md:mx-auto md:gap-y-6"
 >
     <!-- Section Header -->
     <div class="work-experience__header">
-        <h4 class="text-xs text-secondary mb-2">Work Experience</h4>
+        <h4 class="text-secondary mb-2 text-xs">Work Experience</h4>
     </div>
 
     <!-- Work Experience Item 1 -->
-    <div class="work-experience__item grid grid-cols-1 md:grid-cols-3 gap-x-4 text-xs md:text-sm gap-2">
-        <p class="underline col-span-1">kv.digital</p>
+    <div
+        class="work-experience__item grid grid-cols-1 gap-2 gap-x-4 text-xs md:grid-cols-3 md:text-sm"
+    >
+        <p class="col-span-1 underline">kv.digital</p>
         <p class="col-span-1">Frontend Developer</p>
         <p class="col-span-1">November 2023 - Now</p>
     </div>
 
     <!-- Work Experience Item 2 -->
-    <div class="work-experience__item grid grid-cols-1 md:grid-cols-3 gap-x-4 text-xs md:text-sm gap-2">
-        <p class="underline col-span-1">Other Company</p>
+    <div
+        class="work-experience__item grid grid-cols-1 gap-2 gap-x-4 text-xs md:grid-cols-3 md:text-sm"
+    >
+        <p class="col-span-1 underline">Other Company</p>
         <p class="col-span-1">Frontend Developer</p>
         <p class="col-span-1">January 2021 - October 2023</p>
     </div>
 
     <!-- Work Experience Item 3 -->
-    <div class="work-experience__item grid grid-cols-1 md:grid-cols-3 gap-x-4 text-xs md:text-sm gap-2">
-        <p class="underline col-span-1">Freelance</p>
+    <div
+        class="work-experience__item grid grid-cols-1 gap-2 gap-x-4 text-xs md:grid-cols-3 md:text-sm"
+    >
+        <p class="col-span-1 underline">Freelance</p>
         <p class="col-span-1">Web Developer</p>
         <p class="col-span-1">2019 - 2020</p>
     </div>
 </div>
 
 <div
-  class="development-process max-w-[96%] 3xl:max-w-[70%] my-20 md:mx-auto mx-6 md:mb-4 3xl:mb-30 grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12 pt-12 border-t-[0.1px] border-gray-300"
+    class="development-process 3xl:max-w-[70%] 3xl:mb-30 mx-6 my-20 grid max-w-[96%] grid-cols-1 gap-x-6 gap-y-12 border-t-[0.1px] border-gray-300 pt-12 md:mx-auto md:mb-4 md:grid-cols-3"
 >
-  <div class="development-process__header md:col-start-1 md:row-start-1">
-    <h4 class="text-xs text-secondary">Development Process</h4>
-  </div>
+    <div class="development-process__header md:col-start-1 md:row-start-1">
+        <h4 class="text-secondary text-xs">Development Process</h4>
+    </div>
 
-  <div class="liquid-glass development-process__discover md:col-start-1 md:row-start-2">
-    <h4 class="text-black text-xs md:text-sm">Discover</h4>
-    <p class="text-secondary text-xs select-none">
-      Uncover user needs and problems through research and observations.
-      Identify design challenges worth addressing.
-    </p>
-  </div>
+    <div
+        class="liquid-glass development-process__discover md:col-start-1 md:row-start-2"
+    >
+        <h4 class="text-xs text-black md:text-sm">Discover</h4>
+        <p class="text-secondary select-none text-xs">
+            Uncover user needs and problems through research and observations.
+            Identify design challenges worth addressing.
+        </p>
+    </div>
 
-  <div class="liquid-glass development-process__create md:col-start-2 md:row-start-2">
-    <h4 class="text-black text-xs md:text-sm">Create</h4>
-    <p class="text-secondary text-xs select-none">
-      Engage in creative exploration, challenge assumptions, and rapidly
-      prototype and test solutions.
-    </p>
-  </div>
+    <div
+        class="liquid-glass development-process__create md:col-start-2 md:row-start-2"
+    >
+        <h4 class="text-xs text-black md:text-sm">Create</h4>
+        <p class="text-secondary select-none text-xs">
+            Engage in creative exploration, challenge assumptions, and rapidly
+            prototype and test solutions.
+        </p>
+    </div>
 
-  <div class="liquid-glass development-process__deliver p-2 md:col-start-3 md:row-start-2">
-    <h4 class="text-black text-xs md:text-sm">Deliver</h4>
-    <p class="text-secondary text-xs select-none">
-      Translate refined concepts into intuitive interfaces, collaborate
-      closely with design and engineering, and deliver user-focused,
-      accessible products.
-    </p>
-  </div>
+    <div
+        class="liquid-glass development-process__deliver p-2 md:col-start-3 md:row-start-2"
+    >
+        <h4 class="text-xs text-black md:text-sm">Deliver</h4>
+        <p class="text-secondary select-none text-xs">
+            Translate refined concepts into intuitive interfaces, collaborate
+            closely with design and engineering, and deliver user-focused,
+            accessible products.
+        </p>
+    </div>
 
-  <div class="development-process__text md:col-start-1 md:row-start-4">
-    <p class="text-black text-xs">
-      As a detail-oriented developer, I focus on the small but impactful
-      aspects of UI development: spacing, element placement, smooth state
-      transitions, and micro-interactions. I believe great frontend work
-      lies in these details—when thoughtfully implemented, they create
-      interfaces that feel seamless and intuitive. <br /><br />
-      I strive to make design ideas shine through clean, performant, and
-      maintainable code. Collaborating deeply with designers allows me to
-      better understand the intention behind every pixel and transform it
-      into meaningful user experiences.
-    </p>
-  </div>
+    <div class="development-process__text md:col-start-1 md:row-start-4">
+        <p class="text-xs text-black">
+            As a detail-oriented developer, I focus on the small but impactful
+            aspects of UI development: spacing, element placement, smooth state
+            transitions, and micro-interactions. I believe great frontend work
+            lies in these details—when thoughtfully implemented, they create
+            interfaces that feel seamless and intuitive. <br /><br />
+            I strive to make design ideas shine through clean, performant, and
+            maintainable code. Collaborating deeply with designers allows me to
+            better understand the intention behind every pixel and transform it
+            into meaningful user experiences.
+        </p>
+    </div>
 
-  <div class="development-process__text md:col-start-1 md:row-start-6">
-    <h4 class="text-xs text-secondary mb-2">Design Explorations</h4>
-    <p class="text-black text-xs">
-      This page showcases a collection of my small projects and
-      experiments, providing a glimpse into my design journey and ideas
-      I've explored along the way.
-    </p>
-  </div>
+    <div class="development-process__text md:col-start-1 md:row-start-6">
+        <h4 class="text-secondary mb-2 text-xs">Design Explorations</h4>
+        <p class="text-xs text-black">
+            This page showcases a collection of my small projects and
+            experiments, providing a glimpse into my design journey and ideas
+            I've explored along the way.
+        </p>
+    </div>
 </div>

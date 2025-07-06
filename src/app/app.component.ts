@@ -61,12 +61,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
                 });
             }
             if (event instanceof NavigationEnd) {
-                
                 gsap.to(this.pageContainer.nativeElement, {
                     height: '0vh',
                     duration: 0.5,
                     ease: 'power2.out',
-                    delay: 0.1 
+                    delay: 0.1
                 });
             }
         });
