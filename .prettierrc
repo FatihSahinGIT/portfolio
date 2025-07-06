@@ -1,0 +1,7 @@
+{
+  "tailwindStylesheet": "./src/app/styles.css",
+  "trailingComma": "none",
+  "tabWidth": 4,
+  "semi": true,
+  "singleQuote": true
+}

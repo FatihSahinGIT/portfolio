@@ -42,8 +42,18 @@ export class AboutComponent implements AfterViewInit {
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.education-block',
-        start: 'top 25%',
-        markers: true,
+        start: 'top 30%',
+      },
+    });
+
+    gsap.from('.work-experience', {
+      opacity: 0,
+      y: 10,
+      duration: 1.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.work-experience',
+        start: 'top 30%',
       },
     });
 
