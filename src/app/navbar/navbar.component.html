@@ -2,11 +2,19 @@
     <!-- Logo -->
     <div class="fade-in flex items-center">
         <a routerLink="/">
-            <img
-                src="nav-logo.svg"
-                alt="Navigation Bar Logo"
-                class="h-8 md:h-12"
-            />
+            @if (isDarkMode()) {
+                <img
+                    src="nav-logo-dark.svg"
+                    alt="Navigation Bar Logo"
+                    class="h-8 md:h-12"
+                />
+            } @else {
+                <img
+                    src="nav-logo.svg"
+                    alt="Navigation Bar Logo"
+                    class="h-8 md:h-12"
+                />
+            }
         </a>
     </div>
 
@@ -27,6 +35,33 @@
                     class="block rounded px-3 py-2 underline-offset-4 hover:underline"
                     >Contact</a
                 >
+            </li>
+            <li class="flex items-center justify-center">
+                @if (isDarkMode()) {
+                    <ng-icon
+                        name="bootstrapLightbulbFill"
+                        color="#ffff"
+                        class="cursor-pointer transition-all duration-300 ease-in-out"
+                        [class.opacity-100]="isDarkMode()"
+                        [class.opacity-0]="!isDarkMode()"
+                        [class.scale-100]="isDarkMode()"
+                        [class.scale-90]="!isDarkMode()"
+                        [class.pointer-events-none]="!isDarkMode()"
+                        (click)="toggleTheme()"
+                    ></ng-icon>
+                } @else {
+                    <ng-icon
+                        name="bootstrapMoonFill"
+                        color="#00000"
+                        class="cursor-pointer transition-all duration-300 ease-in-out"
+                        [class.opacity-100]="!isDarkMode()"
+                        [class.opacity-0]="isDarkMode()"
+                        [class.scale-100]="!isDarkMode()"
+                        [class.scale-90]="isDarkMode()"
+                        [class.pointer-events-none]="isDarkMode()"
+                        (click)="toggleTheme()"
+                    ></ng-icon>
+                }
             </li>
         </ul>
     </div>

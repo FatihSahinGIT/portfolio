@@ -4,5 +4,6 @@ import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
     { path: '', component: LandingComponent, pathMatch: 'full' },
-    { path: 'about', component: AboutComponent }
+    { path: 'about', component: AboutComponent },
+    { path: 'work/:workName', loadComponent: () => import('./single-work/single-work.component').then(m => m.SingleWorkComponent) },
 ];

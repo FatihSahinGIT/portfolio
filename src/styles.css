@@ -1,10 +1,63 @@
 @import 'tailwindcss';
 
-@theme {
-    --color-primary: #0000;
-    --color-secondary: #acacac;
+/* Enable dark mode variant for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* === THEME BREAKPOINTS === */
+@theme {
     --breakpoint-3xl: 120rem;
+    --breakpoint-2xl: 90rem;
+}
+
+@theme {
+    /* == LIGHT MODE */
+
+    /* = Background = */
+    --bg-dark: hsl(100, 100, 100%);
+    --bg: hsl(0, 0%, 90%);
+    --bg-light: hsl(0, 0%, 85%);
+
+    /* = Text = */
+    --text: hsl(100, 100%, 0%);
+    --text-muted: hsl(0, 0%, 70%);
+
+    /* = Border & Gradient */
+    --border: hsl(0, 0%, 80%);
+    --border-card: 1px solid var(--bg);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --hightlight: hsl(0, 0, 60%);
+}
+
+html.dark,
+body.dark {
+    /* == DARK MODE */
+
+    /* = Background = */
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 10%);
+    --bg-light: hsl(0, 0%, 15%);
+
+    /* = Text = */
+    --text: hsl(100, 100%, 100%);
+    --text-muted: hsl(0, 0%, 75%);
+
+    /* = Border & Gradient */
+    --border: hsl(0, 0%, 80%);
+    --border-card: 1px solid var(--border);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --hightlight: hsl(0, 0, 100%);
+}
+
+/* Root styles */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
 }
 
 @layer utilities {
@@ -28,13 +81,27 @@
     /* border: 1px solid red; */
 }
 
-:root {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 ::selection {
     background: #000;
     color: #fff;
+}
+
+h4 {
+    color: var(--text-muted)
+}
+
+.box {
+    background: var(--bg-light);
+    padding: 0.5rem;
+    color: var(--text);
+    border-radius: 0.5rem;
+    border-top: 1px solid var(--hightlight);
+    border: var(--border);
+    transition: all 0.5s ease-in-out;
+}
+
+.box:hover {
+    background: var(--bg);
 }
 
 .liquid-glass {

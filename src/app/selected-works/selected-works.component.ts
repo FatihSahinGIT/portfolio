@@ -9,11 +9,11 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
 import { gsap } from 'gsap/gsap-core';
 import * as PROJECT_DATA from './projects.json';
-import { NgOptimizedImage } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-selected-works',
-    imports: [NgIcon, NgOptimizedImage],
+    imports: [NgIcon],
     providers: [provideIcons({ bootstrapAlarm, bootstrapApp })],
     templateUrl: './selected-works.component.html',
     styleUrl: './selected-works.component.css'
@@ -25,6 +25,7 @@ export class SelectedWorksComponent implements AfterViewInit {
     selectedWorks!: ElementRef<HTMLElement>;
 
     readonly #el: ElementRef = inject(ElementRef);
+    readonly #router: Router = inject(Router);
 
     public projects = (PROJECT_DATA as any).default;
 
@@ -40,15 +41,19 @@ export class SelectedWorksComponent implements AfterViewInit {
 
     public scrollLeft(): void {
         this.scrollContainer.nativeElement.scrollBy({
-            left: -300,
+            left: -200,
             behavior: 'smooth'
         });
     }
 
     public scrollRight(): void {
         this.scrollContainer.nativeElement.scrollBy({
-            left: 300,
+            left: 200,
             behavior: 'smooth'
         });
+    }
+
+    public redirectToWork(projectCompany: string): void {
+        this.#router.navigate(['/work', projectCompany]);
     }
 }

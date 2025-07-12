@@ -51,25 +51,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         this.#rafId = requestAnimationFrame(raf);
     }
 
-    ngAfterViewInit(): void {
-        this.router.events.subscribe((event) => {
-            if (event instanceof NavigationStart) {
-                gsap.to(this.pageContainer.nativeElement, {
-                    height: '100vh',
-                    duration: 0.5,
-                    ease: 'power2.in'
-                });
-            }
-            if (event instanceof NavigationEnd) {
-                gsap.to(this.pageContainer.nativeElement, {
-                    height: '0vh',
-                    duration: 0.5,
-                    ease: 'power2.out',
-                    delay: 0.1
-                });
-            }
-        });
-    }
+    ngAfterViewInit(): void {}
 
     ngOnDestroy() {
         cancelAnimationFrame(this.#rafId);

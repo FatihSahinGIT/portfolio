@@ -1,5 +1,5 @@
 <div #selectedWorks class="mb-12">
-    <h2 class="text-secondary mb-2 text-sm">Selected Work</h2>
+    <h4 class="text-secondary mb-2 text-sm">Selected Work</h4>
     <div class="my-4 flex justify-start space-x-3">
         <ng-icon
             name="bootstrapArrowLeft"
@@ -18,15 +18,13 @@
         <ul class="flex min-w-max space-x-6">
             @for (project of projects; track project.company; let i = $index) {
                 <li
-                    class="liquid-glass 3xl:w-[670px] 3xl:h-max h-[697px] w-[460px] flex-shrink-0 overflow-hidden"
+                    class="box 3xl:w-[670px] 3xl:h-max h-[697px] w-[460px] flex-shrink-0 overflow-hidden"
                 >
                     <img
-                        [ngSrc]="project.image"
+                        [src]="project.image"
                         [alt]="project.title"
-                        width="900"
-                        height="1350"
-                        [priority]="i === 0"
                         class="3xl:h-[100vh] fade-in h-[620px] w-full cursor-pointer rounded-sm object-cover"
+                        (click)="redirectToWork(project.company)"
                     />
 
                     <h3 class="my-2 text-sm font-normal">
