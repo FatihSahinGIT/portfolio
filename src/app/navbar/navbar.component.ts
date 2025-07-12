@@ -2,8 +2,10 @@ import {
     AfterViewInit,
     Component,
     ElementRef,
+    EventEmitter,
     inject,
     OnInit,
+    Output,
     signal,
     WritableSignal
 } from '@angular/core';
@@ -18,12 +20,13 @@ import { gsap } from 'gsap/gsap-core';
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
-    imports: [RouterLink, NgIcon],
+    imports: [NgIcon],
     providers: [provideIcons({ bootstrapLightbulbFill, bootstrapMoonFill })],
     styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements AfterViewInit, OnInit {
     readonly #el: ElementRef = inject(ElementRef);
+    @Output() navTransition = new EventEmitter<string>();
 
     public isDarkMode: WritableSignal<boolean> = signal(false);
 
@@ -35,7 +38,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         gsap.from(this.#el.nativeElement.querySelectorAll('.fade-in'), {
             opacity: 0,
             y: 10,
-            duration: 5,
+            duration: 1.5,
             ease: 'power3.out'
         });
     }
