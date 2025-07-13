@@ -10,6 +10,7 @@ import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
 import { gsap } from 'gsap/gsap-core';
 import * as PROJECT_DATA from './projects.json';
 import { Router } from '@angular/router';
+import { ROUTE_PATHS } from '../app.routes';
 
 @Component({
     selector: 'app-selected-works',
@@ -40,20 +41,24 @@ export class SelectedWorksComponent implements AfterViewInit {
     }
 
     public scrollLeft(): void {
+        const box = this.scrollContainer.nativeElement.querySelector('.box') as HTMLElement;
+        const scrollAmount = box ? box.offsetWidth + 12 : 200; // 24px = space-x-6
         this.scrollContainer.nativeElement.scrollBy({
-            left: -200,
+            left: -scrollAmount,
             behavior: 'smooth'
         });
     }
 
     public scrollRight(): void {
+        const box = this.scrollContainer.nativeElement.querySelector('.box') as HTMLElement;
+        const scrollAmount = box ? box.offsetWidth + 80 : 200; // 24px = space-x-6
         this.scrollContainer.nativeElement.scrollBy({
-            left: 200,
+            left: scrollAmount,
             behavior: 'smooth'
         });
     }
 
     public redirectToWork(projectCompany: string): void {
-        this.#router.navigate(['/work', projectCompany]);
+        this.#router.navigate([ROUTE_PATHS.work(projectCompany)]);
     }
 }

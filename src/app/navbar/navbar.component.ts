@@ -4,18 +4,17 @@ import {
     ElementRef,
     EventEmitter,
     inject,
-    OnInit,
     Output,
     signal,
     WritableSignal
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import {
     bootstrapLightbulbFill,
     bootstrapMoonFill
 } from '@ng-icons/bootstrap-icons';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { gsap } from 'gsap/gsap-core';
+import { ROUTE_PATHS } from '../app.routes';
 
 @Component({
     selector: 'app-navbar',
@@ -24,15 +23,12 @@ import { gsap } from 'gsap/gsap-core';
     providers: [provideIcons({ bootstrapLightbulbFill, bootstrapMoonFill })],
     styleUrl: './navbar.component.css'
 })
-export class NavbarComponent implements AfterViewInit, OnInit {
+export class NavbarComponent implements AfterViewInit {
     readonly #el: ElementRef = inject(ElementRef);
     @Output() navTransition = new EventEmitter<string>();
 
     public isDarkMode: WritableSignal<boolean> = signal(false);
-
-    ngOnInit(): void {
-        // this.detectDarkMode();
-    }
+    public ROUTE_PATHS = ROUTE_PATHS;
 
     ngAfterViewInit(): void {
         gsap.from(this.#el.nativeElement.querySelectorAll('.fade-in'), {

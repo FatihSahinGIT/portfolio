@@ -1,68 +1,33 @@
 <nav class="mb-8 flex items-center justify-between px-4 py-4 md:px-8">
-    <!-- Logo -->
-    <div class="fade-in flex items-center">
-        <a (click)="navTransition.emit('/')">
-            @if (isDarkMode()) {
-                <img
-                    src="nav-logo-dark.svg"
-                    alt="Navigation Bar Logo"
-                    class="h-8 md:h-12"
-                />
-            } @else {
-                <img
-                    src="nav-logo.svg"
-                    alt="Navigation Bar Logo"
-                    class="h-8 md:h-12"
-                />
-            }
-        </a>
-    </div>
+  <div class="fade-in flex cursor-pointer items-center">
+    <a (click)="navTransition.emit(ROUTE_PATHS.root)">
+      <img
+        [src]="isDarkMode() ? 'nav-logo-dark.svg' : 'nav-logo.svg'"
+        alt="Navigation Bar Logo"
+        class="h-8 md:h-12"
+      />
+    </a>
+  </div>
 
-    <!-- Nav Items -->
-    <div id="nav-menu" class="fade-in flex items-center">
-        <ul class="flex flex-row space-x-1 text-xs md:space-x-8">
-            <li>
-                <a
-                    (click)="navTransition.emit('/about')"
-                    class="font-color block rounded px-3 py-2 underline-offset-4 hover:underline"
-                >
-                    About
-                </a>
-            </li>
-            <li>
-                <a
-                    (click)="navTransition.emit('/about')"
-                    class="block rounded px-3 py-2 underline-offset-4 hover:underline"
-                    >Contact</a
-                >
-            </li>
-            <li class="flex items-center justify-center">
-                @if (isDarkMode()) {
-                    <ng-icon
-                        name="bootstrapLightbulbFill"
-                        color="#ffff"
-                        class="cursor-pointer transition-all duration-300 ease-in-out"
-                        [class.opacity-100]="isDarkMode()"
-                        [class.opacity-0]="!isDarkMode()"
-                        [class.scale-100]="isDarkMode()"
-                        [class.scale-90]="!isDarkMode()"
-                        [class.pointer-events-none]="!isDarkMode()"
-                        (click)="toggleTheme()"
-                    ></ng-icon>
-                } @else {
-                    <ng-icon
-                        name="bootstrapMoonFill"
-                        color="#00000"
-                        class="cursor-pointer transition-all duration-300 ease-in-out"
-                        [class.opacity-100]="!isDarkMode()"
-                        [class.opacity-0]="isDarkMode()"
-                        [class.scale-100]="!isDarkMode()"
-                        [class.scale-90]="isDarkMode()"
-                        [class.pointer-events-none]="isDarkMode()"
-                        (click)="toggleTheme()"
-                    ></ng-icon>
-                }
-            </li>
-        </ul>
-    </div>
+  <div id="nav-menu" class="fade-in flex items-center">
+    <ul class="flex flex-row space-x-1 text-xs md:space-x-8">
+      <li>
+        <a
+          (click)="navTransition.emit(ROUTE_PATHS.about)"
+          class="font-color block cursor-pointer rounded px-3 py-2 underline-offset-4 hover:underline"
+        >About</a>
+      </li>
+      <li>
+        <a class="block cursor-pointer px-3 py-2 underline-offset-4 hover:underline">Contact</a>
+      </li>
+      <li class="flex items-center justify-center">
+        <ng-icon
+          [name]="isDarkMode() ? 'bootstrapLightbulbFill' : 'bootstrapMoonFill'"
+          [color]="isDarkMode() ? '#ffff' : '#000'"
+          class="cursor-pointer"
+          (click)="toggleTheme()"
+        />
+      </li>
+    </ul>
+  </div>
 </nav>

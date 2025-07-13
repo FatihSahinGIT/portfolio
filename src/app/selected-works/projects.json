@@ -1,24 +1,28 @@
 [
     {
         "company": "interval",
+        "name": "InterVal",
         "image": "project-images/interval/interval-mobile.jpg",
         "alt-text": "Screenshot of AI-Powered Analytics Dashboard project",
         "tools": ["Angular", "Tailwind CSS v4", "TypeScript", "Node.js"]
     },
     {
         "company": "kv.digital",
+        "name": "kv.digital",
         "image": "project-images/kv.digital/kv.digital.jpg",
         "alt-text": "Homepage of redesigned e-commerce platform",
         "tools": ["React", "Tailwind CSS v4", "Redux", "Express.js"]
     },
     {
         "company": "avant-kitchen",
+        "name": "Avant Kitchen",
         "image": "project-images/avant/avant.jpg",
         "alt-text": "Dashboard view of Sustainable Energy Tracker application",
         "tools": ["Vue.js", "Tailwind CSS v4", "Firebase", "D3.js"]
     },
     {
         "company": "mindful-minds-management",
+        "name": "Mindful Minds Management",
         "image": "project-images/mindful-minds/mindful-minds.jpg",
         "alt-text": "Dashboard view of Sustainable Energy Tracker application",
         "tools": ["Vue.js", "Tailwind CSS v4", "Firebase", "D3.js"]

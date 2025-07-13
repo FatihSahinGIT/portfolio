@@ -53,7 +53,7 @@ export class AboutComponent implements AfterViewInit {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.work-experience',
-                start: 'top 20%'
+                start: 'top 40%'
             }
         });
 

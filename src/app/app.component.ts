@@ -2,18 +2,14 @@ import {
     AfterViewInit,
     Component,
     ElementRef,
+    inject,
     OnDestroy,
     OnInit,
     ViewChild
 } from '@angular/core';
 import Lenis from 'lenis';
 import { NavbarComponent } from './navbar/navbar.component';
-import {
-    NavigationEnd,
-    NavigationStart,
-    Router,
-    RouterOutlet
-} from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
 import {
     bootstrapArrowRight,
@@ -22,6 +18,7 @@ import {
 import { FooterComponent } from './footer/footer.component';
 import { gsap } from 'gsap/gsap-core';
 import { OverlayService } from './overlay.service';
+import { ROUTE_PATHS } from './app.routes';
 
 @Component({
     selector: 'app-root',
@@ -32,15 +29,13 @@ import { OverlayService } from './overlay.service';
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild('transitionOverlay', { static: true })
-    transitionOverlay!: ElementRef;
+    public transitionOverlay!: ElementRef;
 
     #lenis!: Lenis;
     #rafId!: number;
 
-    constructor(
-        private router: Router,
-        private overlayService: OverlayService
-    ) {}
+    readonly #router: Router = inject(Router);
+    readonly #overlayService: OverlayService = inject(OverlayService);
 
     ngOnInit() {
         this.#lenis = new Lenis({
@@ -55,7 +50,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         };
         this.#rafId = requestAnimationFrame(raf);
 
-        this.router.events.subscribe((event) => {
+        this.#router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 // Animate overlay out (move down and fade out)
                 gsap.to(this.transitionOverlay.nativeElement, {
@@ -71,7 +66,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
                             opacity: 0
                         });
                         // Notify overlay animation is done
-                        this.overlayService.notifyOverlayDone();
+                        this.#overlayService.notifyOverlayDone();
                     }
                 });
             }
@@ -80,7 +75,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
     ngAfterViewInit(): void {
         gsap.set(this.transitionOverlay.nativeElement, {
-            y: '100%', // Start off-screen at the bottom
+            y: '100%',
             opacity: 0
         });
     }
@@ -88,8 +83,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     public async transitionAndNavigate(url: string) {
         if (this.isCurrentRoute(url)) return;
 
-
-        // Always animate overlay in from bottom
         await gsap
             .to(this.transitionOverlay.nativeElement, {
                 y: 0,
@@ -98,7 +91,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
                 ease: 'power2.out'
             })
             .then();
-        this.router.navigateByUrl(url).then((success) => {
+        this.#router.navigateByUrl(url).then((success) => {
             if (!success) {
                 // If navigation fails, reset overlay
                 gsap.set(this.transitionOverlay.nativeElement, {
@@ -110,7 +103,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     private isCurrentRoute(url: string): boolean {
-        return this.router.url === url;
+        return this.#router.url === url;
     }
 
     ngOnDestroy() {
