@@ -1,0 +1,21 @@
+@layer utilities {
+  .fade-in-text {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .liquid-glass {
+    @apply rounded-xl border border-neutral-400/20 bg-neutral-300/20 p-2 shadow-sm backdrop-blur-[1px] transition-colors duration-500;
+  }
+  .liquid-glass:hover {
+    @apply bg-neutral-300/60;
+  }
+}

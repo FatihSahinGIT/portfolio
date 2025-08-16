@@ -10,7 +10,7 @@ import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
 import { gsap } from 'gsap/gsap-core';
 import * as PROJECT_DATA from './projects.json';
 import { ROUTE_PATHS } from '../app.routes';
-import { TransitionService } from '../transition.service';
+import { TransitionService } from '../shared/services/transition.service';
 
 @Component({
     selector: 'app-selected-works',

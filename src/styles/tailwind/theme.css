@@ -1,0 +1,30 @@
+@theme {
+    --breakpoint-3xl: 120rem;
+    --breakpoint-2xl: 90rem;
+    /* == LIGHT MODE */
+    --bg-dark: hsl(100, 100, 100%);
+    --bg: hsl(0, 0%, 90%);
+    --bg-light: hsl(0, 0%, 85%);
+    --text: hsl(100, 100%, 0%);
+    --text-muted: hsl(0, 0%, 70%);
+    --border: hsl(0, 0%, 80%);
+    --border-card: 1px solid var(--bg);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --hightlight: hsl(0, 0, 60%);
+}
+
+html.dark,
+body.dark {
+    /* == DARK MODE */
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 10%);
+    --bg-light: hsl(0, 0%, 15%);
+    --text: hsl(100, 100%, 100%);
+    --text-muted: hsl(0, 0%, 75%);
+    --border: hsl(0, 0%, 80%);
+    --border-card: 1px solid var(--border);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --hightlight: hsl(0, 0, 100%);
+}

@@ -16,7 +16,7 @@ import {
     bootstrapArrowLeft
 } from '@ng-icons/bootstrap-icons';
 import { FooterComponent } from './footer/footer.component';
-import { TransitionService } from './transition.service';
+import { TransitionService } from './shared/services/transition.service';
 
 @Component({
     selector: 'app-root',
