@@ -9,8 +9,8 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
 import { gsap } from 'gsap/gsap-core';
 import * as PROJECT_DATA from './projects.json';
-import { Router } from '@angular/router';
 import { ROUTE_PATHS } from '../app.routes';
+import { TransitionService } from '../transition.service';
 
 @Component({
     selector: 'app-selected-works',
@@ -26,7 +26,7 @@ export class SelectedWorksComponent implements AfterViewInit {
     selectedWorks!: ElementRef<HTMLElement>;
 
     readonly #el: ElementRef = inject(ElementRef);
-    readonly #router: Router = inject(Router);
+    readonly #transitionService: TransitionService = inject(TransitionService);
 
     public projects = (PROJECT_DATA as any).default;
 
@@ -59,6 +59,6 @@ export class SelectedWorksComponent implements AfterViewInit {
     }
 
     public redirectToWork(projectCompany: string): void {
-        this.#router.navigate([ROUTE_PATHS.work(projectCompany)]);
+        this.#transitionService.transitionAndNavigate(ROUTE_PATHS.work(projectCompany));
     }
 }

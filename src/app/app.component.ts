@@ -9,16 +9,14 @@ import {
 } from '@angular/core';
 import Lenis from 'lenis';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, RouterOutlet } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
 import {
     bootstrapArrowRight,
     bootstrapArrowLeft
 } from '@ng-icons/bootstrap-icons';
 import { FooterComponent } from './footer/footer.component';
-import { gsap } from 'gsap/gsap-core';
-import { OverlayService } from './overlay.service';
-import { ROUTE_PATHS } from './app.routes';
+import { TransitionService } from './transition.service';
 
 @Component({
     selector: 'app-root',
@@ -34,8 +32,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     #lenis!: Lenis;
     #rafId!: number;
 
-    readonly #router: Router = inject(Router);
-    readonly #overlayService: OverlayService = inject(OverlayService);
+    readonly #transitionService: TransitionService = inject(TransitionService);
+
+    public transitionAndNavigate(url: string) {
+        this.#transitionService.transitionAndNavigate(url);
+    }
 
     ngOnInit() {
         this.#lenis = new Lenis({
@@ -50,60 +51,17 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         };
         this.#rafId = requestAnimationFrame(raf);
 
-        this.#router.events.subscribe((event) => {
+        // Listen for navigation end to animate overlay out
+        this.#transitionService['router'].events.subscribe((event: any) => {
             if (event instanceof NavigationEnd) {
-                // Animate overlay out (move down and fade out)
-                gsap.to(this.transitionOverlay.nativeElement, {
-                    y: '100%',
-                    opacity: 0,
-                    duration: 0.6,
-                    ease: 'power3.inOut',
-                    clearProps: 'all',
-                    onComplete: () => {
-                        // Reset overlay to initial state after animation
-                        gsap.set(this.transitionOverlay.nativeElement, {
-                            y: '100%',
-                            opacity: 0
-                        });
-                        // Notify overlay animation is done
-                        this.#overlayService.notifyOverlayDone();
-                    }
-                });
+                this.#transitionService.animateOverlayOut();
             }
         });
     }
 
     ngAfterViewInit(): void {
-        gsap.set(this.transitionOverlay.nativeElement, {
-            y: '100%',
-            opacity: 0
-        });
-    }
-
-    public async transitionAndNavigate(url: string) {
-        if (this.isCurrentRoute(url)) return;
-
-        await gsap
-            .to(this.transitionOverlay.nativeElement, {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out'
-            })
-            .then();
-        this.#router.navigateByUrl(url).then((success) => {
-            if (!success) {
-                // If navigation fails, reset overlay
-                gsap.set(this.transitionOverlay.nativeElement, {
-                    y: '100%',
-                    opacity: 0
-                });
-            }
-        });
-    }
-
-    private isCurrentRoute(url: string): boolean {
-        return this.#router.url === url;
+        // Register the overlay element with the service
+        this.#transitionService.registerOverlay(this.transitionOverlay);
     }
 
     ngOnDestroy() {

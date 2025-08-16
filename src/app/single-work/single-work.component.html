@@ -1,0 +1,32 @@
+<section #infoContainer class="single-work__container mx-6 h-full relative">
+    <!-- Header -->
+    <div class="flex h-[40vh] flex-col items-start justify-center gap-10 md:gap-20">
+        <div>
+            <h1 class="fade-in text-lg font-normal md:text-2xl">
+                {{ project?.name }}
+            </h1>
+            <h2 class="text-base text-muted text-gray-400">
+                {{ project?.alttext }}
+            </h2>
+        </div>
+        <div class="flex w-full flex-col justify-between gap-6 md:flex-row">
+            <div class="single-work__specs-item">
+                <span class="block text-xs md:text-base">Agency</span>
+                <span class="text-xs text-gray-400">{{ project?.name }}</span>
+            </div>
+            <div class="single-work__specs-item">
+                <span class="block text-xs md:text-base">Year</span>
+                <span class="text-xs text-gray-400">{{ project?.year }}</span>
+            </div>
+            <div class="single-work__specs-item">
+                <span class="block text-xs md:text-base">Timeframe</span>
+                <span class="text-xs text-gray-400">{{ project?.timeframe }}</span>
+            </div>
+            <div class="single-work__specs-item">
+                <span class="block text-xs md:text-base">Technology</span>
+                <span class="text-xs text-gray-400">{{ project?.tools }}</span>
+            </div>
+        </div>
+    </div>
+    <span class="border-anim absolute left-0 bottom-2 md:bottom-12 h-[0.1px] w-full origin-left scale-x-0 bg-gray-300"></span>
+</section>

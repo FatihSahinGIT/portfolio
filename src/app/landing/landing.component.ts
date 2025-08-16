@@ -5,7 +5,7 @@ import {
     inject,
     OnInit
 } from '@angular/core';
-import { gsap } from 'gsap/gsap-core';
+
 import { IntroductionComponent } from '../introduction/introduction.component';
 import { SelectedWorksComponent } from '../selected-works/selected-works.component';
 
