@@ -1,32 +1,149 @@
-<section #infoContainer class="single-work__container mx-6 h-full relative">
+<section
+    #infoContainer
+    class="single-work__container mb-20 grid auto-rows-min gap-8"
+>
     <!-- Header -->
-    <div class="flex h-[40vh] flex-col items-start justify-center gap-10 md:gap-20">
+    <div
+        class="row-start-1 flex h-[40vh] flex-col items-start justify-center gap-10 md:gap-20"
+    >
         <div>
             <h1 class="fade-in text-lg font-normal md:text-2xl">
                 {{ project?.name }}
             </h1>
-            <h2 class="text-base text-muted text-gray-400">
+            <h2 class="text-muted text-base text-gray-400">
                 {{ project?.alttext }}
             </h2>
         </div>
-        <div class="flex w-full flex-col justify-between gap-6 md:flex-row">
-            <div class="single-work__specs-item">
+        <div
+            class="flex w-full flex-row flex-wrap justify-between gap-6 self-start"
+        >
+            <div class="single-work__specs-item w-max">
                 <span class="block text-xs md:text-base">Agency</span>
                 <span class="text-xs text-gray-400">{{ project?.name }}</span>
             </div>
-            <div class="single-work__specs-item">
+            <div class="single-work__specs-item w-fit">
                 <span class="block text-xs md:text-base">Year</span>
                 <span class="text-xs text-gray-400">{{ project?.year }}</span>
             </div>
-            <div class="single-work__specs-item">
+            <div class="single-work__specs-item w-fit">
                 <span class="block text-xs md:text-base">Timeframe</span>
-                <span class="text-xs text-gray-400">{{ project?.timeframe }}</span>
+                <span class="text-xs text-gray-400">{{
+                    project?.timeframe
+                }}</span>
             </div>
-            <div class="single-work__specs-item">
+            <div class="single-work__specs-item w-fit">
                 <span class="block text-xs md:text-base">Technology</span>
                 <span class="text-xs text-gray-400">{{ project?.tools }}</span>
             </div>
         </div>
+
+        <span
+            class="border-anim h-[0.1px] w-full origin-left scale-x-0 bg-gray-300"
+        ></span>
     </div>
-    <span class="border-anim absolute left-0 bottom-2 md:bottom-12 h-[0.1px] w-full origin-left scale-x-0 bg-gray-300"></span>
+    <div
+        class="single-work__content row-start-2 flex flex-col justify-start gap-10 md:flex-row"
+    >
+        <div class="liquid-glass w-full rounded-lg p-4">
+            <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Project image"
+                class="h-full w-full rounded-sm object-cover"
+            />
+        </div>
+
+        <div
+            class="single-work__content-text flex w-80 flex-col gap-2 md:gap-4"
+        >
+            <h4 class="text-sm md:text-base">Overview</h4>
+            <p class="text-xs">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
+                cum odit eum et. Obcaecati iusto, voluptas quam quod recusandae
+                distinctio vitae quaerat reiciendis voluptates in ipsum porro.
+                Omnis, dolorum placeat.
+            </p>
+        </div>
+    </div>
+
+    <div
+        class="mt-50 gap-50 row-start-3 flex flex-col-reverse md:flex-col md:gap-80"
+    >
+        <h1 class="md:max-w-2/3 max-w-full text-base md:text-2xl">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa id
+            exercitationem omnis voluptate ratione minima placeat aspernatur
+            reiciendis eaque labore. Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Ipsa id exercitationem omnis voluptate ratione
+            minima placeat aspernatur reiciendis eaque labore. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Ipsa id exercitationem
+            omnis voluptate ratione minima placeat aspernatur reiciendis eaque
+            labore.
+        </h1>
+
+        <div class="flex flex-col gap-10 md:flex-row">
+            <div class="liquid-glass rounded-lg p-2 md:p-4">
+                <img
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Project image"
+                    class="h-full w-full rounded-sm object-cover"
+                />
+            </div>
+            <div class="liquid-glass rounded-lg p-2 md:p-4">
+                <img
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Project image"
+                    class="h-full w-full rounded-sm object-cover"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="mt-50 row-start-4 flex flex-col justify-between gap-10 md:flex-row"
+    >
+        <div class="w-1/2">
+            <h4 class="text-xs md:text-sm">Challenges</h4>
+        </div>
+        <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            earum praesentium similique, itaque veritatis explicabo eum incidunt
+            tempora cupiditate ipsa dolorum nisi sunt quaerat adipisci tenetur
+            saepe vel. Suscipit ab corrupti sit cupiditate dignissimos. Eius qui
+            quaerat delectus omnis quidem? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Excepturi earum praesentium similique,
+            itaque veritatis explicabo eum incidunt tempora cupiditate ipsa
+            dolorum nisi sunt quaerat adipisci tenetur saepe vel. Suscipit ab
+            corrupti sit cupiditate dignissimos. Eius qui quaerat delectus omnis
+            quidem?
+        </div>
+    </div>
+
+    <div class="mt-50 row-start-5">
+        <div class="liquid-glass h-[80vh] w-full rounded-lg p-4">
+            <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Project image"
+                class="h-full w-full rounded-sm object-cover"
+            />
+        </div>
+    </div>
+
+    <div
+        class="mt-50 row-start-6 flex flex-col justify-between gap-4 md:flex-row"
+    >
+        <div class="w-1/2">
+            <h4 class="text-xs md:text-sm">Takeaways</h4>
+        </div>
+        <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            earum praesentium similique, itaque veritatis explicabo eum incidunt
+            tempora cupiditate ipsa dolorum nisi sunt quaerat adipisci tenetur
+            saepe vel. Suscipit ab corrupti sit cupiditate dignissimos. Eius qui
+            quaerat delectus omnis quidem? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Excepturi earum praesentium similique,
+            itaque veritatis explicabo eum incidunt tempora cupiditate ipsa
+            dolorum nisi sunt quaerat adipisci tenetur saepe vel. Suscipit ab
+            corrupti sit cupiditate dignissimos. Eius qui quaerat delectus omnis
+            quidem?
+        </div>
+    </div>
 </section>
