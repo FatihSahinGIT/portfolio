@@ -32,8 +32,6 @@ export class AboutComponent implements AfterViewInit {
             ease: 'power2.out'
         });
 
-        console.log('eduaction', this.educationBlocks);
-
         gsap.from(gsap.utils.toArray('.education-block'), {
             opacity: 0,
             y: 10,

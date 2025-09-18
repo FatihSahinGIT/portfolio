@@ -1,74 +1,46 @@
-<section
+<main
+    role="main"
     #infoContainer
     class="single-work__container mb-20 grid auto-rows-min gap-8"
+    aria-labelledby="work-title"
 >
-    <!-- Header -->
-    <div
-        class="row-start-1 flex h-[40vh] flex-col items-start justify-center gap-10 md:gap-20"
-    >
-        <div>
-            <h1 class="fade-in text-lg font-normal md:text-2xl">
-                {{ project?.name }}
-            </h1>
-            <h2 class="text-muted text-base text-gray-400">
-                {{ project?.alttext }}
-            </h2>
-        </div>
-        <div
-            class="flex w-full flex-row flex-wrap justify-between gap-6 self-start"
-        >
-            <div class="single-work__specs-item w-max">
-                <span class="block text-xs md:text-base">Agency</span>
-                <span class="text-xs text-gray-400">{{ project?.name }}</span>
-            </div>
-            <div class="single-work__specs-item w-fit">
-                <span class="block text-xs md:text-base">Year</span>
-                <span class="text-xs text-gray-400">{{ project?.year }}</span>
-            </div>
-            <div class="single-work__specs-item w-fit">
-                <span class="block text-xs md:text-base">Timeframe</span>
-                <span class="text-xs text-gray-400">{{
-                    project?.timeframe
-                }}</span>
-            </div>
-            <div class="single-work__specs-item w-fit">
-                <span class="block text-xs md:text-base">Technology</span>
-                <span class="text-xs text-gray-400">{{ project?.tools }}</span>
-            </div>
-        </div>
 
-        <span
-            class="border-anim h-[0.1px] w-full origin-left scale-x-0 bg-gray-300"
-        ></span>
-    </div>
+    <app-single-work-header [project]="project"></app-single-work-header>
     <div
         class="single-work__content row-start-2 flex flex-col justify-start gap-10 md:flex-row"
+        aria-label="Project overview"
     >
-        <div class="liquid-glass w-full rounded-lg p-4">
-            <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                alt="Project image"
-                class="h-full w-full rounded-sm object-cover"
-            />
+        <div class="liquid-glass rounded-lg p-4 md:h-max md:w-3/4">
+            <figure>
+                <img
+                    src="/kvdigital.webp"
+                    alt="Screenshot of kv.digital project interface."
+                    class="h-full w-full rounded-sm object-cover"
+                />
+                <figcaption class="mt-2 text-xs text-gray-400">
+                    Screenshot of kv.digital project interface.
+                </figcaption>
+            </figure>
         </div>
-
-        <div
+        <aside
             class="single-work__content-text flex w-80 flex-col gap-2 md:gap-4"
+            aria-label="Project overview text"
         >
-            <h4 class="text-sm md:text-base">Overview</h4>
+            <h2 class="text-sm md:text-base">Overview</h2>
             <p class="text-xs">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
                 cum odit eum et. Obcaecati iusto, voluptas quam quod recusandae
                 distinctio vitae quaerat reiciendis voluptates in ipsum porro.
                 Omnis, dolorum placeat.
             </p>
-        </div>
+        </aside>
     </div>
 
     <div
-        class="mt-50 gap-50 row-start-3 flex flex-col-reverse md:flex-col md:gap-80"
+        class="single-work__bold-text mt-50 gap-30 md:gap-50 row-start-3 flex flex-col-reverse md:flex-col"
+        aria-label="Project highlights"
     >
-        <h1 class="md:max-w-2/3 max-w-full text-base md:text-2xl">
+        <h2 class="md:max-w-3/4 max-w-full text-xs md:text-2xl">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa id
             exercitationem omnis voluptate ratione minima placeat aspernatur
             reiciendis eaque labore. Lorem ipsum dolor, sit amet consectetur
@@ -77,31 +49,44 @@
             dolor, sit amet consectetur adipisicing elit. Ipsa id exercitationem
             omnis voluptate ratione minima placeat aspernatur reiciendis eaque
             labore.
-        </h1>
-
-        <div class="flex flex-col gap-10 md:flex-row">
-            <div class="liquid-glass rounded-lg p-2 md:p-4">
-                <img
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                    alt="Project image"
-                    class="h-full w-full rounded-sm object-cover"
-                />
+        </h2>
+        <div
+            class="flex flex-col justify-start gap-10 md:flex-row"
+            aria-label="Project highlight images"
+        >
+            <div class="liquid-glass h-max rounded-lg p-2 md:p-4">
+                <figure>
+                    <img
+                        src="/kvdigitalmobile.webp"
+                        alt="Mobile screenshot of kv.digital project."
+                        class="h-full w-full rounded-sm object-cover"
+                    />
+                    <figcaption class="mt-2 text-xs text-gray-400">
+                        Mobile screenshot of kv.digital project.
+                    </figcaption>
+                </figure>
             </div>
-            <div class="liquid-glass rounded-lg p-2 md:p-4">
-                <img
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                    alt="Project image"
-                    class="h-full w-full rounded-sm object-cover"
-                />
+            <div class="liquid-glass h-max rounded-lg p-2 md:p-4">
+                <figure>
+                    <img
+                        src="/kvdigitalmobile.webp"
+                        alt="Mobile screenshot of kv.digital project."
+                        class="h-full w-full rounded-sm object-cover"
+                    />
+                    <figcaption class="mt-2 text-xs text-gray-400">
+                        Mobile screenshot of kv.digital project.
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </div>
 
     <div
-        class="mt-50 row-start-4 flex flex-col justify-between gap-10 md:flex-row"
+        class="single-work__technology md:mt-50 row-start-4 mt-10 flex flex-col justify-between gap-10 md:flex-row"
+        aria-label="Technology"
     >
         <div class="w-1/2">
-            <h4 class="text-xs md:text-sm">Challenges</h4>
+            <h2 class="text-xs md:text-sm">Technology</h2>
         </div>
         <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -117,21 +102,12 @@
         </div>
     </div>
 
-    <div class="mt-50 row-start-5">
-        <div class="liquid-glass h-[80vh] w-full rounded-lg p-4">
-            <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                alt="Project image"
-                class="h-full w-full rounded-sm object-cover"
-            />
-        </div>
-    </div>
-
     <div
-        class="mt-50 row-start-6 flex flex-col justify-between gap-4 md:flex-row"
+        class="single-work__challenges md:mt-50 row-start-5 mt-10 flex flex-col justify-between gap-10 md:flex-row"
+        aria-label="Challenges"
     >
         <div class="w-1/2">
-            <h4 class="text-xs md:text-sm">Takeaways</h4>
+            <h2 class="text-xs md:text-sm">Challenges</h2>
         </div>
         <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -146,4 +122,43 @@
             quidem?
         </div>
     </div>
-</section>
+
+    <div
+        class="single-work__grand-image mt-50 row-start-6"
+        aria-label="Grand image"
+    >
+        <div class="liquid-glass h-max w-full rounded-lg p-4">
+            <figure>
+                <img
+                    src="/kvdigital.webp"
+                    alt="Screenshot of kv.digital project interface."
+                    class="h-max w-full rounded-sm object-cover"
+                />
+                <figcaption class="mt-2 text-xs text-gray-400">
+                    Screenshot of kv.digital project interface.
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div
+        class="single-work__takeaways md:mt-50 row-start-7 flex flex-col justify-between gap-4 md:flex-row"
+        aria-label="Takeaways"
+    >
+        <div class="w-1/2">
+            <h2 class="text-xs md:text-sm">Takeaways</h2>
+        </div>
+        <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            earum praesentium similique, itaque veritatis explicabo eum incidunt
+            tempora cupiditate ipsa dolorum nisi sunt quaerat adipisci tenetur
+            saepe vel. Suscipit ab corrupti sit cupiditate dignissimos. Eius qui
+            quaerat delectus omnis quidem? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Excepturi earum praesentium similique,
+            itaque veritatis explicabo eum incidunt tempora cupiditate ipsa
+            dolorum nisi sunt quaerat adipisci tenetur saepe vel. Suscipit ab
+            corrupti sit cupiditate dignissimos. Eius qui quaerat delectus omnis
+            quidem?
+        </div>
+    </div>
+</main>
