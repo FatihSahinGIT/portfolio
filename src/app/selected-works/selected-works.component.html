@@ -18,12 +18,12 @@
         <ul class="flex min-w-max space-x-6">
             @for (project of projects; track project.company; let i = $index) {
                 <li
-                    class="box 3xl:w-[670px] 3xl:h-max h-full w-[350px] flex-shrink-0 overflow-hidden"
+                    class="box 3xl:w-[670px] 3xl:h-full h-full w-[350px] flex-shrink-0 overflow-hidden"
                 >
                     <img
                         [src]="project.image"
                         [alt]="project.title"
-                        class="3xl:h-[100vh] fade-in h-full w-max cursor-pointer rounded-sm object-contain"
+                        class="3xl:h-max fade-in 3xl:rounded-sm h-full w-max cursor-pointer rounded-md object-contain"
                         (click)="redirectToWork(project.company)"
                     />
 

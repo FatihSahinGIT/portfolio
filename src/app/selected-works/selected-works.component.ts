@@ -41,7 +41,9 @@ export class SelectedWorksComponent implements AfterViewInit {
     }
 
     public scrollLeft(): void {
-        const box = this.scrollContainer.nativeElement.querySelector('.box') as HTMLElement;
+        const box = this.scrollContainer.nativeElement.querySelector(
+            '.box'
+        ) as HTMLElement;
         const scrollAmount = box ? box.offsetWidth + 12 : 200; // 24px = space-x-6
         this.scrollContainer.nativeElement.scrollBy({
             left: -scrollAmount,
@@ -50,7 +52,9 @@ export class SelectedWorksComponent implements AfterViewInit {
     }
 
     public scrollRight(): void {
-        const box = this.scrollContainer.nativeElement.querySelector('.box') as HTMLElement;
+        const box = this.scrollContainer.nativeElement.querySelector(
+            '.box'
+        ) as HTMLElement;
         const scrollAmount = box ? box.offsetWidth + 80 : 200; // 24px = space-x-6
         this.scrollContainer.nativeElement.scrollBy({
             left: scrollAmount,
@@ -59,6 +63,8 @@ export class SelectedWorksComponent implements AfterViewInit {
     }
 
     public redirectToWork(projectCompany: string): void {
-        this.#transitionService.transitionAndNavigate(ROUTE_PATHS.work(projectCompany));
+        this.#transitionService.transitionAndNavigate(
+            ROUTE_PATHS.work(projectCompany)
+        );
     }
 }

@@ -1,10 +1,4 @@
-import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    inject,
-    OnInit
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { IntroductionComponent } from '../introduction/introduction.component';
 import { SelectedWorksComponent } from '../selected-works/selected-works.component';

@@ -27,6 +27,9 @@
     --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
     --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
     --hightlight: hsl(0, 0, 60%);
+
+    /* = Cursor = */
+    --cursor: url('../public/cursor.svg') 5 5, auto;
 }
 
 html.dark,
@@ -48,6 +51,9 @@ body.dark {
     --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
     --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
     --hightlight: hsl(0, 0, 100%);
+
+    /* = Cursor = */
+    --cursor: url('../public/cursor-white.svg') 5 5, auto;
 }
 
 /* Root styles */
@@ -58,6 +64,7 @@ body.dark {
 body {
     background: var(--bg-dark);
     color: var(--text);
+    cursor: var(--cursor)
 }
 
 @layer utilities {
@@ -87,7 +94,7 @@ body {
 }
 
 h4 {
-    color: var(--text-muted)
+    color: var(--text-muted);
 }
 
 .box {
