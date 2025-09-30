@@ -8,7 +8,7 @@ import {
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapAlarm, bootstrapApp } from '@ng-icons/bootstrap-icons';
 import { gsap } from 'gsap/gsap-core';
-import * as PROJECT_DATA from './projects.json';
+import * as PROJECT_DATA from './projects-short.json';
 import { ROUTE_PATHS } from '../app.routes';
 import { TransitionService } from '../shared/services/transition.service';
 

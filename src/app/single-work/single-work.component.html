@@ -6,15 +6,15 @@
 >
     <app-single-work-header [project]="project"></app-single-work-header>
     <div
-        class="single-work__content row-start-2 flex flex-col justify-center gap-10 md:flex-col-reverse"
+        class="single-work__content row-start-2 flex flex-col-reverse justify-center gap-10 md:flex-col-reverse"
         aria-label="Project overview"
     >
-        <div class="liquid-glass rounded-lg p-4 md:h-max md:w-full">
+        <div class="liquid-glass rounded-lg p-4 md:h-max md:w-max">
             <figure>
                 <img
-                    src="/kvdigital.webp"
+                    src="/tss.jpg"
                     alt="Screenshot of kv.digital project interface."
-                    class="h-[400px] w-full rounded-sm object-contain"
+                    class="h-[80vh] w-full rounded-sm object-contain"
                 />
                 <figcaption class="mt-2 text-xs text-gray-400">
                     Screenshot of kv.digital project interface.
@@ -27,16 +27,13 @@
         >
             <h4 class="text-xs md:text-sm">Introduction</h4>
             <p class="text-xs">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
-                cum odit eum et. Obcaecati iusto, voluptas quam quod recusandae
-                distinctio vitae quaerat reiciendis voluptates in ipsum porro.
-                Omnis, dolorum placeat.
+                {{ project?.texts?.introduction }}
             </p>
         </aside>
     </div>
 
     <div
-        class="single-work__bold-text mt-50 gap-30 md:gap-50 row-start-3 flex flex-col-reverse md:flex-col"
+        class="single-work__bold-text mt-50 gap-30 md:gap-8 row-start-3 flex flex-col-reverse md:flex-col"
         aria-label="Project highlights"
     >
         <div
@@ -47,29 +44,21 @@
                 <h4 class="text-xs md:text-sm">Role</h4>
             </div>
             <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi earum praesentium similique, itaque veritatis
-                explicabo eum incidunt tempora cupiditate ipsa dolorum nisi sunt
-                quaerat adipisci tenetur saepe vel. Suscipit ab corrupti sit
-                cupiditate dignissimos. Eius qui quaerat delectus omnis quidem?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi earum praesentium similique, itaque veritatis
-                explicabo eum incidunt tempora cupiditate ipsa dolorum nisi sunt
-                quaerat adipisci tenetur saepe vel. Suscipit ab corrupti sit
-                cupiditate dignissimos. Eius qui quaerat delectus omnis quidem?
+                {{ project?.texts?.role }}
+
             </div>
         </div>
 
         <div
-            class="flex flex-col justify-start gap-10 md:flex-row"
+            class="flex flex-col justify-start gap-4 md:flex-row"
             aria-label="Project highlight images"
         >
             <div class="liquid-glass h-max rounded-lg p-2 md:p-4">
                 <figure>
                     <img
-                        src="/kvdigitalmobile.webp"
+                        src="/iphonemock.webp"
                         alt="Mobile screenshot of kv.digital project."
-                        class="h-full w-full rounded-sm object-cover"
+                        class="h-max w-full rounded-sm object-cover"
                     />
                     <figcaption class="mt-2 text-xs text-gray-400">
                         Mobile screenshot of kv.digital project.
@@ -79,9 +68,9 @@
             <div class="liquid-glass h-max rounded-lg p-2 md:p-4">
                 <figure>
                     <img
-                        src="/kvdigitalmobile.webp"
+                        src="/iphonemock.webp"
                         alt="Mobile screenshot of kv.digital project."
-                        class="h-full w-full rounded-sm object-cover"
+                        class="h-max w-full rounded-sm object-cover"
                     />
                     <figcaption class="mt-2 text-xs text-gray-400">
                         Mobile screenshot of kv.digital project.
@@ -99,16 +88,8 @@
             <h4 class="text-xs md:text-sm">Technology</h4>
         </div>
         <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            earum praesentium similique, itaque veritatis explicabo eum incidunt
-            tempora cupiditate ipsa dolorum nisi sunt quaerat adipisci tenetur
-            saepe vel. Suscipit ab corrupti sit cupiditate dignissimos. Eius qui
-            quaerat delectus omnis quidem? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Excepturi earum praesentium similique,
-            itaque veritatis explicabo eum incidunt tempora cupiditate ipsa
-            dolorum nisi sunt quaerat adipisci tenetur saepe vel. Suscipit ab
-            corrupti sit cupiditate dignissimos. Eius qui quaerat delectus omnis
-            quidem?
+                {{ project?.texts?.technology }}
+
         </div>
     </div>
 
@@ -120,16 +101,7 @@
             <h4 class="text-xs md:text-sm">Challenges</h4>
         </div>
         <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            earum praesentium similique, itaque veritatis explicabo eum incidunt
-            tempora cupiditate ipsa dolorum nisi sunt quaerat adipisci tenetur
-            saepe vel. Suscipit ab corrupti sit cupiditate dignissimos. Eius qui
-            quaerat delectus omnis quidem? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Excepturi earum praesentium similique,
-            itaque veritatis explicabo eum incidunt tempora cupiditate ipsa
-            dolorum nisi sunt quaerat adipisci tenetur saepe vel. Suscipit ab
-            corrupti sit cupiditate dignissimos. Eius qui quaerat delectus omnis
-            quidem?
+                {{ project?.texts?.challenges }}
         </div>
     </div>
 
@@ -159,16 +131,7 @@
             <h4 class="text-xs md:text-sm">Takeaways</h4>
         </div>
         <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            earum praesentium similique, itaque veritatis explicabo eum incidunt
-            tempora cupiditate ipsa dolorum nisi sunt quaerat adipisci tenetur
-            saepe vel. Suscipit ab corrupti sit cupiditate dignissimos. Eius qui
-            quaerat delectus omnis quidem? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Excepturi earum praesentium similique,
-            itaque veritatis explicabo eum incidunt tempora cupiditate ipsa
-            dolorum nisi sunt quaerat adipisci tenetur saepe vel. Suscipit ab
-            corrupti sit cupiditate dignissimos. Eius qui quaerat delectus omnis
-            quidem?
+                {{ project?.texts?.takeaway }}
         </div>
     </div>
 </main>

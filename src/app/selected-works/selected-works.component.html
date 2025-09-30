@@ -18,19 +18,20 @@
         <ul class="flex min-w-max space-x-6">
             @for (project of projects; track project.company; let i = $index) {
                 <li
-                    class="box 3xl:w-[670px] 3xl:h-full h-full w-[350px] flex-shrink-0 overflow-hidden"
+                    class="box h-full w-auto overflow-hidden rounded-md bg-white shadow"
                 >
                     <img
                         [src]="project.image"
                         [alt]="project.title"
-                        class="3xl:h-max fade-in 3xl:rounded-sm h-full w-max cursor-pointer rounded-md object-contain"
+                        class="cursor-pointer w-auto h-[80vh] rounded-md object-cover"
                         (click)="redirectToWork(project.company)"
                     />
-
-                    <h3 class="my-2 text-sm font-normal">
-                        {{ project.name }}
-                    </h3>
-                    <p class="text-xs text-gray-400">{{ project.tools }}</p>
+                    <div class="w-full px-2">
+                        <h3 class="mb-1 mt-2 text-sm font-normal">
+                            {{ project.name }}
+                        </h3>
+                        <p class="text-xs text-gray-400">{{ project.tools }}</p>
+                    </div>
                 </li>
             }
         </ul>

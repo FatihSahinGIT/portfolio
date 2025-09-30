@@ -12,7 +12,5 @@ export class SingleWorkHeaderComponent implements OnInit {
 
 
     ngOnInit(): void {
-        console.log("project", this.project);
-        
     }
 }

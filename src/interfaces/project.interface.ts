@@ -6,4 +6,11 @@ export interface Project {
     timeframe: string;
     tools: string[];
     year: number;
+    texts: {
+        introduction: string;
+        role?: string;
+        technology?: string;
+        challenges?: string;
+        takeaway?: string;
+    };
 }
