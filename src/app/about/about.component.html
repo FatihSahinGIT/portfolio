@@ -1,55 +1,39 @@
-<div
-    #imagesAbout
-    class="3xl:max-w-[70%] 3xl:mb-8 mx-6 mb-20 grid max-w-[96%] grid-cols-1 grid-rows-none gap-4 md:mx-auto md:mb-4 md:grid-cols-3 md:gap-y-10 md:[grid-template-rows:max-content_max-content_max-content]"
->
-    <!-- First image + intro -->
-    <div class="float-image flex flex-col items-start">
-        <img
-            src="about-images/balls.jpg"
-            alt="Fatih in ball pit"
-            class="h-[90%] w-full object-cover"
-        />
-        <p class="pt-4 text-sm">
-            I’m Fatih Sahin, a 25-year-old frontend developer based in Berlin,
-            Germany. I specialize in building modern, responsive web
-            applications with a strong focus on usability, performance, and
-            design collaboration.
-        </p>
-        <a
-            href="#"
-            class="text-secondary mt-2 text-xs underline hover:text-black"
-            >Read Resumé</a
+<div class="mx-6 my-20 grid grid-cols-1 gap-6 md:mx-auto md:grid-cols-3">
+    <!-- Introduction -->
+    <div class="about-introduction col-start-1 row-start-1 mb-40 mt-20">
+        <div
+            class="about-introduction__text-container flex flex-col items-start gap-4"
         >
+            <p class="about-introduction__text-content text-xs">
+                I’m Fatih Sahin, a 25-year-old frontend developer based in
+                Berlin, Germany. I specialize in building modern, responsive web
+                applications with a strong focus on usability, performance, and
+                design collaboration.
+            </p>
+
+            <p class="about-introduction__text-content text-xs">
+                Motivated by curiosity and a love for learning, I’m always
+                exploring new tools, frameworks, and techniques to expand my
+                knowledge and stay up to date with the latest in web
+                development. I approach every project with a problem-solving
+                mindset, aiming to craft solutions that are both innovative and
+                practical.
+            </p>
+
+            <button
+                class="about-introduction__text-content_button hover:text-secondary text-xs underline"
+            >
+                Read Resumé
+            </button>
+        </div>
     </div>
 
-    <!-- Second image -->
-    <div class="float-image flex flex-col items-center">
-        <img
-            src="about-images/azula.jpg"
-            alt="Sleeping cat"
-            class="h-[90%] w-full rounded-lg object-cover"
-        />
-    </div>
-
-    <!-- Third image (Rome) -->
-    <div class="float-image flex flex-col items-start text-left">
-        <img
-            src="about-images/rome.jpg"
-            alt="Fatih in Rome"
-            class="h-[90%] w-full rounded-lg object-cover"
-        />
-    </div>
-</div>
-
-<div
-    class="3xl:max-w-[70%] mx-6 my-20 grid max-w-[96%] grid-cols-1 gap-6 md:mx-auto md:grid-cols-3"
->
-    <div class="education-block md:col-start-1 md:row-start-1">
+    <div class="education-block col-start-1 row-start-2">
         <h4 class="text-secondary mb-2 text-xs">Education</h4>
     </div>
 
     <!-- Education content under rome.jpg (third column, second row on desktop) -->
-    <div class="education-block md:col-start-3 md:row-start-1">
+    <div class="education-block md:col-start-3 md:row-start-2">
         <div class="education-bht__headline">
             <h5 class="text-sm">
                 Bachelor of Science at Berliner Hochschule für Technik
@@ -90,44 +74,44 @@
     </div>
 </div>
 
-<div
-    class="work-experience 3xl:max-w-[70%] mx-6 my-20 grid max-w-[96%] grid-cols-1 gap-4 md:mx-auto md:gap-y-6"
->
+<div class="work-experience mx-6 my-20">
     <!-- Section Header -->
     <div class="work-experience__header">
         <h4 class="text-secondary mb-2 text-xs">Work Experience</h4>
     </div>
 
-    <!-- Work Experience Item 1 -->
-    <div
-        class="work-experience__item grid grid-cols-1 gap-2 gap-x-4 text-xs md:grid-cols-3 md:text-sm"
-    >
-        <p class="col-span-1 underline">kv.digital</p>
-        <p class="col-span-1">Frontend Developer</p>
-        <p class="col-span-1">November 2023 - Now</p>
-    </div>
+    <div class="work-experience__content flex flex-col gap-4">
+        <!-- Work Experience Item 1 -->
+        <div
+            class="work-experience__item flex flex-row justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+        >
+            <p class="col-span-1 underline">kv.digital</p>
+            <p class="col-span-1">Frontend Developer</p>
+            <p class="col-span-1">November 2023 - Now</p>
+        </div>
 
-    <!-- Work Experience Item 2 -->
-    <div
-        class="work-experience__item grid grid-cols-1 gap-2 gap-x-4 text-xs md:grid-cols-3 md:text-sm"
-    >
-        <p class="col-span-1 underline">Other Company</p>
-        <p class="col-span-1">Frontend Developer</p>
-        <p class="col-span-1">January 2021 - October 2023</p>
-    </div>
+        <!-- Work Experience Item 2 -->
+        <div
+            class="work-experience__item flex flex-row justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+        >
+            <p class="col-span-1 underline">Other Company</p>
+            <p class="col-span-1">Frontend Developer</p>
+            <p class="col-span-1">January 2021 - October 2023</p>
+        </div>
 
-    <!-- Work Experience Item 3 -->
-    <div
-        class="work-experience__item grid grid-cols-1 gap-2 gap-x-4 text-xs md:grid-cols-3 md:text-sm"
-    >
-        <p class="col-span-1 underline">Freelance</p>
-        <p class="col-span-1">Web Developer</p>
-        <p class="col-span-1">2019 - 2020</p>
+        <!-- Work Experience Item 3 -->
+        <div
+            class="work-experience__item flex flex-row justify-between items-center gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+        >
+            <p class="col-span-1 underline">Freelance</p>
+            <p class="col-span-1">Web Developer</p>
+            <p class="col-span-1">2019 - 2020</p>
+        </div>
     </div>
 </div>
 
 <div
-    class="development-process 3xl:max-w-[70%] 3xl:mb-30 mx-6 my-20 grid max-w-[96%] grid-cols-1 gap-x-6 gap-y-12 border-t-[0.1px] border-gray-300 pt-12 md:mx-auto md:mb-4 md:grid-cols-3"
+    class="development-process 3xl:mb-30 my-20 grid grid-cols-1 gap-x-6 gap-y-12  pt-12 md:mb-4 md:grid-cols-3"
 >
     <div class="development-process__header md:col-start-1 md:row-start-1">
         <h4 class="text-secondary text-xs">Development Process</h4>
@@ -165,7 +149,7 @@
     </div>
 
     <div class="development-process__text md:col-start-1 md:row-start-4">
-        <p class="text-xs ">
+        <p class="text-xs">
             As a detail-oriented developer, I focus on the small but impactful
             aspects of UI development: spacing, element placement, smooth state
             transitions, and micro-interactions. I believe great frontend work

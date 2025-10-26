@@ -2,7 +2,7 @@
   <div class="fade-in flex cursor-pointer items-center">
     <a (click)="navTransition.emit(ROUTE_PATHS.root)">
       <img
-        [src]="isDarkMode() ? 'nav-logo-dark.svg' : 'nav-logo.svg'"
+        [src]="isDarkMode() ? '/nav-logo/nav-logo-dark.svg' : '/nav-logo/nav-logo.svg'"
         alt="Navigation Bar Logo"
         class="h-8 md:h-12"
       />
@@ -12,13 +12,13 @@
   <div id="nav-menu" class="fade-in flex items-center">
     <ul class="flex flex-row space-x-1 text-xs md:space-x-8">
       <li>
-        <a
+        <button
           (click)="navTransition.emit(ROUTE_PATHS.about)"
           class="font-color block cursor-pointer rounded px-3 py-2 underline-offset-4 hover:underline"
-        >About</a>
+        >About</button>
       </li>
       <li>
-        <a class="block cursor-pointer px-3 py-2 underline-offset-4 hover:underline">Contact</a>
+        <button class="block cursor-pointer px-3 py-2 underline-offset-4 hover:underline">Contact</button>
       </li>
       <li class="flex items-center justify-center">
         <ng-icon

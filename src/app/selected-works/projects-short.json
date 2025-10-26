@@ -2,10 +2,42 @@
     {
         "company": "interval",
         "name": "InterVal",
-        "image": "project-images/interval/interval.webp",
+        "images": {
+            "selected": {
+                "src": "project-images/interval/selected/interval.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "introduction": {
+                "src": "project-images/interval/introduction/interval.png",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "smartphone": {
+                "src": "project-images/interval/smartphone/interval-smartphone.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "tablet": {
+                "src": "project-images/interval/tablet/interval-tablet.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "desktop": {
+                "src": "project-images/interval/desktop/interval-desktop.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            }
+        },
         "alttext": "Screenshot of AI-Powered Analytics Dashboard project",
         "timeframe": "3 months",
-        "tools": ["Angular", "Tailwind CSS v4", "TypeScript", "Node.js"],
+        "tools": [
+            "Angular",
+            "TypeScript",
+            "Jest",
+            "Storybook",
+            "SonarQube",
+            "Jenkins",
+            "Bitbucket",
+            "Figma",
+            "JIRA",
+            "Confluence"
+        ],
         "year": 2022,
         "texts": {
             "introduction": "kv.digital GmbH is the innovation and competence center for the digitalization of outpatient medical care (“niedergelassene ärztliche Versorgung”) in Germany. It is a 100% subsidiary of the National Association of Statutory Health Insurance Physicians (KBV). The company develops and operates digital platforms, web and app solutions that support secure medical communication (for example, the exchange of doctor’s letters, lab data, and patient-related messages) and patient services such as appointment booking via the “116117 Terminservice” or vaccination appointment services.",
@@ -18,10 +50,42 @@
     {
         "company": "kv.digital",
         "name": "kv.digital",
-        "image": "project-images/kv.digital/kv.digital.webp",
+        "images": {
+            "selected": {
+                "src": "project-images/kv.digital/selected/kv.digital.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "introduction": {
+                "src": "project-images/kv.digital/introduction/kvdigi.png",
+                "figcaption": "Landing Page of the Marketing Website"
+            },
+            "smartphone": {
+                "src": "project-images/kv.digital/smartphone/kvdigital-smartphone.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "tablet": {
+                "src": "project-images/kv.digital/tablet/kvdigital-tablet.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            },
+            "desktop": {
+                "src": "project-images/kv.digital/desktop/kvdigital.webp",
+                "figcaption": "Screenshot of kv.digital project interface."
+            }
+        },
         "alttext": "Digital solutions for German healthcare",
         "timeframe": "Ongoing",
-        "tools": ["Angular", "TypeScript", "Jest", "Storybook", "SonarQube", "Jenkins", "Bitbucket", "Figma", "JIRA", "Confluence"],
+        "tools": [
+            "Angular",
+            "TypeScript",
+            "Jest",
+            "Storybook",
+            "SonarQube",
+            "Jenkins",
+            "Bitbucket",
+            "Figma",
+            "JIRA",
+            "Confluence"
+        ],
         "year": 2023,
         "texts": {
             "introduction": "kv.digital GmbH is the innovation and competence center for the digitalization of outpatient medical care (“niedergelassene ärztliche Versorgung”) in Germany. It is a 100% subsidiary of the National Association of Statutory Health Insurance Physicians (KBV). The company develops and operates digital platforms, web and app solutions that support secure medical communication (for example, the exchange of doctor’s letters, lab data, and patient-related messages) and patient services such as appointment booking via the “116117 Terminservice” or vaccination appointment services.",

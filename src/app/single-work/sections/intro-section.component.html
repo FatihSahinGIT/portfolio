@@ -1,0 +1,20 @@
+<div class="single-work__content row-start-2 flex flex-col-reverse justify-center gap-10 md:flex-col-reverse" aria-label="Project overview">
+  <div class="liquid-glass rounded-lg p-4 md:h-max md:w-max">
+    <figure>
+      <img
+        [src]="project?.images?.introduction?.src"
+        [alt]="project?.images?.introduction?.figcaption || project?.alttext"
+        class="md:h-full h-full w-auto max-w-[90vw] rounded-sm object-contain"
+      />
+      <figcaption class="mt-2 text-xs text-gray-400">
+        {{ project?.images?.introduction?.figcaption }}
+      </figcaption>
+    </figure>
+  </div>
+  <aside class="single-work__content-text flex gap-2 w-full md:w-2/3 flex-col" aria-label="Project overview text">
+    <h4 class="text-xs md:text-sm">Introduction</h4>
+    <p class="text-xs">
+      {{ project?.texts?.introduction }}
+    </p>
+  </aside>
+</div>

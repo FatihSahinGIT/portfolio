@@ -23,7 +23,7 @@ export class AboutComponent implements AfterViewInit {
     educationBlocks!: QueryList<ElementRef<HTMLElement>>;
 
     ngAfterViewInit(): void {
-        gsap.from('.float-image', {
+        gsap.from('.about-introduction', {
             opacity: 0,
             y: 10,
             delay: 1,
@@ -40,7 +40,7 @@ export class AboutComponent implements AfterViewInit {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.education-block',
-                start: 'top 30%'
+                start: 'top 50%'
             }
         });
 
@@ -51,7 +51,19 @@ export class AboutComponent implements AfterViewInit {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.work-experience',
-                start: 'top 40%'
+                start: 'top 80%'
+            }
+        });
+
+
+        gsap.from('.development-process', {
+            opacity: 0,
+            y: 10,
+            duration: 1.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.work-experience',
+                start: 'top 70%'
             }
         });
 

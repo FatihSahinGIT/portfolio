@@ -6,15 +6,26 @@ import {
     OnInit,
     ViewChild
 } from '@angular/core';
-import * as PROJECT_DATA from '../selected-works/projects.json';
+import * as PROJECT_DATA from '../selected-works/projects-short.json';
 import { ActivatedRoute } from '@angular/router';
 import { gsap } from 'gsap/gsap-core';
 import { Project } from '../../interfaces/project.interface';
+
 import { SingleWorkHeaderComponent } from "./single-work-header/single-work-header.component";
+import { IntroSectionComponent } from './sections/intro-section.component';
+import { HighlightsSectionComponent } from './sections/highlights-section.component';
+import { TextSectionComponent } from './sections/text-section.component';
+import { GrandImageSectionComponent } from './sections/grand-image-section.component';
 
 @Component({
     selector: 'app-single-work',
-    imports: [SingleWorkHeaderComponent],
+    imports: [
+        SingleWorkHeaderComponent,
+        IntroSectionComponent,
+        HighlightsSectionComponent,
+        TextSectionComponent,
+        GrandImageSectionComponent
+    ],
     templateUrl: './single-work.component.html',
     styleUrl: './single-work.component.css'
 })

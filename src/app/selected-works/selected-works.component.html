@@ -21,16 +21,20 @@
                     class="box h-full w-auto overflow-hidden rounded-md bg-white shadow"
                 >
                     <img
-                        [src]="project.image"
+                        [src]="project?.images?.selected?.src"
                         [alt]="project.title"
-                        class="cursor-pointer w-auto h-[80vh] rounded-md object-cover"
+                        class="h-[90vh] w-auto cursor-pointer rounded-md object-cover"
                         (click)="redirectToWork(project.company)"
                     />
-                    <div class="w-full px-2">
+                    <div class="w-full">
                         <h3 class="mb-1 mt-2 text-sm font-normal">
                             {{ project.name }}
                         </h3>
-                        <p class="text-xs text-gray-400">{{ project.tools }}</p>
+                        <span class="text-xs text-gray-400">
+                            @for (tool of project?.tools; track tool; let i = $index) {
+                                {{ tool }}@if (i < (project?.tools?.length || 0) - 1) {<span>,</span>}
+                            }
+                        </span>
                     </div>
                 </li>
             }

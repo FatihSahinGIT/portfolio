@@ -29,7 +29,7 @@
     --hightlight: hsl(0, 0, 60%);
 
     /* = Cursor = */
-    --cursor: url('../public/cursor.svg') 5 5, auto;
+    --cursor: url('../public/cursor/cursor.svg') 5 5, auto;
 }
 
 html.dark,
@@ -53,7 +53,7 @@ body.dark {
     --hightlight: hsl(0, 0, 100%);
 
     /* = Cursor = */
-    --cursor: url('../public/cursor-white.svg') 5 5, auto;
+    --cursor: url('../public/cursor/cursor-white.svg') 5 5, auto;
 }
 
 /* Root styles */
@@ -64,7 +64,7 @@ body.dark {
 body {
     background: var(--bg-dark);
     color: var(--text);
-    cursor: var(--cursor)
+    cursor: var(--cursor);
 }
 
 @layer utilities {
@@ -84,7 +84,7 @@ body {
 }
 
 .grid > * {
-    @apply px-4 md:px-8;
+    @apply mx-6;
     /* border: 1px solid red; */
 }
 

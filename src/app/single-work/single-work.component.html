@@ -4,134 +4,23 @@
     class="single-work__container mb-20 grid auto-rows-min gap-8"
     aria-labelledby="work-title"
 >
+
     <app-single-work-header [project]="project"></app-single-work-header>
-    <div
-        class="single-work__content row-start-2 flex flex-col-reverse justify-center gap-10 md:flex-col-reverse"
-        aria-label="Project overview"
-    >
-        <div class="liquid-glass rounded-lg p-4 md:h-max md:w-max">
-            <figure>
-                <img
-                    src="/tss.jpg"
-                    alt="Screenshot of kv.digital project interface."
-                    class="h-[80vh] w-full rounded-sm object-contain"
-                />
-                <figcaption class="mt-2 text-xs text-gray-400">
-                    Screenshot of kv.digital project interface.
-                </figcaption>
-            </figure>
-        </div>
-        <aside
-            class="single-work__content-text flex w-2/3 flex-col"
-            aria-label="Project overview text"
-        >
-            <h4 class="text-xs md:text-sm">Introduction</h4>
-            <p class="text-xs">
-                {{ project?.texts?.introduction }}
-            </p>
-        </aside>
-    </div>
 
-    <div
-        class="single-work__bold-text mt-50 gap-30 md:gap-8 row-start-3 flex flex-col-reverse md:flex-col"
-        aria-label="Project highlights"
-    >
-        <div
-            class="single-work__technology col-start-1 row-start-4 mt-10 flex flex-row justify-between gap-2 md:flex-col"
-            aria-label="Technology"
-        >
-            <div class="w-1/2">
-                <h4 class="text-xs md:text-sm">Role</h4>
-            </div>
-            <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-                {{ project?.texts?.role }}
+    <app-intro-section [project]="project"></app-intro-section>
 
-            </div>
-        </div>
 
-        <div
-            class="flex flex-col justify-start gap-4 md:flex-row"
-            aria-label="Project highlight images"
-        >
-            <div class="liquid-glass h-max rounded-lg p-2 md:p-4">
-                <figure>
-                    <img
-                        src="/iphonemock.webp"
-                        alt="Mobile screenshot of kv.digital project."
-                        class="h-max w-full rounded-sm object-cover"
-                    />
-                    <figcaption class="mt-2 text-xs text-gray-400">
-                        Mobile screenshot of kv.digital project.
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="liquid-glass h-max rounded-lg p-2 md:p-4">
-                <figure>
-                    <img
-                        src="/iphonemock.webp"
-                        alt="Mobile screenshot of kv.digital project."
-                        class="h-max w-full rounded-sm object-cover"
-                    />
-                    <figcaption class="mt-2 text-xs text-gray-400">
-                        Mobile screenshot of kv.digital project.
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-    </div>
+    <app-highlights-section [project]="project"></app-highlights-section>
 
-    <div
-        class="single-work__technology md:mt-50 col-start-1 row-start-4 mt-10 flex flex-row justify-between gap-2 md:flex-col"
-        aria-label="Technology"
-    >
-        <div class="w-1/2">
-            <h4 class="text-xs md:text-sm">Technology</h4>
-        </div>
-        <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-                {{ project?.texts?.technology }}
 
-        </div>
-    </div>
+    <app-text-section title="Technology" [text]="project?.texts?.technology"></app-text-section>
 
-    <div
-        class="single-work__challenges md:mt-25 row-start-5 mt-10 flex flex-col justify-between gap-2 md:flex-col"
-        aria-label="Challenges"
-    >
-        <div class="w-1/2">
-            <h4 class="text-xs md:text-sm">Challenges</h4>
-        </div>
-        <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-                {{ project?.texts?.challenges }}
-        </div>
-    </div>
 
-    <div
-        class="single-work__grand-image mt-50 row-start-6"
-        aria-label="Grand image"
-    >
-        <div class="liquid-glass h-max w-full rounded-lg p-4">
-            <figure>
-                <img
-                    src="/kvdigital.webp"
-                    alt="Screenshot of kv.digital project interface."
-                    class="h-max w-full rounded-sm object-cover"
-                />
-                <figcaption class="mt-2 text-xs text-gray-400">
-                    Screenshot of kv.digital project interface.
-                </figcaption>
-            </figure>
-        </div>
-    </div>
+    <app-text-section title="Challenges" [text]="project?.texts?.challenges"></app-text-section>
 
-    <div
-        class="single-work__takeaways md:mt-50 row-start-7 flex flex-col justify-between gap-2 md:flex-col"
-        aria-label="Takeaways"
-    >
-        <div class="w-1/2">
-            <h4 class="text-xs md:text-sm">Takeaways</h4>
-        </div>
-        <div class="w-2/3 text-xs md:w-1/2 md:text-sm">
-                {{ project?.texts?.takeaway }}
-        </div>
-    </div>
+
+    <app-grand-image-section [image]="project?.images?.desktop"></app-grand-image-section>
+
+
+    <app-text-section title="Takeaways" [text]="project?.texts?.takeaway"></app-text-section>
 </main>
