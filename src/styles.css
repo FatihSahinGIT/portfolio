@@ -19,7 +19,7 @@
 
     /* = Text = */
     --text: hsl(100, 100%, 0%);
-    --text-muted: hsl(0, 0%, 70%);
+    --text-muted: hsl(0, 0%, 30%);
 
     /* = Border & Gradient */
     --border: hsl(0, 0%, 80%);
@@ -43,7 +43,7 @@ body.dark {
 
     /* = Text = */
     --text: hsl(100, 100%, 100%);
-    --text-muted: hsl(0, 0%, 75%);
+    --text-muted: hsl(0, 0%, 30%);
 
     /* = Border & Gradient */
     --border: hsl(0, 0%, 80%);

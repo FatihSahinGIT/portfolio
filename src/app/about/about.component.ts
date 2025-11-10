@@ -35,13 +35,10 @@ export class AboutComponent implements AfterViewInit {
         gsap.from(gsap.utils.toArray('.education-block'), {
             opacity: 0,
             y: 10,
-            duration: 1.2,
-            stagger: 0.3,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '.education-block',
-                start: 'top 50%'
-            }
+            delay: 1,
+            stagger: 0.5,
+            duration: 2,
+            ease: 'power2.out'
         });
 
         gsap.from('.work-experience', {

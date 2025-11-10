@@ -1,17 +1,19 @@
-<div class="mx-6 my-20 grid grid-cols-1 gap-6 md:mx-auto md:grid-cols-3">
+<div class="md:mx-6 md:my-20 grid grid-cols-1 gap-6  md:grid-cols-3">
     <!-- Introduction -->
-    <div class="about-introduction col-start-1 row-start-1 mb-40 mt-20">
+    <div class="about-introduction mb-20 mt-20 md:col-start-1 md:row-start-1">
         <div
             class="about-introduction__text-container flex flex-col items-start gap-4"
+        
         >
-            <p class="about-introduction__text-content text-xs">
+            <h1 class="text-secondary text-xs">Introdcution</h1>
+            <p class="about-introduction__text-content text-base">
                 I’m Fatih Sahin, a 25-year-old frontend developer based in
                 Berlin, Germany. I specialize in building modern, responsive web
                 applications with a strong focus on usability, performance, and
                 design collaboration.
             </p>
 
-            <p class="about-introduction__text-content text-xs">
+            <p class="about-introduction__text-content text-base">
                 Motivated by curiosity and a love for learning, I’m always
                 exploring new tools, frameworks, and techniques to expand my
                 knowledge and stay up to date with the latest in web
@@ -28,7 +30,17 @@
         </div>
     </div>
 
-    <div class="education-block col-start-1 row-start-2">
+    <div class="about-introduction mb-40 md:mt-20 3xl:col-start-3  md:col-start-2 md:col-span-2 md:row-start-1">
+        <div class="about-introduction__image-container">
+            <img
+                src="about-images/portfolio.png"
+                alt="Portrait of Fatih Sahin"
+                class="rounded-lg w-full h-auto object-cover"
+            />
+        </div>
+    </div>
+
+    <div class="education-block md:col-start-1 md:row-start-2">
         <h4 class="text-secondary mb-2 text-xs">Education</h4>
     </div>
 
@@ -77,13 +89,13 @@
 <div class="work-experience mx-6 my-20">
     <!-- Section Header -->
     <div class="work-experience__header">
-        <h4 class="text-secondary mb-2 text-xs">Work Experience</h4>
+        <h4 class="text-secondary md:mb-2 mb-8 text-xs">Work Experience</h4>
     </div>
 
     <div class="work-experience__content flex flex-col gap-4">
         <!-- Work Experience Item 1 -->
         <div
-            class="work-experience__item flex flex-row justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+            class="work-experience__item flex md:flex-row flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
         >
             <p class="col-span-1 underline">kv.digital</p>
             <p class="col-span-1">Frontend Developer</p>
@@ -92,7 +104,7 @@
 
         <!-- Work Experience Item 2 -->
         <div
-            class="work-experience__item flex flex-row justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+            class="work-experience__item flex md:flex-row flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
         >
             <p class="col-span-1 underline">Other Company</p>
             <p class="col-span-1">Frontend Developer</p>
@@ -101,7 +113,7 @@
 
         <!-- Work Experience Item 3 -->
         <div
-            class="work-experience__item flex flex-row justify-between items-center gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+            class="work-experience__item flex md:flex-row flex-col  justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
         >
             <p class="col-span-1 underline">Freelance</p>
             <p class="col-span-1">Web Developer</p>
@@ -111,7 +123,7 @@
 </div>
 
 <div
-    class="development-process 3xl:mb-30 my-20 grid grid-cols-1 gap-x-6 gap-y-12  pt-12 md:mb-4 md:grid-cols-3"
+    class="development-process 3xl:mb-30 my-20 grid grid-cols-1 gap-x-6 gap-y-12 pt-12 md:mb-4 md:grid-cols-3"
 >
     <div class="development-process__header md:col-start-1 md:row-start-1">
         <h4 class="text-secondary text-xs">Development Process</h4>
