@@ -6,14 +6,16 @@ import {
     ViewChild,
     ViewChildren
 } from '@angular/core';
+import { EducationBlockComponent } from './education-block/education-block.component';
 import { gsap } from 'gsap/gsap-core';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
     selector: 'app-about',
-    imports: [],
+    standalone: true,
+    imports: [EducationBlockComponent],
     templateUrl: './about.component.html',
-    styleUrl: './about.component.css'
+    styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements AfterViewInit {
     @ViewChild('imagesAbout', { static: false })
@@ -32,13 +34,22 @@ export class AboutComponent implements AfterViewInit {
             ease: 'power2.out'
         });
 
+
+
+        
+
         gsap.from(gsap.utils.toArray('.education-block'), {
             opacity: 0,
             y: 10,
             delay: 1,
             stagger: 0.5,
             duration: 2,
-            ease: 'power2.out'
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.education-block',
+                start: 'top 50%',
+            }
+            
         });
 
         gsap.from('.work-experience', {

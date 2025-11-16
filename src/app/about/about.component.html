@@ -1,79 +1,113 @@
-<div class="md:mx-6 md:my-20 grid grid-cols-1 gap-6  md:grid-cols-3">
+<div class="grid grid-cols-1 gap-6 md:my-20 md:grid-cols-3">
     <!-- Introduction -->
-    <div class="about-introduction mb-20 mt-20 md:col-start-1 md:row-start-1">
+    <div class="about-introduction mb-20 mt-20 md:col-span-3 md:row-start-1">
         <div
-            class="about-introduction__text-container flex flex-col items-start gap-4"
-        
+            class="about-introduction__text-container 3xl:w-3/4 flex flex-col items-start gap-4"
         >
-            <h1 class="text-secondary text-xs">Introdcution</h1>
-            <p class="about-introduction__text-content text-base">
-                I’m Fatih Sahin, a 25-year-old frontend developer based in
+            <h1 class="text-secondary text-3xl font-normal md:w-2/3">
+                Building interfaces that are intuitive, accessible, and easy to
+                use
+            </h1>
+            <p class="about-introduction__text-content mt-4 text-base md:w-3/4">
+                I am Fatih Sahin, a 25-year-old frontend developer based in
                 Berlin, Germany. I specialize in building modern, responsive web
                 applications with a strong focus on usability, performance, and
-                design collaboration.
+                thoughtful design
             </p>
 
-            <p class="about-introduction__text-content text-base">
-                Motivated by curiosity and a love for learning, I’m always
-                exploring new tools, frameworks, and techniques to expand my
-                knowledge and stay up to date with the latest in web
-                development. I approach every project with a problem-solving
-                mindset, aiming to craft solutions that are both innovative and
-                practical.
+            <p class="about-introduction__text-content text-base md:w-3/4">
+                My fascination with frontend development comes from its role as
+                the bridge between design and code — the place where ideas
+                become real, interactive experiences. I care deeply about
+                accessibility and aim to create interfaces that are intuitive,
+                inclusive, and feel naturally “right” to use.
+            </p>
+
+            <p class="about-introduction__text-content text-base md:w-3/4">
+                Curious by nature and motivated by continue learning, I
+                regularly explore new tools, frameworks, and techniques to
+                expand my skill set and stay up to date with modern web
+                development practices. I approach every project with a
+                solution-oriented mindset, aiming to deliver outcomes that are
+                both innovative and practical.
             </p>
 
             <button
-                class="about-introduction__text-content_button hover:text-secondary text-xs underline"
+                class="about-introduction__text-content_button hover:text-secondary text-xs text-gray-400 underline"
             >
                 Read Resumé
             </button>
         </div>
     </div>
 
-    <div class="about-introduction mb-40 md:mt-20 3xl:col-start-3  md:col-start-2 md:col-span-2 md:row-start-1">
-        <div class="about-introduction__image-container">
+    <div
+        class="about-introduction 3xl:col-start-1 mb-40 md:col-span-1 md:col-start-1 md:row-start-1 md:mt-20"
+    >
+        <figure class="about-introduction__image-container">
             <img
                 src="about-images/portfolio.png"
                 alt="Portrait of Fatih Sahin"
-                class="rounded-lg w-full h-auto object-cover"
+                class="h-auto w-full rounded-sm object-cover"
             />
-        </div>
+            <figcaption class="mt-2">
+                <p class="text-sm">Fatih Sahin</p>
+                <p class="text-sm text-gray-400">Frontend Developer</p>
+            </figcaption>
+        </figure>
     </div>
 
     <div class="education-block md:col-start-1 md:row-start-2">
-        <h4 class="text-secondary mb-2 text-xs">Education</h4>
+        <h2 class="text-secondary mb-2 text-lg">Education</h2>
     </div>
 
-    <!-- Education content under rome.jpg (third column, second row on desktop) -->
     <div class="education-block md:col-start-3 md:row-start-2">
-        <div class="education-bht__headline">
-            <h5 class="text-sm">
-                Bachelor of Science at Berliner Hochschule für Technik
-            </h5>
-            <span class="text-secondary text-xs"
-                >October 2017 - March 2023</span
-            >
-            <p class="mt-2 text-xs">
-                At kv.digital, I work on both B2B and B2C web applications using
-                Angular and TypeScript. I stay in close contact with the design
-                team to create intuitive and visually appealing user interfaces
-                based on Figma designs.<br />
-                My workflow includes writing robust tests with Jest,
-                contributing to CI/CD pipelines via Jenkins, and using Bitbucket
-                for code collaboration and reviews.
+        <app-education-block
+            [headline]="'ANGULARarchitects'"
+            [duration]="'October 2025'"
+        >
+            <p class="mt-2 text-base">
+                I participated in an accessibility workshop led by Dr. Maria
+                Korneeva. The course addressed web accessibility standards
+                including WCAG and focused on integration into Angular
+                applications. <br />
+                Key topics included designing accessible components, applying
+                the appropriate use of ARIA , ensuring keyboard navigation and
+                focus management, structuring semantic HTML to support assistive
+                technologies, providing accessible forms and error messaging,
+                and managing color contrast and responsive layout for inclusive
+                experiences. The training also covered how to audit and test
+                Angular applications for accessibility issues and embed
+                accessibility practices into the development workflow.
             </p>
-        </div>
+        </app-education-block>
     </div>
 
     <div class="education-block md:col-start-3 md:row-start-3">
-        <div class="education-bht__headline">
-            <h5 class="text-sm">
-                Bachelor of Science at Berliner Hochschule für Technik
-            </h5>
-            <span class="text-secondary text-xs"
-                >October 2017 - March 2023</span
-            >
-            <p class="mt-2 text-xs">
+        <app-education-block
+            [headline]="'Angular Schule'"
+            [duration]="'April 2024'"
+        >
+            <p class="mt-2 text-base">
+                I completed a comprehensive Angular training covering the
+                fundamentals and advanced concepts of Angular, including
+                component architecture, services, dependency injection, routing,
+                forms, and application structure. The course included practical
+                work with TypeScript, Angular CLI, Standalone Components,
+                Signals, and reactive programming with RxJS. <br />
+                Additional topics included HTTP communication with REST APIs,
+                state handling, testing practices, and best-practice
+                architectural patterns for building scalable and maintainable
+                Angular applications.
+            </p>
+        </app-education-block>
+    </div>
+
+    <div class="education-block md:col-start-3 md:row-start-4">
+        <app-education-block
+            [headline]="'Berliner Hochschule für Technik'"
+            [duration]="'October 2017 - March 2023'"
+        >
+            <p class="mt-2 text-base">
                 At kv.digital, I work on both B2B and B2C web applications using
                 Angular and TypeScript. I stay in close contact with the design
                 team to create intuitive and visually appealing user interfaces
@@ -82,20 +116,20 @@
                 contributing to CI/CD pipelines via Jenkins, and using Bitbucket
                 for code collaboration and reviews.
             </p>
-        </div>
+        </app-education-block>
     </div>
 </div>
 
 <div class="work-experience mx-6 my-20">
     <!-- Section Header -->
     <div class="work-experience__header">
-        <h4 class="text-secondary md:mb-2 mb-8 text-xs">Work Experience</h4>
+        <h2 class="text-secondary mb-8 text-xs md:mb-2">Work Experience</h2>
     </div>
 
     <div class="work-experience__content flex flex-col gap-4">
         <!-- Work Experience Item 1 -->
         <div
-            class="work-experience__item flex md:flex-row flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+            class="work-experience__item flex flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:flex-row md:text-sm"
         >
             <p class="col-span-1 underline">kv.digital</p>
             <p class="col-span-1">Frontend Developer</p>
@@ -104,7 +138,7 @@
 
         <!-- Work Experience Item 2 -->
         <div
-            class="work-experience__item flex md:flex-row flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+            class="work-experience__item flex flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:flex-row md:text-sm"
         >
             <p class="col-span-1 underline">Other Company</p>
             <p class="col-span-1">Frontend Developer</p>
@@ -113,7 +147,7 @@
 
         <!-- Work Experience Item 3 -->
         <div
-            class="work-experience__item flex md:flex-row flex-col  justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:text-sm"
+            class="work-experience__item flex flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:flex-row md:text-sm"
         >
             <p class="col-span-1 underline">Freelance</p>
             <p class="col-span-1">Web Developer</p>
@@ -126,13 +160,13 @@
     class="development-process 3xl:mb-30 my-20 grid grid-cols-1 gap-x-6 gap-y-12 pt-12 md:mb-4 md:grid-cols-3"
 >
     <div class="development-process__header md:col-start-1 md:row-start-1">
-        <h4 class="text-secondary text-xs">Development Process</h4>
+        <h2 class="text-secondary text-xs">Development Process</h2>
     </div>
 
     <div
         class="liquid-glass development-process__discover md:col-start-1 md:row-start-2"
     >
-        <h4 class="text-xs md:text-sm">Discover</h4>
+        <h3 class="text-xs md:text-sm">Discover</h3>
         <p class="text-secondary select-none text-xs">
             Uncover user needs and problems through research and observations.
             Identify design challenges worth addressing.
@@ -142,7 +176,7 @@
     <div
         class="liquid-glass development-process__create md:col-start-2 md:row-start-2"
     >
-        <h4 class="text-xs md:text-sm">Create</h4>
+        <h3 class="text-xs md:text-sm">Create</h3>
         <p class="text-secondary select-none text-xs">
             Engage in creative exploration, challenge assumptions, and rapidly
             prototype and test solutions.
@@ -152,7 +186,7 @@
     <div
         class="liquid-glass development-process__deliver p-2 md:col-start-3 md:row-start-2"
     >
-        <h4 class="text-xs md:text-sm">Deliver</h4>
+        <h3 class="text-xs md:text-sm">Deliver</h3>
         <p class="text-secondary select-none text-xs">
             Translate refined concepts into intuitive interfaces, collaborate
             closely with design and engineering, and deliver user-focused,
@@ -175,7 +209,7 @@
     </div>
 
     <div class="development-process__text md:col-start-1 md:row-start-6">
-        <h4 class="text-secondary mb-2 text-xs">Design Explorations</h4>
+        <h2 class="text-secondary mb-2 text-xs">Design Explorations</h2>
         <p class="text-xs">
             This page showcases a collection of my small projects and
             experiments, providing a glimpse into my design journey and ideas
