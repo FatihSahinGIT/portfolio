@@ -1,21 +1,18 @@
 <div class="grid grid-cols-1 gap-6 md:my-20 md:grid-cols-3">
     <!-- Introduction -->
-    <div class="about-introduction mb-20 mt-20 md:col-span-3 md:row-start-1">
+    <div class="about-introduction mb-20 mt-20 md:col-span-1 md:row-start-1">
         <div
-            class="about-introduction__text-container 3xl:w-3/4 flex flex-col items-start gap-4"
+            class="about-introduction__text-container flex flex-col items-start gap-4"
         >
-            <h1 class="text-secondary text-3xl font-normal md:w-2/3">
-                Building interfaces that are intuitive, accessible, and easy to
-                use
-            </h1>
-            <p class="about-introduction__text-content mt-4 text-base md:w-3/4">
+            <h1 class="text-secondary text-base text-gray-400">Introduction</h1>
+            <p class="about-introduction__text-content mt-2 text-base">
                 I am Fatih Sahin, a 25-year-old frontend developer based in
                 Berlin, Germany. I specialize in building modern, responsive web
                 applications with a strong focus on usability, performance, and
                 thoughtful design
             </p>
 
-            <p class="about-introduction__text-content text-base md:w-3/4">
+            <p class="about-introduction__text-content text-base">
                 My fascination with frontend development comes from its role as
                 the bridge between design and code — the place where ideas
                 become real, interactive experiences. I care deeply about
@@ -40,12 +37,10 @@
         </div>
     </div>
 
-    <div
-        class="about-introduction 3xl:col-start-1 mb-40 md:col-span-1 md:col-start-1 md:row-start-1 md:mt-20"
-    >
+    <div class="about-introduction mb-20 mt-20 md:col-start-3 md:row-start-1">
         <figure class="about-introduction__image-container">
             <img
-                src="about-images/portfolio.png"
+                src="/about-images/portrait.jpg"
                 alt="Portrait of Fatih Sahin"
                 class="h-auto w-full rounded-sm object-cover"
             />
@@ -57,7 +52,7 @@
     </div>
 
     <div class="education-block md:col-start-1 md:row-start-2">
-        <h2 class="text-secondary mb-2 text-lg">Education</h2>
+        <h2 class="text-secondary text-base text-gray-400">Education</h2>
     </div>
 
     <div class="education-block md:col-start-3 md:row-start-2">
@@ -118,102 +113,46 @@
             </p>
         </app-education-block>
     </div>
-</div>
-
-<div class="work-experience mx-6 my-20">
-    <!-- Section Header -->
-    <div class="work-experience__header">
-        <h2 class="text-secondary mb-8 text-xs md:mb-2">Work Experience</h2>
+    <div class="education-block md:col-start-1 md:row-start-20">
+        <h2 class="text-secondary text-base text-gray-400">Education</h2>
     </div>
 
-    <div class="work-experience__content flex flex-col gap-4">
-        <!-- Work Experience Item 1 -->
-        <div
-            class="work-experience__item flex flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:flex-row md:text-sm"
+    <div class="education-block md:col-start-3 md:row-start-20">
+        <app-education-block
+            [headline]="'kv.digital'"
+            [duration]="'October 2025'"
         >
-            <p class="col-span-1 underline">kv.digital</p>
-            <p class="col-span-1">Frontend Developer</p>
-            <p class="col-span-1">November 2023 - Now</p>
-        </div>
-
-        <!-- Work Experience Item 2 -->
-        <div
-            class="work-experience__item flex flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:flex-row md:text-sm"
-        >
-            <p class="col-span-1 underline">Other Company</p>
-            <p class="col-span-1">Frontend Developer</p>
-            <p class="col-span-1">January 2021 - October 2023</p>
-        </div>
-
-        <!-- Work Experience Item 3 -->
-        <div
-            class="work-experience__item flex flex-col justify-between gap-2 text-xs md:col-start-1 md:row-start-1 md:flex-row md:text-sm"
-        >
-            <p class="col-span-1 underline">Freelance</p>
-            <p class="col-span-1">Web Developer</p>
-            <p class="col-span-1">2019 - 2020</p>
-        </div>
-    </div>
-</div>
-
-<div
-    class="development-process 3xl:mb-30 my-20 grid grid-cols-1 gap-x-6 gap-y-12 pt-12 md:mb-4 md:grid-cols-3"
->
-    <div class="development-process__header md:col-start-1 md:row-start-1">
-        <h2 class="text-secondary text-xs">Development Process</h2>
+            <p class="mt-2 text-base">
+                I participated in an accessibility workshop led by Dr. Maria
+                Korneeva. The course addressed web accessibility standards
+                including WCAG and focused on integration into Angular
+                applications. <br />
+                Key topics included designing accessible components, applying
+                the appropriate use of ARIA , ensuring keyboard navigation and
+                focus management, structuring semantic HTML to support assistive
+                technologies, providing accessible forms and error messaging,
+                and managing color contrast and responsive layout for inclusive
+                experiences. The training also covered how to audit and test
+                Angular applications for accessibility issues and embed
+                accessibility practices into the development workflow.
+            </p>
+        </app-education-block>
     </div>
 
-    <div
-        class="liquid-glass development-process__discover md:col-start-1 md:row-start-2"
-    >
-        <h3 class="text-xs md:text-sm">Discover</h3>
-        <p class="text-secondary select-none text-xs">
-            Uncover user needs and problems through research and observations.
-            Identify design challenges worth addressing.
-        </p>
-    </div>
-
-    <div
-        class="liquid-glass development-process__create md:col-start-2 md:row-start-2"
-    >
-        <h3 class="text-xs md:text-sm">Create</h3>
-        <p class="text-secondary select-none text-xs">
-            Engage in creative exploration, challenge assumptions, and rapidly
-            prototype and test solutions.
-        </p>
-    </div>
-
-    <div
-        class="liquid-glass development-process__deliver p-2 md:col-start-3 md:row-start-2"
-    >
-        <h3 class="text-xs md:text-sm">Deliver</h3>
-        <p class="text-secondary select-none text-xs">
-            Translate refined concepts into intuitive interfaces, collaborate
-            closely with design and engineering, and deliver user-focused,
-            accessible products.
-        </p>
-    </div>
-
-    <div class="development-process__text md:col-start-1 md:row-start-4">
-        <p class="text-xs">
-            As a detail-oriented developer, I focus on the small but impactful
-            aspects of UI development: spacing, element placement, smooth state
-            transitions, and micro-interactions. I believe great frontend work
-            lies in these details—when thoughtfully implemented, they create
-            interfaces that feel seamless and intuitive. <br /><br />
-            I strive to make design ideas shine through clean, performant, and
-            maintainable code. Collaborating deeply with designers allows me to
-            better understand the intention behind every pixel and transform it
-            into meaningful user experiences.
-        </p>
-    </div>
-
-    <div class="development-process__text md:col-start-1 md:row-start-6">
-        <h2 class="text-secondary mb-2 text-xs">Design Explorations</h2>
-        <p class="text-xs">
-            This page showcases a collection of my small projects and
-            experiments, providing a glimpse into my design journey and ideas
-            I've explored along the way.
-        </p>
+    <div class="education-block md:col-start-3 md:row-start-21">
+        <app-education-block [headline]="'Interval'" [duration]="'April 2024'">
+            <p class="mt-2 text-base">
+                I completed a comprehensive Angular training covering the
+                fundamentals and advanced concepts of Angular, including
+                component architecture, services, dependency injection, routing,
+                forms, and application structure. The course included practical
+                work with TypeScript, Angular CLI, Standalone Components,
+                Signals, and reactive programming with RxJS. <br />
+                Additional topics included HTTP communication with REST APIs,
+                state handling, testing practices, and best-practice
+                architectural patterns for building scalable and maintainable
+                Angular applications.
+            </p>
+        </app-education-block>
     </div>
 </div>
