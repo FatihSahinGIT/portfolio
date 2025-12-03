@@ -1,46 +1,32 @@
-<nav class="mx-6 my-4 mb-8 flex items-center justify-between">
-    <div class="fade-in flex cursor-pointer items-center">
-        <a>
-            <img
-                [src]="
-                    isDarkMode()
-                        ? '/nav-logo/nav-logo-dark.svg'
-                        : '/nav-logo/nav-logo.svg'
-                "
-                alt="Navigation Bar Logo"
-                class="h-8 md:h-12"
-            />
-        </a>
-    </div>
+<nav
+    class="mx-6 my-4 mb-8 flex items-center justify-between"
+    aria-label="Main navigation"
+>
+    <a href="/" aria-label="Home - Portfolio" class="inline-flex">
+        <img [src]="logoSrc()" alt="Portfolio Logo" class="h-8 md:h-12" />
+    </a>
 
-    <div id="nav-menu" class="fade-in flex items-center">
-        <ul class="flex flex-row space-x-1 text-xs md:space-x-8">
-            <li>
-                <button
-                    class="font-color block cursor-pointer rounded px-3 py-2 underline-offset-4 hover:underline"
-                >
-                    About
-                </button>
-            </li>
-            <li>
-                <button
-                    class="block cursor-pointer px-3 py-2 underline-offset-4 hover:underline"
-                >
-                    Contact
-                </button>
-            </li>
-            <li class="flex items-center justify-center">
+    <ul class="flex items-center space-x-1 md:space-x-8">
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <button
+                type="button"
+                (click)="toggleTheme()"
+                [attr.aria-label]="
+                    isDarkMode()
+                        ? 'Switch to light mode'
+                        : 'Switch to dark mode'
+                "
+                class="flex cursor-pointer items-center justify-center p-2"
+            >
                 <ng-icon
                     [name]="
-                        isDarkMode()
-                            ? 'bootstrapLightbulbFill'
-                            : 'bootstrapMoonFill'
+                        isDarkMode() ? 'bootstrapSunFill' : 'bootstrapMoonFill'
                     "
-                    [color]="isDarkMode() ? '#ffff' : '#000'"
-                    class="cursor-pointer"
-                    (click)="toggleTheme()"
+                    aria-hidden="true"
                 />
-            </li>
-        </ul>
-    </div>
+            </button>
+        </li>
+    </ul>
 </nav>

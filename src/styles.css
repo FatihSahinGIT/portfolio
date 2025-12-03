@@ -10,7 +10,7 @@
 
     /* = Text = */
     --text: hsl(100, 100%, 0%);
-    --text-muted: hsl(0, 0%, 35%);
+    --text-muted: hsl(0, 0%, 46%);
 
     /* = Border & Gradient */
     --border: hsl(0, 0%, 80%);
@@ -31,7 +31,7 @@ body.dark {
 
     /* = Text = */
     --text: hsl(100, 100%, 100%);
-    --text-muted: hsl(0, 0%, 35%);
+    --text-muted: hsl(0, 0%, 46%);
 
     /* = Border & Gradient */
     --border: hsl(0, 0%, 80%);
@@ -49,4 +49,16 @@ body.dark {
 body {
     background: var(--bg-dark);
     color: var(--text);
+}
+
+h6 {
+    color: var(--text-muted);
+    @apply tracking-[-0.0125em];
+    @apply text-xs;
+}
+
+button {
+    @apply cursor-pointer;
+    @apply underline-offset-4;
+    @apply hover:underline;
 }
