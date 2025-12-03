@@ -8,19 +8,18 @@ import {
     ViewChild
 } from '@angular/core';
 import Lenis from 'lenis';
-import { NavbarComponent } from './navbar/navbar.component';
 import { NavigationEnd, RouterOutlet } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
 import {
     bootstrapArrowRight,
     bootstrapArrowLeft
 } from '@ng-icons/bootstrap-icons';
-import { FooterComponent } from './footer/footer.component';
+
 import { TransitionService } from './shared/services/transition.service';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, NavbarComponent, FooterComponent],
+    imports: [RouterOutlet],
     providers: [provideIcons({ bootstrapArrowRight, bootstrapArrowLeft })],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
