@@ -1,14 +1,5 @@
 @import 'tailwindcss';
 
-/* Enable dark mode variant for Tailwind v4 */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* === THEME BREAKPOINTS === */
-@theme {
-    --breakpoint-3xl: 120rem;
-    --breakpoint-2xl: 90rem;
-}
-
 @theme {
     /* == LIGHT MODE */
 
@@ -58,56 +49,4 @@ body.dark {
 body {
     background: var(--bg-dark);
     color: var(--text);
-}
-
-@layer utilities {
-    .fade-in-text {
-        animation: fadeIn 0.5s ease-out forwards;
-    }
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-}
-
-.grid > * {
-    @apply mx-6;
-    /* border: 1px solid red; */
-}
-
-::selection {
-    background: #000;
-    color: #fff;
-}
-
-h4 {
-    color: var(--text-muted);
-}
-
-.box {
-    background: var(--bg-light);
-    padding: 0.5rem;
-    color: var(--text);
-    border-radius: 0.5rem;
-    border-top: 1px solid var(--hightlight);
-    border: var(--border);
-    transition: all 0.5s ease-in-out;
-}
-
-.box:hover {
-    background: var(--bg);
-}
-
-.liquid-glass {
-    @apply rounded-xl border border-neutral-400/20 bg-neutral-300/20 p-2 shadow-sm backdrop-blur-[1px] transition-colors duration-500;
-}
-
-.liquid-glass:hover {
-    @apply bg-neutral-300/60;
 }

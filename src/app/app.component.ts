@@ -16,10 +16,12 @@ import {
 } from '@ng-icons/bootstrap-icons';
 
 import { TransitionService } from './shared/services/transition.service';
+import { NavbarComponent } from "./shared/components/layout/navbar/navbar.component";
+import { FooterComponent } from "./shared/components/layout/footer/footer.component";
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet],
+    imports: [RouterOutlet, NavbarComponent, FooterComponent],
     providers: [provideIcons({ bootstrapArrowRight, bootstrapArrowLeft })],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

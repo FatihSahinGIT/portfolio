@@ -1,0 +1,46 @@
+<nav class="mx-6 my-4 mb-8 flex items-center justify-between">
+    <div class="fade-in flex cursor-pointer items-center">
+        <a>
+            <img
+                [src]="
+                    isDarkMode()
+                        ? '/nav-logo/nav-logo-dark.svg'
+                        : '/nav-logo/nav-logo.svg'
+                "
+                alt="Navigation Bar Logo"
+                class="h-8 md:h-12"
+            />
+        </a>
+    </div>
+
+    <div id="nav-menu" class="fade-in flex items-center">
+        <ul class="flex flex-row space-x-1 text-xs md:space-x-8">
+            <li>
+                <button
+                    class="font-color block cursor-pointer rounded px-3 py-2 underline-offset-4 hover:underline"
+                >
+                    About
+                </button>
+            </li>
+            <li>
+                <button
+                    class="block cursor-pointer px-3 py-2 underline-offset-4 hover:underline"
+                >
+                    Contact
+                </button>
+            </li>
+            <li class="flex items-center justify-center">
+                <ng-icon
+                    [name]="
+                        isDarkMode()
+                            ? 'bootstrapLightbulbFill'
+                            : 'bootstrapMoonFill'
+                    "
+                    [color]="isDarkMode() ? '#ffff' : '#000'"
+                    class="cursor-pointer"
+                    (click)="toggleTheme()"
+                />
+            </li>
+        </ul>
+    </div>
+</nav>
