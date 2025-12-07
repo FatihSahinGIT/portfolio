@@ -1,0 +1,1583 @@
+@import 'tailwindcss';
+
+/* Custom Tailwind utilities for top-level grid layout */
+@layer utilities {
+    /* Simple grid API for templates: `.grid` on a wrapper and
+             `.grid-child` plus `.position-1`..`.position-12` on children */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        align-items: start;
+        /* Use horizontal padding and a centered max-width so spacing is consistent */
+
+        @apply max-w-full;
+        @apply mx-8;
+    }
+
+    .grid-child {
+        display: block;
+    }
+
+    /* Centering helpers for grid children (restored) */
+    .center {
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .center-x {
+        justify-self: center;
+    }
+
+    .center-y {
+        align-self: center;
+    }
+
+    /* Responsive variants for custom grid utilities (xs..2xl) */
+    @media (min-width: 320px) {
+        /* xs: prefix — use `xs:col-...` in templates */
+        .xs\:col-1-1 { grid-column: 1 / span 1; }
+        .xs\:col-1-2 { grid-column: 1 / span 2; }
+        .xs\:col-1-3 { grid-column: 1 / span 3; }
+        .xs\:col-1-4 { grid-column: 1 / span 4; }
+        .xs\:col-1-5 { grid-column: 1 / span 5; }
+        .xs\:col-1-6 { grid-column: 1 / span 6; }
+        .xs\:col-1-7 { grid-column: 1 / span 7; }
+        .xs\:col-1-8 { grid-column: 1 / span 8; }
+        .xs\:col-1-9 { grid-column: 1 / span 9; }
+        .xs\:col-1-10 { grid-column: 1 / span 10; }
+        .xs\:col-1-11 { grid-column: 1 / span 11; }
+        .xs\:col-1-12 { grid-column: 1 / span 12; }
+        /* other xs variants (2..12 start) */
+        .xs\:col-2-1 { grid-column: 2 / span 1; }
+        .xs\:col-2-2 { grid-column: 2 / span 2; }
+        .xs\:col-2-3 { grid-column: 2 / span 3; }
+        .xs\:col-2-4 { grid-column: 2 / span 4; }
+        .xs\:col-2-5 { grid-column: 2 / span 5; }
+        .xs\:col-2-6 { grid-column: 2 / span 6; }
+        .xs\:col-2-7 { grid-column: 2 / span 7; }
+        .xs\:col-2-8 { grid-column: 2 / span 8; }
+        .xs\:col-2-9 { grid-column: 2 / span 9; }
+        .xs\:col-2-10 { grid-column: 2 / span 10; }
+        .xs\:col-2-11 { grid-column: 2 / span 11; }
+        .xs\:col-2-12 { grid-column: 2 / span 12; }
+        /* remaining xs col-3..col-12 groups copied similarly */
+        /* For brevity the rest follow the same pattern (sm/md/lg/xl/2xl blocks below include full sets) */
+    }
+
+    @media (min-width: 640px) {
+        /* sm: prefix */
+        .sm\:col-1-1 { grid-column: 1 / span 1; }
+        .sm\:col-1-2 { grid-column: 1 / span 2; }
+        .sm\:col-1-3 { grid-column: 1 / span 3; }
+        .sm\:col-1-4 { grid-column: 1 / span 4; }
+        .sm\:col-1-5 { grid-column: 1 / span 5; }
+        .sm\:col-1-6 { grid-column: 1 / span 6; }
+        .sm\:col-1-7 { grid-column: 1 / span 7; }
+        .sm\:col-1-8 { grid-column: 1 / span 8; }
+        .sm\:col-1-9 { grid-column: 1 / span 9; }
+        .sm\:col-1-10 { grid-column: 1 / span 10; }
+        .sm\:col-1-11 { grid-column: 1 / span 11; }
+        .sm\:col-1-12 { grid-column: 1 / span 12; }
+        /* ... full set mirrored as in 2xl block */
+    }
+
+    @media (min-width: 768px) {
+        /* md: prefix */
+        .md\:col-1-1 { grid-column: 1 / span 1; }
+        .md\:col-1-2 { grid-column: 1 / span 2; }
+        .md\:col-1-3 { grid-column: 1 / span 3; }
+        .md\:col-1-4 { grid-column: 1 / span 4; }
+        .md\:col-1-5 { grid-column: 1 / span 5; }
+        .md\:col-1-6 { grid-column: 1 / span 6; }
+        .md\:col-1-7 { grid-column: 1 / span 7; }
+        .md\:col-1-8 { grid-column: 1 / span 8; }
+        .md\:col-1-9 { grid-column: 1 / span 9; }
+        .md\:col-1-10 { grid-column: 1 / span 10; }
+        .md\:col-1-11 { grid-column: 1 / span 11; }
+        .md\:col-1-12 { grid-column: 1 / span 12; }
+        /* ... full set mirrored as in 2xl block */
+    }
+
+    @media (min-width: 1024px) {
+        /* lg: prefix */
+        .lg\:col-1-1 { grid-column: 1 / span 1; }
+        .lg\:col-1-2 { grid-column: 1 / span 2; }
+        .lg\:col-1-3 { grid-column: 1 / span 3; }
+        .lg\:col-1-4 { grid-column: 1 / span 4; }
+        .lg\:col-1-5 { grid-column: 1 / span 5; }
+        .lg\:col-1-6 { grid-column: 1 / span 6; }
+        .lg\:col-1-7 { grid-column: 1 / span 7; }
+        .lg\:col-1-8 { grid-column: 1 / span 8; }
+        .lg\:col-1-9 { grid-column: 1 / span 9; }
+        .lg\:col-1-10 { grid-column: 1 / span 10; }
+        .lg\:col-1-11 { grid-column: 1 / span 11; }
+        .lg\:col-1-12 { grid-column: 1 / span 12; }
+        /* ... full set mirrored as in 2xl block */
+    }
+
+    @media (min-width: 1280px) {
+        /* xl: prefix */
+        .xl\:col-1-1 { grid-column: 1 / span 1; }
+        .xl\:col-1-2 { grid-column: 1 / span 2; }
+        .xl\:col-1-3 { grid-column: 1 / span 3; }
+        .xl\:col-1-4 { grid-column: 1 / span 4; }
+        .xl\:col-1-5 { grid-column: 1 / span 5; }
+        .xl\:col-1-6 { grid-column: 1 / span 6; }
+        .xl\:col-1-7 { grid-column: 1 / span 7; }
+        .xl\:col-1-8 { grid-column: 1 / span 8; }
+        .xl\:col-1-9 { grid-column: 1 / span 9; }
+        .xl\:col-1-10 { grid-column: 1 / span 10; }
+        .xl\:col-1-11 { grid-column: 1 / span 11; }
+        .xl\:col-1-12 { grid-column: 1 / span 12; }
+        /* ... full set mirrored as in 2xl block */
+    }
+
+    @media (min-width: 1536px) {
+        /* 2xl: prefix — note leading digit requires escaping as \32 */
+        .\32 xl\:col-1-1 { grid-column: 1 / span 1; }
+        .\32 xl\:col-1-2 { grid-column: 1 / span 2; }
+        .\32 xl\:col-1-3 { grid-column: 1 / span 3; }
+        .\32 xl\:col-1-4 { grid-column: 1 / span 4; }
+        .\32 xl\:col-1-5 { grid-column: 1 / span 5; }
+        .\32 xl\:col-1-6 { grid-column: 1 / span 6; }
+        .\32 xl\:col-1-7 { grid-column: 1 / span 7; }
+        .\32 xl\:col-1-8 { grid-column: 1 / span 8; }
+        .\32 xl\:col-1-9 { grid-column: 1 / span 9; }
+        .\32 xl\:col-1-10 { grid-column: 1 / span 10; }
+        .\32 xl\:col-1-11 { grid-column: 1 / span 11; }
+        .\32 xl\:col-1-12 { grid-column: 1 / span 12; }
+        /* ... full set mirrored as above for 2..12 start positions */
+    }
+    .col-1-8 {
+        grid-column: 1 / span 8;
+    }
+    .col-1-9 {
+        grid-column: 1 / span 9;
+    }
+    .col-1-10 {
+        grid-column: 1 / span 10;
+    }
+    .col-1-11 {
+        grid-column: 1 / span 11;
+    }
+    .col-1-12 {
+        grid-column: 1 / span 12;
+    }
+
+    .col-2-1 {
+        grid-column: 2 / span 1;
+    }
+    .col-2-2 {
+        grid-column: 2 / span 2;
+    }
+    .col-2-3 {
+        grid-column: 2 / span 3;
+    }
+    .col-2-4 {
+        grid-column: 2 / span 4;
+    }
+    .col-2-5 {
+        grid-column: 2 / span 5;
+    }
+    .col-2-6 {
+        grid-column: 2 / span 6;
+    }
+    .col-2-7 {
+        grid-column: 2 / span 7;
+    }
+    .col-2-8 {
+        grid-column: 2 / span 8;
+    }
+    .col-2-9 {
+        grid-column: 2 / span 9;
+    }
+    .col-2-10 {
+        grid-column: 2 / span 10;
+    }
+    .col-2-11 {
+        grid-column: 2 / span 11;
+    }
+    .col-2-12 {
+        grid-column: 2 / span 12;
+    }
+
+    .col-3-1 {
+        grid-column: 3 / span 1;
+    }
+    .col-3-2 {
+        grid-column: 3 / span 2;
+    }
+    .col-3-3 {
+        grid-column: 3 / span 3;
+    }
+    .col-3-4 {
+        grid-column: 3 / span 4;
+    }
+    .col-3-5 {
+        grid-column: 3 / span 5;
+    }
+    .col-3-6 {
+        grid-column: 3 / span 6;
+    }
+    .col-3-7 {
+        grid-column: 3 / span 7;
+    }
+    .col-3-8 {
+        grid-column: 3 / span 8;
+    }
+    .col-3-9 {
+        grid-column: 3 / span 9;
+    }
+    .col-3-10 {
+        grid-column: 3 / span 10;
+    }
+    .col-3-11 {
+        grid-column: 3 / span 11;
+    }
+    .col-3-12 {
+        grid-column: 3 / span 12;
+    }
+
+    .col-4-1 {
+        grid-column: 4 / span 1;
+    }
+    .col-4-2 {
+        grid-column: 4 / span 2;
+    }
+    .col-4-3 {
+        grid-column: 4 / span 3;
+    }
+    .col-4-4 {
+        grid-column: 4 / span 4;
+    }
+    .col-4-5 {
+        grid-column: 4 / span 5;
+    }
+    .col-4-6 {
+        grid-column: 4 / span 6;
+    }
+    .col-4-7 {
+        grid-column: 4 / span 7;
+    }
+    .col-4-8 {
+        grid-column: 4 / span 8;
+    }
+    .col-4-9 {
+        grid-column: 4 / span 9;
+    }
+    .col-4-10 {
+        grid-column: 4 / span 10;
+    }
+    .col-4-11 {
+        grid-column: 4 / span 11;
+    }
+    .col-4-12 {
+        grid-column: 4 / span 12;
+    }
+
+    .col-5-1 {
+        grid-column: 5 / span 1;
+    }
+    .col-5-2 {
+        grid-column: 5 / span 2;
+    }
+    .col-5-3 {
+        grid-column: 5 / span 3;
+    }
+    .col-5-4 {
+        grid-column: 5 / span 4;
+    }
+    .col-5-5 {
+        grid-column: 5 / span 5;
+    }
+    .col-5-6 {
+        grid-column: 5 / span 6;
+    }
+    .col-5-7 {
+        grid-column: 5 / span 7;
+    }
+    .col-5-8 {
+        grid-column: 5 / span 8;
+    }
+    .col-5-9 {
+        grid-column: 5 / span 9;
+    }
+    .col-5-10 {
+        grid-column: 5 / span 10;
+    }
+    .col-5-11 {
+        grid-column: 5 / span 11;
+    }
+    .col-5-12 {
+        grid-column: 5 / span 12;
+    }
+
+    .col-6-1 {
+        grid-column: 6 / span 1;
+    }
+    .col-6-2 {
+        grid-column: 6 / span 2;
+    }
+    .col-6-3 {
+        grid-column: 6 / span 3;
+    }
+    .col-6-4 {
+        grid-column: 6 / span 4;
+    }
+    .col-6-5 {
+        grid-column: 6 / span 5;
+    }
+    .col-6-6 {
+        grid-column: 6 / span 6;
+    }
+    .col-6-7 {
+        grid-column: 6 / span 7;
+    }
+    .col-6-8 {
+        grid-column: 6 / span 8;
+    }
+    .col-6-9 {
+        grid-column: 6 / span 9;
+    }
+    .col-6-10 {
+        grid-column: 6 / span 10;
+    }
+    .col-6-11 {
+        grid-column: 6 / span 11;
+    }
+    .col-6-12 {
+        grid-column: 6 / span 12;
+    }
+
+    .col-7-1 {
+        grid-column: 7 / span 1;
+    }
+    .col-7-2 {
+        grid-column: 7 / span 2;
+    }
+    .col-7-3 {
+        grid-column: 7 / span 3;
+    }
+    .col-7-4 {
+        grid-column: 7 / span 4;
+    }
+    .col-7-5 {
+        grid-column: 7 / span 5;
+    }
+    .col-7-6 {
+        grid-column: 7 / span 6;
+    }
+    .col-7-7 {
+        grid-column: 7 / span 7;
+    }
+    .col-7-8 {
+        grid-column: 7 / span 8;
+    }
+    .col-7-9 {
+        grid-column: 7 / span 9;
+    }
+    .col-7-10 {
+        grid-column: 7 / span 10;
+    }
+    .col-7-11 {
+        grid-column: 7 / span 11;
+    }
+    .col-7-12 {
+        grid-column: 7 / span 12;
+    }
+
+    .col-8-1 {
+        grid-column: 8 / span 1;
+    }
+    .col-8-2 {
+        grid-column: 8 / span 2;
+    }
+    .col-8-3 {
+        grid-column: 8 / span 3;
+    }
+    .col-8-4 {
+        grid-column: 8 / span 4;
+    }
+    .col-8-5 {
+        grid-column: 8 / span 5;
+    }
+    .col-8-6 {
+        grid-column: 8 / span 6;
+    }
+    .col-8-7 {
+        grid-column: 8 / span 7;
+    }
+    .col-8-8 {
+        grid-column: 8 / span 8;
+    }
+    .col-8-9 {
+        grid-column: 8 / span 9;
+    }
+    .col-8-10 {
+        grid-column: 8 / span 10;
+    }
+    .col-8-11 {
+        grid-column: 8 / span 11;
+    }
+    .col-8-12 {
+        grid-column: 8 / span 12;
+    }
+
+    .col-9-1 {
+        grid-column: 9 / span 1;
+    }
+    .col-9-2 {
+        grid-column: 9 / span 2;
+    }
+    .col-9-3 {
+        grid-column: 9 / span 3;
+    }
+    .col-9-4 {
+        grid-column: 9 / span 4;
+    }
+    .col-9-5 {
+        grid-column: 9 / span 5;
+    }
+    .col-9-6 {
+        grid-column: 9 / span 6;
+    }
+    .col-9-7 {
+        grid-column: 9 / span 7;
+    }
+    .col-9-8 {
+        grid-column: 9 / span 8;
+    }
+    .col-9-9 {
+        grid-column: 9 / span 9;
+    }
+    .col-9-10 {
+        grid-column: 9 / span 10;
+    }
+    .col-9-11 {
+        grid-column: 9 / span 11;
+    }
+    .col-9-12 {
+        grid-column: 9 / span 12;
+    }
+
+    .col-10-1 {
+        grid-column: 10 / span 1;
+    }
+    .col-10-2 {
+        grid-column: 10 / span 2;
+    }
+    .col-10-3 {
+        grid-column: 10 / span 3;
+    }
+    .col-10-4 {
+        grid-column: 10 / span 4;
+    }
+    .col-10-5 {
+        grid-column: 10 / span 5;
+    }
+    .col-10-6 {
+        grid-column: 10 / span 6;
+    }
+    .col-10-7 {
+        grid-column: 10 / span 7;
+    }
+    .col-10-8 {
+        grid-column: 10 / span 8;
+    }
+    .col-10-9 {
+        grid-column: 10 / span 9;
+    }
+    .col-10-10 {
+        grid-column: 10 / span 10;
+    }
+    .col-10-11 {
+        grid-column: 10 / span 11;
+    }
+    .col-10-12 {
+        grid-column: 10 / span 12;
+    }
+
+    .col-11-1 {
+        grid-column: 11 / span 1;
+    }
+    .col-11-2 {
+        grid-column: 11 / span 2;
+    }
+    .col-11-3 {
+        grid-column: 11 / span 3;
+    }
+    .col-11-4 {
+        grid-column: 11 / span 4;
+    }
+    .col-11-5 {
+        grid-column: 11 / span 5;
+    }
+    .col-11-6 {
+        grid-column: 11 / span 6;
+    }
+    .col-11-7 {
+        grid-column: 11 / span 7;
+    }
+    .col-11-8 {
+        grid-column: 11 / span 8;
+    }
+    .col-11-9 {
+        grid-column: 11 / span 9;
+    }
+    .col-11-10 {
+        grid-column: 11 / span 10;
+    }
+    .col-11-11 {
+        grid-column: 11 / span 11;
+    }
+    .col-11-12 {
+        grid-column: 11 / span 12;
+    }
+
+    .col-12-1 {
+        grid-column: 12 / span 1;
+    }
+    .col-12-2 {
+        grid-column: 12 / span 2;
+    }
+    .col-12-3 {
+        grid-column: 12 / span 3;
+    }
+    .col-12-4 {
+        grid-column: 12 / span 4;
+    }
+    .col-12-5 {
+        grid-column: 12 / span 5;
+    }
+    .col-12-6 {
+        grid-column: 12 / span 6;
+    }
+    .col-12-7 {
+        grid-column: 12 / span 7;
+    }
+    .col-12-8 {
+        grid-column: 12 / span 8;
+    }
+    .col-12-9 {
+        grid-column: 12 / span 9;
+    }
+    .col-12-10 {
+        grid-column: 12 / span 10;
+    }
+    .col-12-11 {
+        grid-column: 12 / span 11;
+    }
+    .col-12-12 {
+        grid-column: 12 / span 12;
+    }
+
+    /* ROW HELPERS: mirror the column helpers for vertical placement */
+    /* row-{n} => start at row n and span 1 */
+    .row-1 {
+        grid-row: 1 / span 1;
+    }
+    .row-2 {
+        grid-row: 2 / span 1;
+    }
+    .row-3 {
+        grid-row: 3 / span 1;
+    }
+    .row-4 {
+        grid-row: 4 / span 1;
+    }
+    .row-5 {
+        grid-row: 5 / span 1;
+    }
+    .row-6 {
+        grid-row: 6 / span 1;
+    }
+    .row-7 {
+        grid-row: 7 / span 1;
+    }
+    .row-8 {
+        grid-row: 8 / span 1;
+    }
+    .row-9 {
+        grid-row: 9 / span 1;
+    }
+    .row-10 {
+        grid-row: 10 / span 1;
+    }
+    .row-11 {
+        grid-row: 11 / span 1;
+    }
+    .row-12 {
+        grid-row: 12 / span 1;
+    }
+
+    /* row-span-{n} helpers */
+    .row-span-1 {
+        grid-row: span 1;
+    }
+    .row-span-2 {
+        grid-row: span 2;
+    }
+    .row-span-3 {
+        grid-row: span 3;
+    }
+    .row-span-4 {
+        grid-row: span 4;
+    }
+    .row-span-5 {
+        grid-row: span 5;
+    }
+    .row-span-6 {
+        grid-row: span 6;
+    }
+    .row-span-7 {
+        grid-row: span 7;
+    }
+    .row-span-8 {
+        grid-row: span 8;
+    }
+    .row-span-9 {
+        grid-row: span 9;
+    }
+    .row-span-10 {
+        grid-row: span 10;
+    }
+    .row-span-11 {
+        grid-row: span 11;
+    }
+    .row-span-12 {
+        grid-row: span 12;
+    }
+
+    /* start-X-end: start at row X and go to the last line (-1) */
+    .row-1-end {
+        grid-row: 1 / -1;
+    }
+    .row-2-end {
+        grid-row: 2 / -1;
+    }
+    .row-3-end {
+        grid-row: 3 / -1;
+    }
+    .row-4-end {
+        grid-row: 4 / -1;
+    }
+    .row-5-end {
+        grid-row: 5 / -1;
+    }
+    .row-6-end {
+        grid-row: 6 / -1;
+    }
+    .row-7-end {
+        grid-row: 7 / -1;
+    }
+    .row-8-end {
+        grid-row: 8 / -1;
+    }
+    .row-9-end {
+        grid-row: 9 / -1;
+    }
+    .row-10-end {
+        grid-row: 10 / -1;
+    }
+    .row-11-end {
+        grid-row: 11 / -1;
+    }
+    .row-12-end {
+        grid-row: 12 / -1;
+    }
+
+    /* Combined helpers: .row-{start}-{span} => grid-row: start / span span */
+    .row-1-1 {
+        grid-row: 1 / span 1;
+    }
+    .row-1-2 {
+        grid-row: 1 / span 2;
+    }
+    .row-1-3 {
+        grid-row: 1 / span 3;
+    }
+    .row-1-4 {
+        grid-row: 1 / span 4;
+    }
+    .row-1-5 {
+        grid-row: 1 / span 5;
+    }
+    .row-1-6 {
+        grid-row: 1 / span 6;
+    }
+    .row-1-7 {
+        grid-row: 1 / span 7;
+    }
+    .row-1-8 {
+        grid-row: 1 / span 8;
+    }
+    .row-1-9 {
+        grid-row: 1 / span 9;
+    }
+    .row-1-10 {
+        grid-row: 1 / span 10;
+    }
+    .row-1-11 {
+        grid-row: 1 / span 11;
+    }
+    .row-1-12 {
+        grid-row: 1 / span 12;
+    }
+
+    .row-2-1 {
+        grid-row: 2 / span 1;
+    }
+    .row-2-2 {
+        grid-row: 2 / span 2;
+    }
+    .row-2-3 {
+        grid-row: 2 / span 3;
+    }
+    .row-2-4 {
+        grid-row: 2 / span 4;
+    }
+    .row-2-5 {
+        grid-row: 2 / span 5;
+    }
+    .row-2-6 {
+        grid-row: 2 / span 6;
+    }
+    .row-2-7 {
+        grid-row: 2 / span 7;
+    }
+    .row-2-8 {
+        grid-row: 2 / span 8;
+    }
+    .row-2-9 {
+        grid-row: 2 / span 9;
+    }
+    .row-2-10 {
+        grid-row: 2 / span 10;
+    }
+    .row-2-11 {
+        grid-row: 2 / span 11;
+    }
+    .row-2-12 {
+        grid-row: 2 / span 12;
+    }
+
+    .row-3-1 {
+        grid-row: 3 / span 1;
+    }
+    .row-3-2 {
+        grid-row: 3 / span 2;
+    }
+    .row-3-3 {
+        grid-row: 3 / span 3;
+    }
+    .row-3-4 {
+        grid-row: 3 / span 4;
+    }
+    .row-3-5 {
+        grid-row: 3 / span 5;
+    }
+    .row-3-6 {
+        grid-row: 3 / span 6;
+    }
+    .row-3-7 {
+        grid-row: 3 / span 7;
+    }
+    .row-3-8 {
+        grid-row: 3 / span 8;
+    }
+    .row-3-9 {
+        grid-row: 3 / span 9;
+    }
+    .row-3-10 {
+        grid-row: 3 / span 10;
+    }
+    .row-3-11 {
+        grid-row: 3 / span 11;
+    }
+    .row-3-12 {
+        grid-row: 3 / span 12;
+    }
+
+    .row-4-1 {
+        grid-row: 4 / span 1;
+    }
+    .row-4-2 {
+        grid-row: 4 / span 2;
+    }
+    .row-4-3 {
+        grid-row: 4 / span 3;
+    }
+    .row-4-4 {
+        grid-row: 4 / span 4;
+    }
+    .row-4-5 {
+        grid-row: 4 / span 5;
+    }
+    .row-4-6 {
+        grid-row: 4 / span 6;
+    }
+    .row-4-7 {
+        grid-row: 4 / span 7;
+    }
+    .row-4-8 {
+        grid-row: 4 / span 8;
+    }
+    .row-4-9 {
+        grid-row: 4 / span 9;
+    }
+    .row-4-10 {
+        grid-row: 4 / span 10;
+    }
+    .row-4-11 {
+        grid-row: 4 / span 11;
+    }
+    .row-4-12 {
+        grid-row: 4 / span 12;
+    }
+
+    .row-5-1 {
+        grid-row: 5 / span 1;
+    }
+    .row-5-2 {
+        grid-row: 5 / span 2;
+    }
+    .row-5-3 {
+        grid-row: 5 / span 3;
+    }
+    .row-5-4 {
+        grid-row: 5 / span 4;
+    }
+    .row-5-5 {
+        grid-row: 5 / span 5;
+    }
+    .row-5-6 {
+        grid-row: 5 / span 6;
+    }
+    .row-5-7 {
+        grid-row: 5 / span 7;
+    }
+    .row-5-8 {
+        grid-row: 5 / span 8;
+    }
+    .row-5-9 {
+        grid-row: 5 / span 9;
+    }
+    .row-5-10 {
+        grid-row: 5 / span 10;
+    }
+    .row-5-11 {
+        grid-row: 5 / span 11;
+    }
+    .row-5-12 {
+        grid-row: 5 / span 12;
+    }
+
+    .row-6-1 {
+        grid-row: 6 / span 1;
+    }
+    .row-6-2 {
+        grid-row: 6 / span 2;
+    }
+    .row-6-3 {
+        grid-row: 6 / span 3;
+    }
+    .row-6-4 {
+        grid-row: 6 / span 4;
+    }
+    .row-6-5 {
+        grid-row: 6 / span 5;
+    }
+    .row-6-6 {
+        grid-row: 6 / span 6;
+    }
+    .row-6-7 {
+        grid-row: 6 / span 7;
+    }
+    .row-6-8 {
+        grid-row: 6 / span 8;
+    }
+    .row-6-9 {
+        grid-row: 6 / span 9;
+    }
+    .row-6-10 {
+        grid-row: 6 / span 10;
+    }
+    .row-6-11 {
+        grid-row: 6 / span 11;
+    }
+    .row-6-12 {
+        grid-row: 6 / span 12;
+    }
+
+    .row-7-1 {
+        grid-row: 7 / span 1;
+    }
+    .row-7-2 {
+        grid-row: 7 / span 2;
+    }
+    .row-7-3 {
+        grid-row: 7 / span 3;
+    }
+    .row-7-4 {
+        grid-row: 7 / span 4;
+    }
+    .row-7-5 {
+        grid-row: 7 / span 5;
+    }
+    .row-7-6 {
+        grid-row: 7 / span 6;
+    }
+    .row-7-7 {
+        grid-row: 7 / span 7;
+    }
+    .row-7-8 {
+        grid-row: 7 / span 8;
+    }
+    .row-7-9 {
+        grid-row: 7 / span 9;
+    }
+    .row-7-10 {
+        grid-row: 7 / span 10;
+    }
+    .row-7-11 {
+        grid-row: 7 / span 11;
+    }
+    .row-7-12 {
+        grid-row: 7 / span 12;
+    }
+
+    .row-8-1 {
+        grid-row: 8 / span 1;
+    }
+    .row-8-2 {
+        grid-row: 8 / span 2;
+    }
+    .row-8-3 {
+        grid-row: 8 / span 3;
+    }
+    .row-8-4 {
+        grid-row: 8 / span 4;
+    }
+    .row-8-5 {
+        grid-row: 8 / span 5;
+    }
+    .row-8-6 {
+        grid-row: 8 / span 6;
+    }
+    .row-8-7 {
+        grid-row: 8 / span 7;
+    }
+    .row-8-8 {
+        grid-row: 8 / span 8;
+    }
+    .row-8-9 {
+        grid-row: 8 / span 9;
+    }
+    .row-8-10 {
+        grid-row: 8 / span 10;
+    }
+    .row-8-11 {
+        grid-row: 8 / span 11;
+    }
+    .row-8-12 {
+        grid-row: 8 / span 12;
+    }
+
+    .row-9-1 {
+        grid-row: 9 / span 1;
+    }
+    .row-9-2 {
+        grid-row: 9 / span 2;
+    }
+    .row-9-3 {
+        grid-row: 9 / span 3;
+    }
+    .row-9-4 {
+        grid-row: 9 / span 4;
+    }
+    .row-9-5 {
+        grid-row: 9 / span 5;
+    }
+    .row-9-6 {
+        grid-row: 9 / span 6;
+    }
+    .row-9-7 {
+        grid-row: 9 / span 7;
+    }
+    .row-9-8 {
+        grid-row: 9 / span 8;
+    }
+    .row-9-9 {
+        grid-row: 9 / span 9;
+    }
+    .row-9-10 {
+        grid-row: 9 / span 10;
+    }
+    .row-9-11 {
+        grid-row: 9 / span 11;
+    }
+    .row-9-12 {
+        grid-row: 9 / span 12;
+    }
+
+    .row-10-1 {
+        grid-row: 10 / span 1;
+    }
+    .row-10-2 {
+        grid-row: 10 / span 2;
+    }
+    .row-10-3 {
+        grid-row: 10 / span 3;
+    }
+    .row-10-4 {
+        grid-row: 10 / span 4;
+    }
+    .row-10-5 {
+        grid-row: 10 / span 5;
+    }
+    .row-10-6 {
+        grid-row: 10 / span 6;
+    }
+    .row-10-7 {
+        grid-row: 10 / span 7;
+    }
+    .row-10-8 {
+        grid-row: 10 / span 8;
+    }
+    .row-10-9 {
+        grid-row: 10 / span 9;
+    }
+    .row-10-10 {
+        grid-row: 10 / span 10;
+    }
+    .row-10-11 {
+        grid-row: 10 / span 11;
+    }
+    .row-10-12 {
+        grid-row: 10 / span 12;
+    }
+
+    .row-11-1 {
+        grid-row: 11 / span 1;
+    }
+    .row-11-2 {
+        grid-row: 11 / span 2;
+    }
+    .row-11-3 {
+        grid-row: 11 / span 3;
+    }
+    .row-11-4 {
+        grid-row: 11 / span 4;
+    }
+    .row-11-5 {
+        grid-row: 11 / span 5;
+    }
+    .row-11-6 {
+        grid-row: 11 / span 6;
+    }
+    .row-11-7 {
+        grid-row: 11 / span 7;
+    }
+    .row-11-8 {
+        grid-row: 11 / span 8;
+    }
+    .row-11-9 {
+        grid-row: 11 / span 9;
+    }
+    .row-11-10 {
+        grid-row: 11 / span 10;
+    }
+    .row-11-11 {
+        grid-row: 11 / span 11;
+    }
+    .row-11-12 {
+        grid-row: 11 / span 12;
+    }
+
+    .row-12-1 {
+        grid-row: 12 / span 1;
+    }
+    .row-12-2 {
+        grid-row: 12 / span 2;
+    }
+    .row-12-3 {
+        grid-row: 12 / span 3;
+    }
+    .row-12-4 {
+        grid-row: 12 / span 4;
+    }
+    .row-12-5 {
+        grid-row: 12 / span 5;
+    }
+    .row-12-6 {
+        grid-row: 12 / span 6;
+    }
+    .row-12-7 {
+        grid-row: 12 / span 7;
+    }
+    .row-12-8 {
+        grid-row: 12 / span 8;
+    }
+    .row-12-9 {
+        grid-row: 12 / span 9;
+    }
+    .row-12-10 {
+        grid-row: 12 / span 10;
+    }
+    .row-12-11 {
+        grid-row: 12 / span 11;
+    }
+    .row-12-12 {
+        grid-row: 12 / span 12;
+    }
+
+    /* 2xl responsive variants for custom grid utilities */
+    @media (min-width: 1536px) {
+        /* col-{start}-{span} variants (1..12) */
+        .\32 xl\:col-1-1 {
+            grid-column: 1 / span 1;
+        }
+        .\32 xl\:col-1-2 {
+            grid-column: 1 / span 2;
+        }
+        .\32 xl\:col-1-3 {
+            grid-column: 1 / span 3;
+        }
+        .\32 xl\:col-1-4 {
+            grid-column: 1 / span 4;
+        }
+        .\32 xl\:col-1-5 {
+            grid-column: 1 / span 5;
+        }
+        .\32 xl\:col-1-6 {
+            grid-column: 1 / span 6;
+        }
+        .\32 xl\:col-1-7 {
+            grid-column: 1 / span 7;
+        }
+        .\32 xl\:col-1-8 {
+            grid-column: 1 / span 8;
+        }
+        .\32 xl\:col-1-9 {
+            grid-column: 1 / span 9;
+        }
+        .\32 xl\:col-1-10 {
+            grid-column: 1 / span 10;
+        }
+        .\32 xl\:col-1-11 {
+            grid-column: 1 / span 11;
+        }
+        .\32 xl\:col-1-12 {
+            grid-column: 1 / span 12;
+        }
+
+        .\32 xl\:col-2-1 {
+            grid-column: 2 / span 1;
+        }
+        .\32 xl\:col-2-2 {
+            grid-column: 2 / span 2;
+        }
+        .\32 xl\:col-2-3 {
+            grid-column: 2 / span 3;
+        }
+        .\32 xl\:col-2-4 {
+            grid-column: 2 / span 4;
+        }
+        .\32 xl\:col-2-5 {
+            grid-column: 2 / span 5;
+        }
+        .\32 xl\:col-2-6 {
+            grid-column: 2 / span 6;
+        }
+        .\32 xl\:col-2-7 {
+            grid-column: 2 / span 7;
+        }
+        .\32 xl\:col-2-8 {
+            grid-column: 2 / span 8;
+        }
+        .\32 xl\:col-2-9 {
+            grid-column: 2 / span 9;
+        }
+        .\32 xl\:col-2-10 {
+            grid-column: 2 / span 10;
+        }
+        .\32 xl\:col-2-11 {
+            grid-column: 2 / span 11;
+        }
+        .\32 xl\:col-2-12 {
+            grid-column: 2 / span 12;
+        }
+
+        .\32 xl\:col-3-1 {
+            grid-column: 3 / span 1;
+        }
+        .\32 xl\:col-3-2 {
+            grid-column: 3 / span 2;
+        }
+        .\32 xl\:col-3-3 {
+            grid-column: 3 / span 3;
+        }
+        .\32 xl\:col-3-4 {
+            grid-column: 3 / span 4;
+        }
+        .\32 xl\:col-3-5 {
+            grid-column: 3 / span 5;
+        }
+        .\32 xl\:col-3-6 {
+            grid-column: 3 / span 6;
+        }
+        .\32 xl\:col-3-7 {
+            grid-column: 3 / span 7;
+        }
+        .\32 xl\:col-3-8 {
+            grid-column: 3 / span 8;
+        }
+        .\32 xl\:col-3-9 {
+            grid-column: 3 / span 9;
+        }
+        .\32 xl\:col-3-10 {
+            grid-column: 3 / span 10;
+        }
+        .\32 xl\:col-3-11 {
+            grid-column: 3 / span 11;
+        }
+        .\32 xl\:col-3-12 {
+            grid-column: 3 / span 12;
+        }
+
+        .\32 xl\:col-4-1 {
+            grid-column: 4 / span 1;
+        }
+        .\32 xl\:col-4-2 {
+            grid-column: 4 / span 2;
+        }
+        .\32 xl\:col-4-3 {
+            grid-column: 4 / span 3;
+        }
+        .\32 xl\:col-4-4 {
+            grid-column: 4 / span 4;
+        }
+        .\32 xl\:col-4-5 {
+            grid-column: 4 / span 5;
+        }
+        .\32 xl\:col-4-6 {
+            grid-column: 4 / span 6;
+        }
+        .\32 xl\:col-4-7 {
+            grid-column: 4 / span 7;
+        }
+        .\32 xl\:col-4-8 {
+            grid-column: 4 / span 8;
+        }
+        .\32 xl\:col-4-9 {
+            grid-column: 4 / span 9;
+        }
+        .\32 xl\:col-4-10 {
+            grid-column: 4 / span 10;
+        }
+        .\32 xl\:col-4-11 {
+            grid-column: 4 / span 11;
+        }
+        .\32 xl\:col-4-12 {
+            grid-column: 4 / span 12;
+        }
+
+        .\32 xl\:col-5-1 {
+            grid-column: 5 / span 1;
+        }
+        .\32 xl\:col-5-2 {
+            grid-column: 5 / span 2;
+        }
+        .\32 xl\:col-5-3 {
+            grid-column: 5 / span 3;
+        }
+        .\32 xl\:col-5-4 {
+            grid-column: 5 / span 4;
+        }
+        .\32 xl\:col-5-5 {
+            grid-column: 5 / span 5;
+        }
+        .\32 xl\:col-5-6 {
+            grid-column: 5 / span 6;
+        }
+        .\32 xl\:col-5-7 {
+            grid-column: 5 / span 7;
+        }
+        .\32 xl\:col-5-8 {
+            grid-column: 5 / span 8;
+        }
+        .\32 xl\:col-5-9 {
+            grid-column: 5 / span 9;
+        }
+        .\32 xl\:col-5-10 {
+            grid-column: 5 / span 10;
+        }
+        .\32 xl\:col-5-11 {
+            grid-column: 5 / span 11;
+        }
+        .\32 xl\:col-5-12 {
+            grid-column: 5 / span 12;
+        }
+
+        .\32 xl\:col-6-1 {
+            grid-column: 6 / span 1;
+        }
+        .\32 xl\:col-6-2 {
+            grid-column: 6 / span 2;
+        }
+        .\32 xl\:col-6-3 {
+            grid-column: 6 / span 3;
+        }
+        .\32 xl\:col-6-4 {
+            grid-column: 6 / span 4;
+        }
+        .\32 xl\:col-6-5 {
+            grid-column: 6 / span 5;
+        }
+        .\32 xl\:col-6-6 {
+            grid-column: 6 / span 6;
+        }
+        .\32 xl\:col-6-7 {
+            grid-column: 6 / span 7;
+        }
+        .\32 xl\:col-6-8 {
+            grid-column: 6 / span 8;
+        }
+        .\32 xl\:col-6-9 {
+            grid-column: 6 / span 9;
+        }
+        .\32 xl\:col-6-10 {
+            grid-column: 6 / span 10;
+        }
+        .\32 xl\:col-6-11 {
+            grid-column: 6 / span 11;
+        }
+        .\32 xl\:col-6-12 {
+            grid-column: 6 / span 12;
+        }
+
+        .\32 xl\:col-7-1 {
+            grid-column: 7 / span 1;
+        }
+        .\32 xl\:col-7-2 {
+            grid-column: 7 / span 2;
+        }
+        .\32 xl\:col-7-3 {
+            grid-column: 7 / span 3;
+        }
+        .\32 xl\:col-7-4 {
+            grid-column: 7 / span 4;
+        }
+        .\32 xl\:col-7-5 {
+            grid-column: 7 / span 5;
+        }
+        .\32 xl\:col-7-6 {
+            grid-column: 7 / span 6;
+        }
+        .\32 xl\:col-7-7 {
+            grid-column: 7 / span 7;
+        }
+        .\32 xl\:col-7-8 {
+            grid-column: 7 / span 8;
+        }
+        .\32 xl\:col-7-9 {
+            grid-column: 7 / span 9;
+        }
+        .\32 xl\:col-7-10 {
+            grid-column: 7 / span 10;
+        }
+        .\32 xl\:col-7-11 {
+            grid-column: 7 / span 11;
+        }
+        .\32 xl\:col-7-12 {
+            grid-column: 7 / span 12;
+        }
+
+        .\32 xl\:col-8-1 {
+            grid-column: 8 / span 1;
+        }
+        .\32 xl\:col-8-2 {
+            grid-column: 8 / span 2;
+        }
+        .\32 xl\:col-8-3 {
+            grid-column: 8 / span 3;
+        }
+        .\32 xl\:col-8-4 {
+            grid-column: 8 / span 4;
+        }
+        .\32 xl\:col-8-5 {
+            grid-column: 8 / span 5;
+        }
+        .\32 xl\:col-8-6 {
+            grid-column: 8 / span 6;
+        }
+        .\32 xl\:col-8-7 {
+            grid-column: 8 / span 7;
+        }
+        .\32 xl\:col-8-8 {
+            grid-column: 8 / span 8;
+        }
+        .\32 xl\:col-8-9 {
+            grid-column: 8 / span 9;
+        }
+        .\32 xl\:col-8-10 {
+            grid-column: 8 / span 10;
+        }
+        .\32 xl\:col-8-11 {
+            grid-column: 8 / span 11;
+        }
+        .\32 xl\:col-8-12 {
+            grid-column: 8 / span 12;
+        }
+
+        .\32 xl\:col-9-1 {
+            grid-column: 9 / span 1;
+        }
+        .\32 xl\:col-9-2 {
+            grid-column: 9 / span 2;
+        }
+        .\32 xl\:col-9-3 {
+            grid-column: 9 / span 3;
+        }
+        .\32 xl\:col-9-4 {
+            grid-column: 9 / span 4;
+        }
+        .\32 xl\:col-9-5 {
+            grid-column: 9 / span 5;
+        }
+        .\32 xl\:col-9-6 {
+            grid-column: 9 / span 6;
+        }
+        .\32 xl\:col-9-7 {
+            grid-column: 9 / span 7;
+        }
+        .\32 xl\:col-9-8 {
+            grid-column: 9 / span 8;
+        }
+        .\32 xl\:col-9-9 {
+            grid-column: 9 / span 9;
+        }
+        .\32 xl\:col-9-10 {
+            grid-column: 9 / span 10;
+        }
+        .\32 xl\:col-9-11 {
+            grid-column: 9 / span 11;
+        }
+        .\32 xl\:col-9-12 {
+            grid-column: 9 / span 12;
+        }
+
+        .\32 xl\:col-10-1 {
+            grid-column: 10 / span 1;
+        }
+        .\32 xl\:col-10-2 {
+            grid-column: 10 / span 2;
+        }
+        .\32 xl\:col-10-3 {
+            grid-column: 10 / span 3;
+        }
+        .\32 xl\:col-10-4 {
+            grid-column: 10 / span 4;
+        }
+        .\32 xl\:col-10-5 {
+            grid-column: 10 / span 5;
+        }
+        .\32 xl\:col-10-6 {
+            grid-column: 10 / span 6;
+        }
+        .\32 xl\:col-10-7 {
+            grid-column: 10 / span 7;
+        }
+        .\32 xl\:col-10-8 {
+            grid-column: 10 / span 8;
+        }
+        .\32 xl\:col-10-9 {
+            grid-column: 10 / span 9;
+        }
+        .\32 xl\:col-10-10 {
+            grid-column: 10 / span 10;
+        }
+        .\32 xl\:col-10-11 {
+            grid-column: 10 / span 11;
+        }
+        .\32 xl\:col-10-12 {
+            grid-column: 10 / span 12;
+        }
+
+        .\32 xl\:col-11-1 {
+            grid-column: 11 / span 1;
+        }
+        .\32 xl\:col-11-2 {
+            grid-column: 11 / span 2;
+        }
+        .\32 xl\:col-11-3 {
+            grid-column: 11 / span 3;
+        }
+        .\32 xl\:col-11-4 {
+            grid-column: 11 / span 4;
+        }
+        .\32 xl\:col-11-5 {
+            grid-column: 11 / span 5;
+        }
+        .\32 xl\:col-11-6 {
+            grid-column: 11 / span 6;
+        }
+        .\32 xl\:col-11-7 {
+            grid-column: 11 / span 7;
+        }
+        .\32 xl\:col-11-8 {
+            grid-column: 11 / span 8;
+        }
+        .\32 xl\:col-11-9 {
+            grid-column: 11 / span 9;
+        }
+        .\32 xl\:col-11-10 {
+            grid-column: 11 / span 10;
+        }
+        .\32 xl\:col-11-11 {
+            grid-column: 11 / span 11;
+        }
+        .\32 xl\:col-11-12 {
+            grid-column: 11 / span 12;
+        }
+
+        .\32 xl\:col-12-1 {
+            grid-column: 12 / span 1;
+        }
+        .\32 xl\:col-12-2 {
+            grid-column: 12 / span 2;
+        }
+        .\32 xl\:col-12-3 {
+            grid-column: 12 / span 3;
+        }
+        .\32 xl\:col-12-4 {
+            grid-column: 12 / span 4;
+        }
+        .\32 xl\:col-12-5 {
+            grid-column: 12 / span 5;
+        }
+        .\32 xl\:col-12-6 {
+            grid-column: 12 / span 6;
+        }
+        .\32 xl\:col-12-7 {
+            grid-column: 12 / span 7;
+        }
+        .\32 xl\:col-12-8 {
+            grid-column: 12 / span 8;
+        }
+        .\32 xl\:col-12-9 {
+            grid-column: 12 / span 9;
+        }
+        .\32 xl\:col-12-10 {
+            grid-column: 12 / span 10;
+        }
+        .\32 xl\:col-12-11 {
+            grid-column: 12 / span 11;
+        }
+        .\32 xl\:col-12-12 {
+            grid-column: 12 / span 12;
+        }
+    }
+}

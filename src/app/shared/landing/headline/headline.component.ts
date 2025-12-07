@@ -8,26 +8,28 @@ import { gsap } from 'gsap';
 })
 export class HeadlineComponent implements OnInit, AfterViewInit {
     public headlineText: string = 'Hello';
+    public headlineLetters: string[] = [];
 
     ngOnInit(): void {
         this.generateHeadline();
+        this.headlineLetters = this.headlineText.split('');
     }
 
-    // TODO Fade In GSAP Animation
-
     ngAfterViewInit(): void {
-        // simple fade-in from bottom with a stagger between h1 and h2
-        const els = Array.from(
-            document.querySelectorAll('.headline-title, .headline-sub')
-        ) as HTMLElement[];
-        if (els.length) {
-            gsap.from(els, {
-                y: 12,
-                opacity: 0,
-                stagger: 0.12,
-                duration: 0.55,
-                ease: 'power2.out'
-            });
+        const headlineEl = document.querySelector('.headline-animated');
+        if (headlineEl) {
+            const letters = headlineEl.querySelectorAll('.letter');
+            gsap.fromTo(
+                letters,
+                { y: 5, opacity: 0.0125 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.75,
+                    stagger: 0.0125,
+                    ease: 'power1.in'
+                }
+            );
         }
     }
 
