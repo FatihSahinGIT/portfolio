@@ -8,26 +8,38 @@ import { gsap } from 'gsap';
 })
 export class HeadlineComponent implements OnInit, AfterViewInit {
     public headlineText: string = 'Hello';
-    public headlineLetters: string[] = [];
 
     ngOnInit(): void {
         this.generateHeadline();
-        this.headlineLetters = this.headlineText.split('');
     }
 
     ngAfterViewInit(): void {
         const headlineEl = document.querySelector('.headline-animated');
         if (headlineEl) {
-            const letters = headlineEl.querySelectorAll('.letter');
             gsap.fromTo(
-                letters,
-                { y: 5, opacity: 0.0125 },
+                headlineEl,
+                { y: 3, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
                     duration: 0.75,
                     stagger: 0.0125,
                     ease: 'power1.in'
+                }
+            );
+        }
+
+        const subheadlineEl = document.querySelector('.subheadline-animated');
+        if (subheadlineEl) {
+            gsap.fromTo(
+                subheadlineEl,
+                { y: 5, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    delay: 0.5,
+                    ease: 'power1.out'
                 }
             );
         }
