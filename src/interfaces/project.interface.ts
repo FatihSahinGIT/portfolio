@@ -3,35 +3,21 @@ export interface Project {
     name: string;
     images: {
         selected: {
-            src: string;
+            url: string;
             figcaption: string;
         }
-        introduction: {
-            src: string;
-            figcaption: string;
-        };
-        smartphone: {
-            src: string;
-            figcaption: string;
-        };
-        tablet: {
-            src: string;
-            figcaption: string;
-        };
-        desktop: {
-            src: string;
-            figcaption: string;
-        }
-    };
+        others: string[];
+    } 
+    url: string;
     alttext: string;
     timeframe: string;
     tools: string[];
-    year: number;
+    year: string;
     texts: {
         introduction: string;
         role?: string;
-        technology?: string;
+        technologies?: string;
         challenges?: string;
-        takeaway?: string;
+        takeaways?: string;
     };
 }

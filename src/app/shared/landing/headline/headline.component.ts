@@ -43,6 +43,23 @@ export class HeadlineComponent implements OnInit, AfterViewInit {
                 }
             );
         }
+
+        const headlineSeperatorEl = document.querySelector(
+            '.headline__seperator'
+        );
+        if (headlineSeperatorEl) {
+            gsap.fromTo(
+                headlineSeperatorEl,
+                { width: 0, opacity: 0.2 },
+                {
+                    width: '100%',
+                    opacity: 1,
+                    duration: 1.5,
+                    delay: 0.5,
+                    ease: 'power2.out'
+                }
+            );
+        }
     }
 
     private generateHeadline(): void {

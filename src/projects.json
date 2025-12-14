@@ -1,0 +1,50 @@
+{
+    "projects": [
+        {
+            "company": "kv.digital",
+            "name": "kv.digital",
+            "images": {
+                "selected": {
+                    "url": "/project-images/kv.digital/selected/kv.digital.webp",
+                    "figcaption": "Appointment booking service"
+                },
+                "others": []
+            },
+            "url": "https://kv.digital",
+            "alttext": "kv.digital website screenshots",
+            "timeframe": "Present",
+            "tools": ["Angular", "Figma", "Storybook", "SonarQube", "Jenkins"],
+            "year": "2023",
+            "texts": {
+                "introduction": "kv.digital is a digital agency specializing in web development and design.",
+                "role": "Lead Frontend Developer responsible for developing and maintaining the company website.",
+                "technologies": "Utilized Angular for frontend development, Figma for design collaboration, Storybook for UI component development, SonarQube for code quality analysis, and Jenkins for continuous integration and deployment.",
+                "challenges": "Ensured cross-browser compatibility and optimized performance for a seamless user experience.",
+                "takeaways": "Gained experience in leading a development team and implementing best practices in web development."
+            }
+        },
+        {
+            "company": "interval",
+            "name": "InterVal",
+            "images": {
+                "selected": {
+                    "url": "/project-images/interval/selected/interval.webp",
+                    "figcaption": "Appointment booking service"
+                },
+                "others": []
+            },
+            "url": "https://interval-berlin.de",
+            "alttext": "kv.digital website screenshots",
+            "timeframe": "July 2022 - September 2022",
+            "tools": ["Gutenberg", "CSS", "Figma", "HTML", "CMS"],
+            "year": "2023",
+            "texts": {
+                "introduction": "kv.digital is a digital agency specializing in web development and design.",
+                "role": "Lead Frontend Developer responsible for developing and maintaining the company website.",
+                "technologies": "Utilized Angular for frontend development, Figma for design collaboration, Storybook for UI component development, SonarQube for code quality analysis, and Jenkins for continuous integration and deployment.",
+                "challenges": "Ensured cross-browser compatibility and optimized performance for a seamless user experience.",
+                "takeaways": "Gained experience in leading a development team and implementing best practices in web development."
+            }
+        }
+    ]
+}
