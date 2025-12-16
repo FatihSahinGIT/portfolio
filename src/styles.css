@@ -99,3 +99,12 @@ button {
     width: 100%;
     grid-column: var(--position-1-end, 1 / -1);
 }
+
+.competency-list-item__index {
+    @apply xs:mr-2 md:mr-6;
+    color: var(--text-muted);
+}
+
+.about-competencies__list ul li {
+    @apply xs:text-3xl md:text-6xl;
+}
