@@ -1,12 +1,12 @@
-<div class="about-wrapper mt-20 grid">
-    <div class="about-headline grid-child md:row-1-8 xs:col-1-12 md:col-1-7">
+<section class="about-wrapper mt-20 grid" aria-labelledby="about-name">
+    <header class="about-headline grid-child md:row-1-8 xs:col-1-12 md:col-1-7">
         <div class="flex justify-between xs:flex-col xs:gap-4 md:flex-row">
             <div class="about-headline__name">
-                <h1>Fatih Sahin</h1>
-                <h2>Frontend Developer</h2>
+                <h1 id="about-name">Fatih Sahin</h1>
+                <p class="h2">Frontend Developer</p>
             </div>
 
-            <div
+            <figure
                 class="about-headline__image xs:h-auto xs:w-auto md:h-96 md:w-96"
             >
                 <img
@@ -14,120 +14,190 @@
                     src="/about-images/portrait.jpg"
                     alt="Fatih Sahin Profile Picture"
                 />
-            </div>
+            </figure>
         </div>
-    </div>
+    </header>
 
-    <div
+    <section
         class="about-qualifications grid-child md:col-9-4 xs:col-1-12 xs:row-2-12 xs:mt-4 md:mt-0"
+        aria-labelledby="qualifications-heading"
     >
         <div>
-            <h1>Qualifications</h1>
+            <h2 id="qualifications-heading" class="h1">Qualifications</h2>
 
             <div class="mt-4.5">
                 <ul class="space-y-4">
                     <li
                         class="flex justify-between border-b-2 border-gray-300 pb-2 text-xl text-neutral-500"
                     >
-                        <span>ANGULARarchitects</span>
-                        <span>2025</span>
+                        <span
+                            ><a
+                                href="https://www.angulararchitects.io/"
+                                target="_blank"
+                                class="underline-offset-4 hover:underline hover:ease-in-out"
+                                >ANGULARarchitects</a
+                            ></span
+                        >
+                        <time datetime="2025">2025</time>
                     </li>
                     <li
                         class="flex justify-between border-b-2 border-gray-300 pb-2 text-xl text-neutral-500"
                     >
-                        <span>Angular School</span>
-                        <span>2024</span>
+                        <span
+                            ><a
+                                href="https://angular.schule/"
+                                target="_blank"
+                                class="underline-offset-4 hover:underline hover:ease-in-out"
+                                >Angular Schule</a
+                            ></span
+                        >
+                        <time datetime="2024">2024</time>
                     </li>
                     <li
                         class="flex justify-between border-b-2 border-gray-300 pb-2 text-xl text-neutral-500"
                     >
-                        <span>Bachelor of Science in Media Informatics</span>
-                        <span>2017-2023</span>
+                        <span
+                            ><a
+                                class="underline-offset-4 hover:underline hover:ease-in-out"
+                                href="https://www.bht-berlin.de/b-mi"
+                                target="_blank"
+                            >
+                                Bachelor of Science in Media Informatics</a
+                            ></span
+                        >
+                        <span>
+                            <time datetime="2017">2017</time>&ndash;<time
+                                datetime="2023"
+                                >2023</time
+                            >
+                        </span>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div
-        class="about-text grid-child md:row-8-8 md:col-1-7 xs:col-1-12 xs:mt-4"
+    <section
+        class="about-text grid-child md:row-8-8 md:col-1-7 xs:col-1-12 xs:mt-4 md:h-full"
+        aria-labelledby="about-heading"
     >
         <div class="about-text__container gap-4.5 flex xs:flex-col">
-            <h1 class="about-text__headline">About</h1>
+            <h2 class="about-text__headline h1" id="about-heading">About</h2>
 
-            <h2 class="gap-4.5 flex flex-col">
-                <span>
+            <div class="gap-4.5 flex flex-col">
+                <p class="h2">
                     I am Fatih Sahin, a 25-year-old frontend developer based in
                     Berlin, Germany. I specialize in building modern, responsive
                     web applications with a strong focus on usability,
                     performance, and thoughtful design.
-                </span>
+                </p>
 
-                <span>
+                <p class="h2">
                     My fascination with frontend development comes from its role
                     as the bridge between design and code — the place where
                     ideas become real, interactive experiences. I care deeply
                     about accessibility and aim to create interfaces that are
                     intuitive, inclusive, and feel naturally “right” to use.
-                </span>
-            </h2>
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="about-competencies grid-child col-1-12 xs:row-3-12 xs:h-full md:h-screen">
+    <section
+        class="about-competencies grid-child col-1-12 xs:row-3-12 xs:my-10 xs:h-full md:my-0 md:h-screen"
+        aria-labelledby="competencies-heading"
+    >
         <div
             class="about-competencies__container flex h-full flex-col justify-center"
         >
-            <h1>Competencies</h1>
+            <h2 id="competencies-heading" class="h1">Competencies</h2>
             <div
                 class="about-competencies__list mt-4 flex w-1/2 flex-wrap items-center justify-between"
             >
                 <ul>
                     <li>
-                        <span class="competency-list-item__index">01</span
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >01</span
                         >Accessibility
                     </li>
                     <li>
-                        <span class="competency-list-item__index">02</span
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >02</span
                         >Angular
                     </li>
                     <li>
-                        <span class="competency-list-item__index">03</span>CMS
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >03</span
+                        >CMS
                     </li>
                     <li>
-                        <span class="competency-list-item__index">04</span>Figma
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >04</span
+                        >Figma
                     </li>
                     <li>
-                        <span class="competency-list-item__index">05</span
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >05</span
                         >HTML/CSS
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <span class="competency-list-item__index">06</span>JIRA
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >06</span
+                        >JIRA
                     </li>
                     <li>
-                        <span class="competency-list-item__index">07</span>Jest
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >07</span
+                        >Jest
                     </li>
                     <li>
-                        <span class="competency-list-item__index">08</span>React
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >08</span
+                        >React
                     </li>
                     <li>
-                        <span class="competency-list-item__index">09</span
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >09</span
                         >SonarQube
                     </li>
                     <li>
-                        <span class="competency-list-item__index">10</span
+                        <span
+                            class="competency-list-item__index"
+                            aria-hidden="true"
+                            >10</span
                         >Storybook
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="about-experience grid-child col-1-12 row-12-12">
+    <section
+        class="about-experience grid-child col-1-12 row-12-12"
+        aria-labelledby="experience-heading"
+    >
         <div class="about-experience__container">
-            <h1>Experience</h1>
+            <h2 id="experience-heading" class="h1">Experience</h2>
 
             <div class="about-experience__list">
                 <div class="mt-4.5">
@@ -135,18 +205,34 @@
                         <li
                             class="flex justify-between border-b-2 border-gray-300 pb-2 text-xl text-neutral-500"
                         >
-                            <span>kv.digital</span>
-                            <span>2023 - present</span>
+                            <span>
+                                <a
+                                    class="underline-offset-4 hover:underline hover:ease-in-out"
+                                    href="https://www.kv.digital/"
+                                    target="_blank"
+                                    >kv.digital</a
+                                >
+                            </span>
+                            <span>
+                                <time datetime="2023">2023</time> - present
+                            </span>
                         </li>
                         <li
                             class="flex justify-between border-b-2 border-gray-300 pb-2 text-xl text-neutral-500"
                         >
-                            <span>InterVal</span>
-                            <span>2022</span>
+                            <span>
+                                <a
+                                    class="underline-offset-4 hover:underline hover:ease-in-out"
+                                    href="https://www.interval-berlin.de/"
+                                    target="_blank"
+                                    >InterVal</a
+                                >
+                            </span>
+                            <time datetime="2022">2022</time>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</section>
