@@ -9,7 +9,7 @@
             aria-label="Technologies used"
         >
             @for (tools of tools; track tools) {
-            <li class="selected-work-item__tool">{{ tools }}</li>
+                <li class="selected-work-item__tool">{{ tools }}</li>
             }
         </ul>
     </section>
@@ -20,10 +20,14 @@
             [alt]="imageAlt"
             class="selected-work-item__img rounded-md object-cover lg:max-h-[70vh]"
         />
-        <figcaption class="">
-            <span class="text-xs font-medium text-black">{{name}}</span>
+        <figcaption>
+            <span class="selected-work-box__figcaption-company-name">{{
+                name
+            }}</span>
             -
-            <span class="text-xs font-medium text-gray-500">{{imageAlt}}</span>
+            <span class="selected-work-box__figcaption-image-alt">{{
+                imageAlt
+            }}</span>
         </figcaption>
     </figure>
 </article>

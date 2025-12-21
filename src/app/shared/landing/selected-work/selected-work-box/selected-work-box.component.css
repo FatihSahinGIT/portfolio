@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+.selected-work-box__figcaption-company-name {
+    color: var(--text);
+    @apply text-xs;
+    @apply font-medium;
+}
+
+.selected-work-box__figcaption-image-alt {
+    color: var(--text-muted);
+    @apply text-xs;
+    @apply font-medium;
+}

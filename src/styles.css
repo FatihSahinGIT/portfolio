@@ -98,6 +98,8 @@ button {
     @apply hover:underline;
 }
 
+
+
 .about-qualification__item {
     color: var(--text-muted);
     border-color: var(--text-muted);
@@ -112,6 +114,18 @@ button {
     @apply tracking-[-0.04em];
     @apply text-xl;
 }
+
+/* .selected-work-box__figcaption-image-alt {
+    color: var(--text-muted);
+    @apply text-xs;
+    @apply font-medium;
+}
+
+.selected-work-box__figcaption-company-name {
+    color: var(--text);
+    @apply text-xs;
+    @apply font-medium;
+} */
 
 .seperator {
     border: 1px solid var(--border);
