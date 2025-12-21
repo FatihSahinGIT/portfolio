@@ -11,6 +11,11 @@ export const routes: Routes = [
         path: 'about',
         loadComponent: () => import('./shared/about/wrapper/wrapper.component').then(m => m.WrapperComponent),
         title: 'About - Fatih Sahin',
+    },
+    {
+        path: 'work',
+        loadComponent: () => import('./shared/work/wrapper/work-wrapper.component').then(m => m.WorkWrapperComponent),
+        title: 'Work - Fatih Sahin',
     }
 ];
 
