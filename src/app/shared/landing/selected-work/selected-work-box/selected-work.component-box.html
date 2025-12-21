@@ -9,11 +9,7 @@
             aria-label="Technologies used"
         >
             @for (tools of tools; track tools) {
-            <li
-                class="selected-work-item__tool text-xl font-medium tracking-[-0.04em] text-gray-500"
-            >
-                {{ tools }}
-            </li>
+            <li class="selected-work-item__tool">{{ tools }}</li>
             }
         </ul>
     </section>

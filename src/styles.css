@@ -41,10 +41,10 @@ body.dark {
 
     /* = Text = */
     --text: hsl(100, 100%, 100%);
-    --text-muted: hsl(0, 0%, 46%);
+    --text-muted: hsl(0, 0%, 50%);
 
     /* = Border & Gradient */
-    --border: hsl(0, 0%, 80%);
+    --border: hsl(0, 0%, 50%);
     --border-card: 1px solid var(--border);
     --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
     --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
@@ -96,6 +96,21 @@ button {
     @apply cursor-pointer;
     @apply underline-offset-4;
     @apply hover:underline;
+}
+
+.about-qualification__item {
+    color: var(--text-muted);
+    border-color: var(--text-muted);
+    @apply border-b-2;
+    @apply pb-2;
+    @apply text-xl;
+}
+
+.selected-work-item__tool {
+    color: var(--text-muted);
+    border-color: var(--text-muted);
+    @apply tracking-[-0.04em];
+    @apply text-xl;
 }
 
 .seperator {
