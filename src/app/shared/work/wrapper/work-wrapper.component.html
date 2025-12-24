@@ -5,6 +5,8 @@
     <work-images  class="grid-cild col-1-9"/>
     <work-text class="grid-child col-10-12"/>
 
-    <work-task class="grid-child col-1-12"/>
-    <work-outcome class="grid-child col-1-12"/>
+
+    @for (index of [0, 1]; track index) {
+        <work-details class="grid-child col-1-12"  [headline]="index % 2 === 0 ? 'Task' : 'Outcome'" [text]="lorem"></work-details>
+    }
 </section>
