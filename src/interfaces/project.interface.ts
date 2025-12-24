@@ -21,3 +21,15 @@ export interface Project {
         takeaways?: string;
     };
 }
+
+export interface ProjectImage {
+    url: string;
+    figcaption: string;
+}
+
+export interface ProjectImages {
+    smartphone?: ProjectImage;
+    tablet?: ProjectImage;
+    selected?: ProjectImage;
+    others?: ProjectImage[];
+}

@@ -1,12 +1,14 @@
-<section class="work-wrapper grid mt-20">
+<section class="work-wrapper mt-20 grid">
+    <work-information class="grid-child col-1-9" [projectName]="projectSignal()?.project" [clientName]="projectSignal()?.name" [projectDate]="projectSignal()?.year" [roleName]="projectSignal()?.role" [projectUrl]="projectSignal()?.url" />
 
-    <work-information class="grid-child col-1-9"/>
+    <work-images class="grid-cild col-1-9" [images]="projectSignal()?.images" />
+    <work-text class="grid-child col-10-12" />
 
-    <work-images  class="grid-cild col-1-9"/>
-    <work-text class="grid-child col-10-12"/>
-
-
-    @for (index of [0, 1]; track index) {
-        <work-details class="grid-child col-1-12"  [headline]="index % 2 === 0 ? 'Task' : 'Outcome'" [text]="lorem"></work-details>
+    @for (project of projects; track project.name; let i = $index) {
+        <work-details
+            class="grid-child col-1-12"
+            [headline]="i % 2 === 0 ? 'Task' : 'Outcome'"
+            [text]="lorem"
+        ></work-details>
     }
 </section>

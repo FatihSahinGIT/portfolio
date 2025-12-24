@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'work-information',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
     styleUrl: './work-information.component.css',
     imports: []
 })
-export class WorkInformationComponent {}
+export class WorkInformationComponent {
+    @Input() projectName!: string;
+    @Input() clientName!: string;
+    @Input() projectDate!: string;
+    @Input() roleName!: string;
+    @Input() projectUrl!: string;
+}

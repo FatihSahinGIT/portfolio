@@ -14,7 +14,10 @@
         </ul>
     </section>
 
-    <figure class="selected-work-item__image flex flex-col gap-1">
+    <figure
+        class="selected-work-item__image flex flex-col gap-1"
+        (click)="navigateToProject($event)"
+    >
         <img
             [src]="imageUrl"
             [alt]="imageAlt"

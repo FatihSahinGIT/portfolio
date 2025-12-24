@@ -1,6 +1,18 @@
 <section class="work-images">
-    <div class="work-images__container flex flex-row h-max gap-6">
-        <div class="bg-gray-500 h-150 w-full"></div>
-        <div class="bg-gray-500 h-150 w-full"></div>
+    <div class="work-images__container flex h-max flex-row gap-6">
+        @for (image of deviceImages; track image.url) {
+            <figure class="work-images__figure w-max">
+                <img
+                    class="work-images__img h-full max-w-full"
+                    [src]="image.url"
+                    [alt]="image.figcaption"
+                />
+                <figcaption
+                    class="work-images__figcaption mt-2 text-start text-sm"
+                >
+                    {{ image.figcaption }}
+                </figcaption>
+            </figure>
+        }
     </div>
 </section>
