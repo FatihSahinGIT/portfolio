@@ -24,23 +24,21 @@
             "alttext": "kv.digital website screenshots",
             "timeframe": "Present",
             "tools": ["Angular", "Figma", "Storybook", "SonarQube", "Jenkins"],
-            "year": "2023",
+            "year": "2023 - present",
             "texts": {
-                "introduction": "kv.digital is a digital agency specializing in web development and design.",
-                "role": "Lead Frontend Developer responsible for developing and maintaining the company website.",
-                "technologies": "Utilized Angular for frontend development, Figma for design collaboration, Storybook for UI component development, SonarQube for code quality analysis, and Jenkins for continuous integration and deployment.",
-                "challenges": "Ensured cross-browser compatibility and optimized performance for a seamless user experience.",
-                "takeaways": "Gained experience in leading a development team and implementing best practices in web development."
+                "introduction": "The appointment booking service by kv.digital is a central digital solution designed to simplify and improve access to medical appointments within Germany’s statutory healthcare system. Its main purpose is to connect patients, medical practices, and the regional Associations of Statutory Health Insurance Physicians through a secure and easy-to-use platform. Through the well-known 116117 appointment service, patients can search for and book available appointments with doctors or psychotherapists online, via app, or by phone. \n \n This reduces long waiting times, eliminates the need for repeated phone calls, and makes healthcare access more transparent and convenient. Patients can also manage their appointments digitally by viewing, rescheduling, or canceling them when needed. \n \n For medical practices, the service acts as a digital appointment management tool that helps organize available time slots and reduce administrative workload. By centralizing appointment allocation and offering real-time availability, the system improves efficiency, supports fair distribution of appointments, and strengthens the overall digital infrastructure of outpatient healthcare in Germany",
+                "task": "As a frontend developer working on digital appointment booking services at kv.digital, my role focuses on building stable, accessible, and user-friendly web applications that support critical healthcare workflows. Using Angular as the main framework, I develop and maintain complex, component-based user interfaces for appointment search, booking, and management, ensuring that the applications are performant, scalable, and easy to use for a wide range of users. I translate design concepts and interaction flows from Figma into clean, reusable Angular components while closely following accessibility guidelines and design system standards. \n \n To ensure long-term quality and reliability, I write and maintain automated tests with Jest, covering core user interactions and business logic, and document UI components in Storybook to enable isolated development, visual testing, and better collaboration with designers and stakeholders. \n \nThe development workflow is tightly integrated into CI/CD pipelines powered by Jenkins, where builds, tests, and quality checks run automatically on every change. Code quality, security, and maintainability are continuously monitored with SonarQube, helping identify potential issues early and reduce technical debt. Task planning, implementation, and cross-functional collaboration are organized through JIRA, allowing me to work efficiently with product owners, backend developers, QA, and design teams. Overall, my work combines technical implementation, quality assurance, and close collaboration to deliver robust frontend solutions that make medical appointment booking more efficient, reliable, and accessible within the German healthcare system.",
+                "outcome": "The outcome of my work in this role is the delivery of robust, scalable, and consistently high-quality frontend solutions across multiple applications provided by kv.digital. Working within an Nx-based monorepo, one of the key challenges is building and maintaining shared, well-tested components that function reliably across all applications while still supporting different product requirements. By contributing to a unified codebase, I help ensure consistency, reusability, and long-term maintainability throughout the frontend landscape. \n \n A key part of this outcome is close collaboration with designers, including deep discussions around user flows, visual details, and accessibility. This ensures that design decisions translate into implementations that are not only technically robust but also user-friendly, visually appealing, and accessible, resulting in applications that meet both high usability standards and the reliability demands of digital healthcare services."
             }
         },
         {
             "company": "interval",
             "name": "InterVal",
-            "project": "Landing Page Redesign",
+            "project": "Online Presence Redesign",
             "images": {
                 "selected": {
                     "url": "/project-images/interval/selected/interval.webp",
-                    "figcaption": "Appointment booking service"
+                    "figcaption": "Online Presence redesign"
                 },
                 "smartphone": {
                     "url": "/project-images/interval/smartphone/interval-smartphone.webp",
@@ -52,18 +50,16 @@
                 },
                 "others": []
             },
-            "role": "Webentwickler",
+            "role": "Webdesigner",
             "url": "https://interval-berlin.de",
             "alttext": "kv.digital website screenshots",
             "timeframe": "July 2022 - September 2022",
             "tools": ["Gutenberg", "CSS", "Figma", "HTML", "CMS"],
-            "year": "2023",
+            "year": "July 2022 - September 2022",
             "texts": {
-                "introduction": "kv.digital is a digital agency specializing in web development and design.",
-                "role": "Lead Frontend Developer responsible for developing and maintaining the company website.",
-                "technologies": "Utilized Angular for frontend development, Figma for design collaboration, Storybook for UI component development, SonarQube for code quality analysis, and Jenkins for continuous integration and deployment.",
-                "challenges": "Ensured cross-browser compatibility and optimized performance for a seamless user experience.",
-                "takeaways": "Gained experience in leading a development team and implementing best practices in web development."
+                "introduction": "InterVal is a Berlin-based research and policy consulting firm that conducts empirical studies and evaluations to support public institutions, ministries, authorities, and foundations in Germany. The company combines qualitative and quantitative research methods to analyze model projects, social programs, institutions, and legislation across a diverse set of social and policy areas — including labor markets, vocational education, demographic change and social participation, digitalization, legal evaluations, health and rehabilitation, equality and diversity, higher education research, innovation policy, integration and skilled immigration, early childhood literacy, and schooling. \n \n InterVal’s work is characterized by interdisciplinary, empirically grounded analysis that aims to provide evidence-based insights and recommendations to inform decision-making in public policy and social programs. With participation in more than 150 research projects, the organization evaluates the effectiveness and implementation of initiatives such as federal and state programs, funding measures, and policy frameworks, helping clients understand outcomes and improve future interventions. ",
+                "task": "As part of a student job at InterVal GmbH, my main task was the complete redesign of the company website. Based on a provided theme from Portvier, I restructured and rebuilt the site using a CMS and the Gutenberg editor, ensuring that content could be easily managed and extended by non-technical users. During the implementation, I translated the new visual concept into a clean and consistent layout, adapting components and page structures to fit the organization’s needs. \n \n Beyond the technical redesign, I proactively suggested improvements to the overall design and user experience, with a strong focus on accessibility, clarity, and readability. This included refining color contrasts, typography, and layout decisions to make the website more user-friendly and inclusive, resulting in a modernized web presence that better reflects the organization’s professional and research-oriented work.",
+                "outcome": "As an outcome of this role, I gained valuable experience in CMS-based development and learned how to work effectively with existing themes and tools while coordinating closely with the relevant teams. The project strengthened my communication skills and helped me better understand how design, content, and technical requirements come together in a collaborative environment. \n \n At the same time, this experience helped me clarify my own professional interests: I discovered that I am particularly motivated by building websites and features from the ground up, taking responsibility for the technical architecture and implementation, and shaping solutions more directly through code. This insight has guided my focus toward roles where I can contribute more deeply to hands-on development while still applying the collaboration skills I gained during this project."
             }
         }
     ]

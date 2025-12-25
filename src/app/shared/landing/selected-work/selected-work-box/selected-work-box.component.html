@@ -1,6 +1,11 @@
 <article class="selected-work-item mb-8 flex flex-col gap-3">
     <header class="selected-work-item__content">
-        <h3 class="selected-work-item__title">{{ name }}</h3>
+        <a
+            class="selected-work-item__title h3"
+            (click)="navigateToProject($event)"
+        >
+            {{ name }}
+        </a>
     </header>
 
     <section class="selected-work-item__meta">
@@ -14,10 +19,7 @@
         </ul>
     </section>
 
-    <figure
-        class="selected-work-item__image flex flex-col gap-1"
-        (click)="navigateToProject($event)"
-    >
+    <figure class="selected-work-item__image flex flex-col gap-1">
         <img
             [src]="imageUrl"
             [alt]="imageAlt"

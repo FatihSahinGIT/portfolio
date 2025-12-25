@@ -15,7 +15,7 @@
 
     /* = Background = */
     --bg-dark: hsl(100, 100, 100%);
-    --bg: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 100%);
     --bg-light: hsl(0, 0%, 85%);
 
     /* = Text = */
@@ -115,17 +115,12 @@ button {
     @apply text-xl;
 }
 
-/* .selected-work-box__figcaption-image-alt {
-    color: var(--text-muted);
-    @apply text-xs;
-    @apply font-medium;
-}
-
-.selected-work-box__figcaption-company-name {
+a {
     color: var(--text);
-    @apply text-xs;
-    @apply font-medium;
-} */
+    @apply cursor-pointer;
+    @apply underline-offset-4;
+    @apply hover:underline;
+}
 
 .seperator {
     border: 1px solid var(--border);
