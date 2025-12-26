@@ -1,5 +1,7 @@
-import {AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { gsap } from 'gsap/gsap-core';
+import { OverlayService } from '../../services/overlay.service';
 
 @Component({
     selector: 'about-experience',
@@ -7,6 +9,9 @@ import { gsap } from 'gsap/gsap-core';
     imports: []
 })
 export class AboutExperienceComponent implements AfterViewInit {
+    readonly #router: Router = inject(Router);
+    readonly #overlayService: OverlayService = inject(OverlayService);
+
     ngAfterViewInit(): void {
         gsap.from('.about-experience', {
             duration: 1,
@@ -23,4 +28,15 @@ export class AboutExperienceComponent implements AfterViewInit {
             }
         });
     }
-}   
+
+    public async navigateToProject(event: Event, project: string): Promise<void> {
+        event.preventDefault();
+
+        if (this.#router.url === "/work/" + project) {
+            return;
+        }
+
+        await this.#overlayService.playCover();
+        this.#router.navigateByUrl("/work/" + project);
+    }
+}

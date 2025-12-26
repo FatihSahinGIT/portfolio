@@ -196,6 +196,11 @@
         .md\:col-9-4 {
             grid-column: 9 / span 4;
         }
+        .md\:col-10-12 {
+            grid-column: 10 / span 12;
+        }
+
+
         /* ... full set mirrored as in 2xl block */
     }
 

@@ -17,7 +17,7 @@ export class OverlayService {
         return this.playAnimation('is-covering');
     }
 
-    // Animate the overlay down to reveal the new page after navigation.
+    // Animate the overlay down to reveal the new page after navigation. TODO - always go to top when page is loaded
     public playReveal(): void {
         if (!this.#pendingReveal) {
             return;
@@ -25,10 +25,12 @@ export class OverlayService {
 
         this.#pendingReveal = false;
         void this.playAnimation('is-revealing');
+        window.scrollTo(0, 0);
     }
 
     // Toggle the animation class and resolve when the animation finishes.
     private playAnimation(className: 'is-covering' | 'is-revealing') {
+
         const overlay = this.#overlay;
         if (!overlay) {
             return Promise.resolve();

@@ -1,6 +1,6 @@
-<section class="work-wrapper mt-20 grid">
+<section class="work-wrapper mt-20 grid h-max">
     <work-information
-        class="grid-child col-1-9"
+        class="grid-child xs:col-1-12 md:col-1-9"
         [projectName]="projectSignal()?.project"
         [clientName]="projectSignal()?.name"
         [projectDate]="projectSignal()?.year"
@@ -8,20 +8,23 @@
         [projectUrl]="projectSignal()?.url"
     />
 
-    <work-images class="grid-cild col-1-9" [images]="projectSignal()?.images" />
+    <work-images
+        class="grid-cild xs:col-1-12 md:col-1-9"
+        [images]="projectSignal()?.images"
+    />
     <work-text
-        class="grid-child col-10-12"
+        class="grid-child xs:col-1-12 md:col-10-12"
         [text]="projectSignal()?.texts?.introduction"
     />
 
     <work-details
-        class="grid-child col-1-12"
+        class="grid-child col-1-12 xs:my-20"
         [headline]="'Task'"
         [text]="projectSignal()?.texts?.task"
     ></work-details>
 
     <work-details
-        class="grid-child col-1-12"
+        class="grid-child col-1-12 xs:my-20"
         [headline]="'Outcome'"
         [text]="projectSignal()?.texts?.outcome"
     ></work-details>
