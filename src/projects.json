@@ -11,11 +11,11 @@
                 },
                 "smartphone": {
                     "url": "/project-images/kv.digital/smartphone/kvdigital-smartphone.webp",
-                    "figcaption": "kv.digital on smartphone"
+                    "figcaption": "eTerminservice"
                 },
                 "tablet": {
                     "url": "/project-images/kv.digital/tablet/kvdigital-tablet.webp",
-                    "figcaption": "kv.digital on tablet"
+                    "figcaption": "Map Search"
                 },
                 "others": []
             },
@@ -42,11 +42,11 @@
                 },
                 "smartphone": {
                     "url": "/project-images/interval/smartphone/interval-smartphone.webp",
-                    "figcaption": "interval on smartphone"
+                    "figcaption": "Topic Area Overview"
                 },
                 "tablet": {
                     "url": "/project-images/interval/tablet/interval-tablet.webp",
-                    "figcaption": "interval on tablet"
+                    "figcaption": "Publications Overview"
                 },
                 "others": []
             },

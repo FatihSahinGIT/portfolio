@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+.work-details__text {
+    color: var(--text-muted);
+    @apply tracking-[-0.018em];
+}
+

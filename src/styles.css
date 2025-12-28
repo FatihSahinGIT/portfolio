@@ -98,8 +98,6 @@ button {
     @apply hover:underline;
 }
 
-
-
 .about-qualification__item {
     color: var(--text-muted);
     border-color: var(--text-muted);
@@ -113,6 +111,10 @@ button {
     border-color: var(--text-muted);
     @apply tracking-[-0.04em];
     @apply text-xl;
+}
+
+.work-text {
+    color: var(--text-muted);
 }
 
 a {
