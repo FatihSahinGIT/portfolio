@@ -1,9 +1,9 @@
 <section class="work-images">
     <div
-        class="work-images__container flex h-max gap-6 xs:flex-col md:flex-row"
+        class="work-images__container flex h-max gap-6 xs:flex-col xl:flex-row"
     >
         @for (image of deviceImages; track image.url) {
-            <figure class="work-images__figure xs:w-full md:w-max">
+            <figure class="work-images__figure xs:w-full xl:w-max">
                 <img
                     class="work-images__img xs:h-auto md:h-auto md:max-w-full"
                     [src]="image.url"
