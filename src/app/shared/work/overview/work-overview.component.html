@@ -1,0 +1,47 @@
+<section
+    class="work-overview my-20 grid"
+    aria-labelledby="work-overview-heading"
+>
+    <header class="work-overview__header grid-child col-1-12">
+        <h1 id="work-overview-heading">Work</h1>
+    </header>
+    <div class="work-overview__content grid-child col-1-12 mt-12">
+        <ul
+            class="work-overview__list work-overview__content-test gap-50 flex flex-col"
+            role="list"
+        >
+            @for (work of works; track $index) {
+                <li class="work-overview__item">
+                    <article class="work-overview__card">
+                        <button
+                            type="button"
+                            class="flex w-full flex-col gap-4 text-left"
+                            (click)="navigateToProject($event, work.company)"
+                        >
+                            <figure class="flex flex-col gap-4">
+                                <img
+                                    class="rounded-lg"
+                                    [src]="work.images.overview.url"
+                                    [attr.alt]="
+                                        work.images.overview.figcaption ||
+                                        work.project ||
+                                        work.company
+                                    "
+                                    loading="lazy"
+                                />
+                                <figcaption class="work-overview__figcaption">
+                                    <h2 class="h1 work-overview__company">
+                                        {{ work.name }}
+                                    </h2>
+                                    <p class="h2 work-overview__project">
+                                        {{ work.project }}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </button>
+                    </article>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
