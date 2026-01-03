@@ -94,7 +94,7 @@ h6,
 
 button {
     @apply cursor-pointer;
-    @apply underline-offset-4;
+    @apply underline-offset-2;
     @apply hover:underline;
 }
 
@@ -137,4 +137,10 @@ a {
 
 .about-competencies__list ul li {
     @apply xs:text-3xl md:text-6xl;
+}
+
+@media (min-width: 768px) {
+    .work-overview__header {
+        /* top: 5rem; */
+    }
 }

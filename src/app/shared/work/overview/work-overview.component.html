@@ -2,12 +2,16 @@
     class="work-overview my-20 grid"
     aria-labelledby="work-overview-heading"
 >
-    <header class="work-overview__header grid-child col-1-12">
+    <header
+        class="work-overview__header grid-child col-1-12 md:row-1-12 top-10 md:sticky"
+    >
         <h1 id="work-overview-heading">Work</h1>
     </header>
-    <div class="work-overview__content grid-child col-1-12 mt-12">
+    <div
+        class="work-overview__content grid-child xs:col-1-12 md:col-5-12 md:row-1-12 xs:mt-8"
+    >
         <ul
-            class="work-overview__list work-overview__content-test gap-50 flex flex-col"
+            class="work-overview__list work-overview__content-test md:gap-50 flex flex-col gap-12"
             role="list"
         >
             @for (work of works; track $index) {
@@ -20,7 +24,7 @@
                         >
                             <figure class="flex flex-col gap-4">
                                 <img
-                                    class="rounded-lg"
+                                    class="max-h-max rounded-lg"
                                     [src]="work.images.overview.url"
                                     [attr.alt]="
                                         work.images.overview.figcaption ||
@@ -30,10 +34,10 @@
                                     loading="lazy"
                                 />
                                 <figcaption class="work-overview__figcaption">
-                                    <h2 class="h1 work-overview__company">
+                                    <p class="work-overview__company">
                                         {{ work.name }}
-                                    </h2>
-                                    <p class="h2 work-overview__project">
+                                    </p>
+                                    <p class="work-overview__project">
                                         {{ work.project }}
                                     </p>
                                 </figcaption>

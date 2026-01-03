@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+.work-overview__company {
+    color: var(--text);
+    @apply text-xs;
+    @apply font-medium;
+}
+
+.work-overview__project {
+    color: var(--text-muted);
+    @apply text-xs;
+    @apply font-medium;
+}

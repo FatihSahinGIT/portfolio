@@ -7,6 +7,7 @@ import { OverlayService } from '../../services/overlay.service';
 @Component({
     selector: 'work-overview',
     templateUrl: './work-overview.component.html',
+    styleUrl: './work-overview.component.css',
     imports: []
 })
 export class WorkOverviewComponent implements AfterViewInit {
@@ -15,18 +16,19 @@ export class WorkOverviewComponent implements AfterViewInit {
     readonly #router: Router = inject(Router);
     readonly #overlayService: OverlayService = inject(OverlayService);
 
-    ngAfterViewInit(): void {
-        
-    }
+    ngAfterViewInit(): void {}
 
-    public async navigateToProject(event: Event, project: string): Promise<void> {
+    public async navigateToProject(
+        event: Event,
+        project: string
+    ): Promise<void> {
         event.preventDefault();
 
-        if (this.#router.url === "/work/" + project) {
+        if (this.#router.url === '/work/' + project) {
             return;
         }
 
         await this.#overlayService.playCover();
-        this.#router.navigateByUrl("/work/" + project);
+        this.#router.navigateByUrl('/work/' + project);
     }
 }
