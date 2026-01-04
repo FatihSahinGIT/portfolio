@@ -4,10 +4,10 @@
     background: var(--bg);
     backdrop-filter: blur(14px) saturate(120%);
     -webkit-backdrop-filter: blur(14px) saturate(120%);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.288);
     transform: translateY(100%);
     pointer-events: none;
-    z-index: 9999;
+    z-index: 1;
 }
 
 

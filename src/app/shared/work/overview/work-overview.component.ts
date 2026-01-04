@@ -16,7 +16,31 @@ export class WorkOverviewComponent implements AfterViewInit {
     readonly #router: Router = inject(Router);
     readonly #overlayService: OverlayService = inject(OverlayService);
 
-    ngAfterViewInit(): void {}
+    ngAfterViewInit(): void {
+        gsap.fromTo(
+            '#work-overview-heading',
+            { y: 5, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                duration: 1,
+                delay: 0.5
+            }
+        );
+
+        gsap.fromTo(
+            '.work-overview__list',
+            { y: 5, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                duration: 1,
+                delay: 0.75
+            }
+        );
+    }
 
     public async navigateToProject(
         event: Event,
