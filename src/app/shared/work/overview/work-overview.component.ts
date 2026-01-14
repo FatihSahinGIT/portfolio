@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, inject, Input } from '@angular/core';
 import { gsap } from 'gsap/gsap-core';
-import { works } from '../../../../work.json';
+import { projects } from '../../../../projects.json';
 import { Router } from '@angular/router';
 import { OverlayService } from '../../services/overlay.service';
 
@@ -11,7 +11,7 @@ import { OverlayService } from '../../services/overlay.service';
     imports: []
 })
 export class WorkOverviewComponent implements AfterViewInit {
-    public readonly works = works;
+    public readonly projects = projects;
 
     readonly #router: Router = inject(Router);
     readonly #overlayService: OverlayService = inject(OverlayService);

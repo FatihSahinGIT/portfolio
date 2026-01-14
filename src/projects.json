@@ -1,10 +1,15 @@
 {
     "projects": [
         {
+            "selectedWork": true,
             "company": "kv.digital",
             "name": "kv.digital",
             "project": "Appointment booking service",
             "images": {
+                "overview": {
+                    "url": "/project-images/kv.digital/overview/kvdigital.jpeg",
+                    "figcaption": "Appointment booking service"
+                },
                 "selected": {
                     "url": "/project-images/kv.digital/selected/kv.digital.webp",
                     "figcaption": "Appointment booking service"
@@ -32,10 +37,15 @@
             }
         },
         {
+            "selectedWork": true,
             "company": "interval",
             "name": "InterVal",
             "project": "Online Presence Redesign",
             "images": {
+                "overview": {
+                    "url": "/project-images/interval/overview/interval.jpeg",
+                    "figcaption": "Appointment booking service"
+                },
                 "selected": {
                     "url": "/project-images/interval/selected/interval.webp",
                     "figcaption": "Online Presence redesign"
@@ -60,6 +70,42 @@
                 "introduction": "InterVal is a Berlin-based research and policy consulting firm that conducts empirical studies and evaluations to support public institutions, ministries, authorities, and foundations in Germany. The company combines qualitative and quantitative research methods to analyze model projects, social programs, institutions, and legislation across a diverse set of social and policy areas — including labor markets, vocational education, demographic change and social participation, digitalization, legal evaluations, health and rehabilitation, equality and diversity, higher education research, innovation policy, integration and skilled immigration, early childhood literacy, and schooling. \n \n InterVal’s work is characterized by interdisciplinary, empirically grounded analysis that aims to provide evidence-based insights and recommendations to inform decision-making in public policy and social programs. With participation in more than 150 research projects, the organization evaluates the effectiveness and implementation of initiatives such as federal and state programs, funding measures, and policy frameworks, helping clients understand outcomes and improve future interventions. ",
                 "task": "As part of a student position, I was responsible for the redesign and rebuild of a corporate website using a content management system. I translated an updated visual concept into a clean and consistent layout, structuring pages and components in a way that allows non-technical users to easily manage and extend content. \n \n Beyond the technical implementation, I contributed to improving the overall user experience with a focus on accessibility, clarity, and readability. This included refining color contrasts, typography, and layout decisions to create a more user-friendly and inclusive web presence.",
                 "outcome": "As an outcome of this role, I gained valuable experience in CMS-based development and learned how to work effectively with existing themes and tools while coordinating closely with the relevant teams. The project strengthened my communication skills and helped me better understand how design, content, and technical requirements come together in a collaborative environment. \n \n At the same time, this experience helped me clarify my own professional interests: I discovered that I am particularly motivated by building websites and features from the ground up, taking responsibility for the technical architecture and implementation, and shaping solutions more directly through code. This insight has guided my focus toward roles where I can contribute more deeply to hands-on development while still applying the collaboration skills I gained during this project."
+            }
+        },
+        {
+            "selectedWork": false,
+            "company": "mindful-minds",
+            "name": "Mindful Minds",
+            "project": "Restructuring and Redesign",
+            "images": {
+                "overview": {
+                    "url": "/project-images/mindful-minds/overview/mindful.jpeg",
+                    "figcaption": "Appointment booking service"
+                },
+                "selected": {
+                    "url": "",
+                    "figcaption": ""
+                },
+                "smartphone": {
+                    "url": "/project-images/mindful-minds/smartphone/mindful.webp",
+                    "figcaption": "Refund Calculator"
+                },
+                "tablet": {
+                    "url": "/project-images/mindful-minds/tablet/mindful.webp",
+                    "figcaption": "Onlice Course Overview"
+                },
+                "others": []
+            },
+            "role": "Webdesigner",
+            "url": "https://mindful-minds.com",
+            "alttext": "kv.digital website screenshots",
+            "timeframe": "April 2022 - July 2022",
+            "tools": ["Elementor", "CSS", "JavaScript", "HTML", "CMS"],
+            "year": "April 2022 - July 2022",
+            "texts": {
+                "introduction": "Mindful Minds Management GmbH supports individuals and organizations in strengthening mental well-being through mindfulness-based training and coaching. The company offers live courses, online programs, and tailored workshops focused on stress reduction, resilience, and mindful leadership, and works closely with businesses to connect them with qualified mindfulness trainers. With a strong emphasis on practical, science-based approaches, Mindful Minds helps create healthier, more focused, and sustainable work environments. ",
+                "task": "As a Student Frontend Developer at Mindful Minds Management GmbH, I contributed to refactoring and improving the company website using a CMS-based setup. I built and redesigned pages with Elementor, integrated newsletter and shop functionality, and implemented dynamic UI behavior through custom JavaScript and CSS added via plugins. \n \n Additionally, I maintained course data in the database and connected digital products to the e-commerce system, ensuring a smooth and user-friendly booking flow.",
+                "outcome": "This role gave me deeper insights into maintaining and evolving a production website within a real business context. I significantly improved my CMS knowledge, including working with page builders, plugins, content structures, and editor workflows. I learned how to balance design requirements with technical constraints, implement dynamic features without breaking existing systems, and collaborate with non-technical stakeholders. \n \n Additionally, I gained experience with e-commerce and data management, improved my problem-solving skills in legacy setups, and developed a better understanding of scalability, maintainability, and user-focused frontend development."
             }
         }
     ]

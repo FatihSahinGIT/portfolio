@@ -13,6 +13,8 @@ import { gsap } from 'gsap';
 export class SelectedWorkComponent implements AfterViewInit {
     public readonly projects: Project[] = projectsJson.projects;
 
+    readonly selectedProjects: Project[] = this.projects.filter(project => project.selectedWork);
+
     ngAfterViewInit(): void {
         const headlineEl = document.querySelector('.selected-work__heading');
         if (headlineEl) {

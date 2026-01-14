@@ -5,7 +5,7 @@
 
     <div class="grid-child col-1-10 row-2">
         <div class="selected-work__boxes flex xs:flex-col lg:flex-row gap-10">
-            @for (work of projects; track work.company) {
+            @for (work of selectedProjects; track work.company) {
                 <selected-work-box
                     [name]="work.name"
                     [tools]="work.tools"

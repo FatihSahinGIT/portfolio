@@ -1,4 +1,5 @@
 export interface Project {
+    selectedWork: boolean;
     company: string;
     name: string;
     images: {
