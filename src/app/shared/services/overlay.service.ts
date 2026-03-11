@@ -18,14 +18,10 @@ export class OverlayService {
     }
 
     // Animate the overlay down to reveal the new page after navigation. TODO - always go to top when page is loaded
-    public playReveal(): void {
-        if (!this.#pendingReveal) {
-            return;
-        }
-
+    public playReveal(): Promise<void> {
         this.#pendingReveal = false;
-        void this.playAnimation('is-revealing');
         window.scrollTo(0, 0);
+        return this.playAnimation('is-revealing');
     }
 
     // Toggle the animation class and resolve when the animation finishes.
@@ -37,12 +33,20 @@ export class OverlayService {
         }
 
         return new Promise<void>((resolve) => {
+            // Clear any existing timeout to prevent stuck animations
+            if (this.#fallbackTimeoutId !== null) {
+                window.clearTimeout(this.#fallbackTimeoutId);
+                this.#fallbackTimeoutId = null;
+            }
+
             const fallbackMs = this.getAnimationTimeout(overlay);
             const finish = () => {
                 if (this.#fallbackTimeoutId !== null) {
                     window.clearTimeout(this.#fallbackTimeoutId);
                     this.#fallbackTimeoutId = null;
                 }
+                // Ensure animation classes are removed to prevent state conflicts
+                overlay.classList.remove('is-covering', 'is-revealing');
                 resolve();
             };
             const handleAnimationEnd = () => finish();

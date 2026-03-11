@@ -7,7 +7,7 @@
             "project": "Appointment booking service",
             "images": {
                 "overview": {
-                    "url": "/project-images/kv.digital/overview/kvdigital.jpeg",
+                    "url": "/project-images/kv.digital/overview/kvdigital.png",
                     "figcaption": "Appointment booking service"
                 },
                 "selected": {
@@ -43,8 +43,8 @@
             "project": "Online Presence Redesign",
             "images": {
                 "overview": {
-                    "url": "/project-images/interval/overview/interval.jpeg",
-                    "figcaption": "Appointment booking service"
+                    "url": "/project-images/interval/overview/interval.png",
+                    "figcaption": "Updated online presence"
                 },
                 "selected": {
                     "url": "/project-images/interval/selected/interval.webp",
@@ -79,8 +79,8 @@
             "project": "Restructuring and Redesign",
             "images": {
                 "overview": {
-                    "url": "/project-images/mindful-minds/overview/mindful.jpeg",
-                    "figcaption": "Appointment booking service"
+                    "url": "/project-images/mindful-minds/overview/mindful-minds.webp",
+                    "figcaption": "Updated online presence"
                 },
                 "selected": {
                     "url": "",

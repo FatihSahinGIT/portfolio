@@ -1,10 +1,4 @@
-import {
-    Component,
-    inject,
-    OnInit,
-    signal,
-    WritableSignal
-} from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { WorkInformationComponent } from '../information/work-information.component';
 import { WorkImagesComponent } from '../images/work-images.component';
 import { WorkTextComponent } from '../text/work-text.component';
@@ -13,33 +7,24 @@ import { projects } from '../../../../projects.json';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'work-wrapper',
-    templateUrl: './work-wrapper.component.html',
-    imports: [
-        WorkInformationComponent,
-        WorkImagesComponent,
-        WorkTextComponent,
-        WorkDetailsComponent
-    ]
+  selector: 'work-wrapper',
+  templateUrl: './work-wrapper.component.html',
+  imports: [WorkInformationComponent, WorkImagesComponent, WorkTextComponent, WorkDetailsComponent],
 })
 export class WorkWrapperComponent implements OnInit {
-    public readonly lorem =
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-    public readonly projects = projects;
+  public readonly projects = projects;
 
-    public projectSignal: WritableSignal<any> = signal(null);
+  public projectSignal: WritableSignal<any> = signal(null);
 
-    readonly #route = inject(ActivatedRoute);
+  readonly #route = inject(ActivatedRoute);
 
-    ngOnInit(): void {
-        this.#route.params.subscribe((params) => {
-            const project = params['project'];
+  ngOnInit(): void {
+    this.#route.params.subscribe((params) => {
+      const project = params['project'];
 
-            const filteredProject = this.projects.find(
-                (p) => p.company === project
-            );
+      const filteredProject = this.projects.find((p) => p.company === project);
 
-            this.projectSignal.set(filteredProject);
-        });
-    }
+      this.projectSignal.set(filteredProject);
+    });
+  }
 }

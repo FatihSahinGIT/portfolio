@@ -1,38 +1,28 @@
 <article class="selected-work-item mb-8 flex flex-col gap-3">
-    <header class="selected-work-item__content">
-        <a
-            class="selected-work-item__title h3"
-            (click)="navigateToProject($event)"
-        >
-            {{ name }}
-        </a>
-    </header>
+  <header class="selected-work-item__content">
+    <a class="selected-work-item__title h3" (click)="navigateToProject($event)">
+      {{ name }}
+    </a>
+  </header>
 
-    <section class="selected-work-item__meta">
-        <ul
-            class="selected-work-item__tools mb-1.5 flex flex-col"
-            aria-label="Technologies used"
-        >
-            @for (tools of tools; track tools) {
-                <li class="selected-work-item__tool">{{ tools }}</li>
-            }
-        </ul>
-    </section>
+  <section class="selected-work-item__meta">
+    <ul class="selected-work-item__tools mb-1.5 flex flex-col" aria-label="Technologies used">
+      @for (tools of tools; track tools) {
+        <li class="selected-work-item__tool">{{ tools }}</li>
+      }
+    </ul>
+  </section>
 
-    <figure class="selected-work-item__image flex flex-col gap-1">
-        <img
-            [src]="imageUrl"
-            [alt]="imageAlt"
-            class="selected-work-item__img rounded-md object-cover lg:max-h-[70vh]"
-        />
-        <figcaption>
-            <span class="selected-work-box__figcaption-company-name">{{
-                name
-            }}</span>
-            -
-            <span class="selected-work-box__figcaption-image-alt">{{
-                imageAlt
-            }}</span>
-        </figcaption>
-    </figure>
+  <figure class="selected-work-item__image flex flex-col gap-1">
+    <img
+      [src]="imageUrl"
+      [alt]="imageAlt"
+      class="selected-work-item__img rounded-md object-cover"
+    />
+    <figcaption>
+      <span class="selected-work-box__figcaption-company-name">{{ name }}</span>
+      -
+      <span class="selected-work-box__figcaption-image-alt">{{ imageAlt }}</span>
+    </figcaption>
+  </figure>
 </article>

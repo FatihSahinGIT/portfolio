@@ -54,8 +54,8 @@ export class AppComponent implements OnInit, OnDestroy {
                 filter((event) => event instanceof NavigationEnd),
                 takeUntil(this.#destroy$)
             )
-            .subscribe(() => {
-                this.overlayService.playReveal();
+            .subscribe(async () => {
+                await this.overlayService.playReveal();
             });
 
         const raf = (time: number) => {

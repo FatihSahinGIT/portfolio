@@ -1,18 +1,40 @@
-<section class="headline grid xs:h-[75vh] lg:h-[50vh]">
-    <div class="grid-child xs:col-1-12 md:col-1-10 2xl:col-1-6 center-y">
-        <div class="headline__content gap-4.5 flex flex-col">
-            <h1 class="headline__headline headline-animated">
-                {{ headlineText }}
-            </h1>
-
-            <h2 class="headline__subheadline subheadline-animated">
-                I am a frontend developer who believes that the best software is
-                simple, intuitive, and accessible to everyone. With a computer
-                science background, I create user-focused digital experiences
-                that just <i>feel</i> right.
-            </h2>
+<div>
+  <div class="headline__container h-[80vh] md:h-[85vh] grid grid-cols-4 gap-8 md:grid-cols-12">
+    <!-- Text -->
+    <div
+      class="headline__text col-span-full h-max md:col-span-6 md:h-[inherit] md:content-end lg:col-span-5"
+    >
+      <div class="headline__text-content flex flex-col gap-4 md:gap-8">
+        <div class="headline__text-content-headlines flex flex-col gap-2">
+          <h1 class="hero-headline headline-animated">Frontend Developer</h1>
+          <h2 class="subheadline-animated lg:w-2/3">
+            With a computer science background, I build thoughtful user interfaces that feel
+            intuitive and reliable.
+          </h2>
         </div>
+        <div class="headline__text-content-button">
+          <button
+            class="headline__button w-max rounded-lg bg-black px-2 py-2 text-xs text-white md:text-base"
+            (click)="navigateToWork($event)"
+          >
+            View my work
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="headline__seperator seperator grid-child col-1-12 h-px"></div>
-</section>
+    <!-- Image -->
+    <div
+      class="headline__image-container col-span-full h-full md:h-[inherit] md:col-span-full md:col-start-8 md:content-end lg:col-span-full lg:col-start-8 xl:col-start-9"
+    >
+      <img
+        class="h-[inherit] w-full rounded-md object-cover"
+        src="hero-images/Image.svg"
+        alt="Headline Image"
+      />
+    </div>
+
+    <!-- Seperator -->
+    <div class="headline__seperator col-span-full h-px bg-gray-300"></div>
+  </div>
+</div>

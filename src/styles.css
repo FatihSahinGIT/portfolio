@@ -1,146 +1,165 @@
+@config '../tailwind.config.ts';
 @import 'tailwindcss';
-@import './styles/grid.css';
 
 @theme {
-    --breakpoint-xs: 320px;
-    --breakpoint-sm: 640px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1280px;
-    --breakpoint-2xl: 1536px;
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
 @theme {
-    /* == LIGHT MODE */
+  /* == LIGHT MODE */
 
-    /* = Background = */
-    --bg-dark: hsl(100, 100, 100%);
-    --bg: hsl(0, 0%, 100%);
-    --bg-light: hsl(0, 0%, 85%);
+  /* = Background = */
+  --bg-dark: hsl(100, 100, 100%);
+  --bg: hsl(0, 0%, 100%);
+  --bg-light: hsl(0, 0%, 85%);
 
-    /* = Text = */
-    --text: hsl(100, 100%, 0%);
-    --text-muted: hsl(0, 0%, 46%);
+  /* = Text = */
+  --text: hsl(100, 100%, 0%);
+  --text-muted: hsl(0, 0%, 46%);
 
-    /* = Border & Gradient */
-    --border: hsl(0, 0%, 80%);
-    --border-card: 1px solid var(--bg);
-    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
-    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
-    --hightlight: hsl(0, 0, 60%);
+  /* = Border & Gradient */
+  --border: hsl(0, 0%, 80%);
+  --border-card: 1px solid var(--bg);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --hightlight: hsl(0, 0, 60%);
 }
 
 html.dark,
 body.dark {
-    /* == DARK MODE */
+  /* == DARK MODE */
 
-    /* = Background = */
-    --bg-dark: hsl(0, 0%, 0%);
-    --bg: hsl(0, 0%, 0%);
-    --bg-light: hsl(0, 0%, 15%);
+  /* = Background = */
+  --bg-dark: hsl(0, 0%, 0%);
+  --bg: hsl(0, 0%, 0%);
+  --bg-light: hsl(0, 0%, 15%);
 
-    /* = Text = */
-    --text: hsl(100, 100%, 100%);
-    --text-muted: hsl(0, 0%, 50%);
+  /* = Text = */
+  --text: hsl(100, 100%, 100%);
+  --text-muted: hsl(0, 0%, 50%);
 
-    /* = Border & Gradient */
-    --border: hsl(0, 0%, 50%);
-    --border-card: 1px solid var(--border);
-    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
-    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
-    --hightlight: hsl(0, 0, 100%);
+  /* = Border & Gradient */
+  --border: hsl(0, 0%, 50%);
+  --border-card: 1px solid var(--border);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --hightlight: hsl(0, 0, 100%);
 }
 
 /* Root styles */
 :root {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: var(--bg-dark);
-    color: var(--text);
+  background: var(--bg-dark);
+  color: var(--text);
+  @apply mx-6;
+}
+
+/* .grid {
+  @apply grid;
+  @apply grid-cols-12;
+  margin: 0 2rem;
+  border: 2px solid red;
+} */
+
+.hero-headline {
+  color: var(--text);
+  @apply tracking-[-0.05em];
+  @apply text-3xl;
+  @apply font-medium;
+  @apply md:text-4xl;
+  @apply lg:text-5xl;
+  @apply xl:text-7xl;
 }
 
 h1,
 .h1 {
-    color: var(--text);
-    @apply tracking-[-0.02em];
-    @apply text-4xl;
-    @apply font-medium;
+  color: var(--text);
+  @apply tracking-[-0.02em];
+  @apply text-4xl;
+  @apply font-medium;
 }
 
 h2,
 .h2 {
-    color: var(--text-muted);
-    @apply tracking-[-0.018em];
-    @apply text-3xl;
-    @apply font-medium;
+  color: var(--text-muted);
+  @apply tracking-[-0.018em];
+  @apply xs:text-base;
+  @apply md:text-2xl;
+  @apply font-medium;
 }
 
 h3,
 .h3 {
-    color: var(--text);
-    @apply tracking-[-0.018em];
-    @apply text-xl;
-    @apply font-medium;
+  color: var(--text);
+  @apply tracking-[-0.018em];
+  @apply text-xl;
+  @apply font-medium;
 }
 
 h6,
 .h6 {
-    color: var(--text-muted);
-    @apply tracking-[-0.0125em];
-    @apply text-xs;
+  color: var(--text-muted);
+  @apply tracking-[-0.0125em];
+  @apply text-xs;
 }
 
 button {
-    @apply cursor-pointer;
-    @apply underline-offset-2;
-    @apply hover:underline;
+  @apply cursor-pointer;
+  @apply underline-offset-2;
+  @apply hover:underline;
 }
 
 .about-qualification__item {
-    color: var(--text-muted);
-    border-color: var(--text-muted);
-    @apply border-b-2;
-    @apply pb-2;
-    @apply text-xl;
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+  @apply border-b-2;
+  @apply pb-2;
+  @apply text-xl;
 }
 
 .selected-work-item__tool {
-    color: var(--text-muted);
-    border-color: var(--text-muted);
-    @apply tracking-[-0.04em];
-    @apply text-xl;
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+  @apply tracking-[-0.04em];
+  @apply text-xl;
 }
 
 .work-text {
-    color: var(--text-muted);
+  color: var(--text-muted);
 }
 
 a {
-    color: var(--text);
-    @apply cursor-pointer;
-    @apply underline-offset-4;
-    @apply hover:underline;
+  color: var(--text);
+  @apply cursor-pointer;
+  @apply underline-offset-4;
+  @apply hover:underline;
 }
 
 .seperator {
-    border: 1px solid var(--border);
-    width: 100%;
-    grid-column: var(--position-1-end, 1 / -1);
+  border: 1px solid var(--border);
+  width: 100%;
+  grid-column: var(--position-1-end, 1 / -1);
 }
 
 .competency-list-item__index {
-    @apply xs:mr-2 md:mr-6;
-    color: var(--text-muted);
+  @apply xs:mr-2 md:mr-6;
+  color: var(--text-muted);
 }
 
 .about-competencies__list ul li {
-    @apply xs:text-3xl md:text-6xl;
+  @apply xs:text-3xl md:text-6xl;
 }
 
 @media (min-width: 768px) {
-    .work-overview__header {
-        /* top: 5rem; */
-    }
+  .work-overview__header {
+    /* top: 5rem; */
+  }
 }

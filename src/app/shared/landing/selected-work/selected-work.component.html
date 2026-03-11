@@ -1,19 +1,21 @@
-<div class="selected-work grid">
-    <div class="grid-child col-1-12 row-1">
-        <h1 class="selected-work__heading">Selected Works</h1>
+<div>
+  <div class="selected-work grid grid-cols-4 gap-8 md:grid-cols-12">
+    <div class="col-span-full">
+      <h1 class="selected-work__heading">Selected Works</h1>
     </div>
 
-    <div class="grid-child col-1-10 row-2">
-        <div class="selected-work__boxes flex xs:flex-col lg:flex-row gap-10">
-            @for (work of selectedProjects; track work.company) {
-                <selected-work-box
-                    [name]="work.name"
-                    [tools]="work.tools"
-                    [imageUrl]="work.images.selected.url"
-                    [imageAlt]="work.images.selected.figcaption"
-                    [projectUrl]="work.company"
-                ></selected-work-box>
-            }
-        </div>
+    <div class="col-span-full">
+      <div class="selected-work__boxes flex gap-10 xs:flex-col lg:flex-row">
+        @for (work of selectedProjects; track work.company) {
+          <selected-work-box
+            [name]="work.name"
+            [tools]="work.tools"
+            [imageUrl]="work.images.selected.url"
+            [imageAlt]="work.images.selected.figcaption"
+            [projectUrl]="work.company"
+          ></selected-work-box>
+        }
+      </div>
     </div>
+  </div>
 </div>

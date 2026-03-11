@@ -1,51 +1,29 @@
-<section
-    class="work-overview my-20 grid"
-    aria-labelledby="work-overview-heading"
->
-    <header
-        class="work-overview__header grid-child col-1-12 md:row-1-12 top-10 md:sticky"
-    >
-        <h1 id="work-overview-heading">Things I’ve Worked On</h1>
-    </header>
-    <div
-        class="work-overview__content grid-child xs:col-1-12 md:col-5-12 md:row-1-12 xs:mt-8"
-    >
-        <ul
-            class="work-overview__list md:gap-50 flex flex-col gap-12"
-            role="list"
-        >
-            @for (work of projects; track $index) {
-                <li class="work-overview__item">
-                    <article class="work-overview__card">
-                        <button
-                            type="button"
-                            class="flex w-full flex-col gap-4 text-left"
-                            (click)="navigateToProject($event, work.company)"
-                        >
-                            <figure class="flex flex-col gap-4">
-                                <img
-                                    class="max-h-max rounded-lg"
-                                    [src]="work.images.overview.url"
-                                    [attr.alt]="
-                                        work.images.overview.figcaption ||
-                                        work.project ||
-                                        work.company
-                                    "
-                                    loading="lazy"
-                                />
-                                <figcaption class="work-overview__figcaption">
-                                    <p class="work-overview__company">
-                                        {{ work.name }}
-                                    </p>
-                                    <p class="work-overview__project">
-                                        {{ work.project }}
-                                    </p>
-                                </figcaption>
-                            </figure>
-                        </button>
-                    </article>
-                </li>
-            }
-        </ul>
+<div>
+  <div class="work-overview mb-25.5 mt-8 grid h-max grid-cols-4 gap-6 md:grid-cols-12 md:gap-14">
+    <div class="work-overview__headline col-span-full">
+      <h1 id="work-overview-heading">Things I have worked on</h1>
+      <h2 id="work-overview-subheading">
+        Projects shaped by clear requirements, collaboration, and iteration.
+      </h2>
     </div>
-</section>
+
+    @for (project of projects; track project; let i = $index) {
+      <div [class]="itemClasses(i)" class="work-overview__list">
+        <figure class="h-full w-full" (click)="navigateToProject($event, project.company)">
+          <img
+            [src]="project.images.overview.url"
+            class="h-[50vh] w-full object-cover md:h-auto cursor-pointer rounded-md"
+            [alt]="project.alttext || ''"
+            vo
+          />
+          <figcaption
+            class="hover:text-underline mt-2 w-max cursor-pointer text-sm hover:underline hover:underline-offset-1 md:mt-3"
+            (click)="navigateToProject($event, project.name)"
+          >
+            {{ project.images.overview.figcaption }}
+          </figcaption>
+        </figure>
+      </div>
+    }
+  </div>
+</div>

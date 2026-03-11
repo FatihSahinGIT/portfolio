@@ -13,10 +13,12 @@
 
 .page-transition.is-covering {
     animation: page-cover 900ms linear forwards;
+    pointer-events: auto;
 }
 
 .page-transition.is-revealing {
-    animation: page-reveal 900ms linear;
+    animation: page-reveal 900ms linear forwards;
+    pointer-events: none;
 }
 
 @keyframes page-cover {

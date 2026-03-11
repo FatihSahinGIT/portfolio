@@ -47,6 +47,6 @@ export class NavbarComponent implements OnInit {
         }
 
         await this.overlayService.playCover();
-        this.router.navigateByUrl(path);
+        await this.router.navigateByUrl(path);
     }
 }
