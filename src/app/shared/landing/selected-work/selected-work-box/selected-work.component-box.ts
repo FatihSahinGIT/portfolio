@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OverlayService } from '../../../services/overlay.service';
+
 
 @Component({
     selector: 'selected-work-box',
@@ -15,7 +15,7 @@ export class SelectedWorkBoxComponent {
     @Input() projectUrl!: string;
 
     readonly #router = inject(Router);
-    readonly #overlayService = inject(OverlayService);
+
 
     public async navigateToProject(event: Event): Promise<void> {
         event.preventDefault();
@@ -24,7 +24,7 @@ export class SelectedWorkBoxComponent {
             return;
         }
 
-        await this.#overlayService.playCover();
+
         this.#router.navigateByUrl("/work/" + this.projectUrl);
     }
 

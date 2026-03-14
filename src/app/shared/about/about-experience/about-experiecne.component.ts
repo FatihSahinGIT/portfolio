@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { gsap } from 'gsap/gsap-core';
-import { OverlayService } from '../../services/overlay.service';
+
 
 @Component({
     selector: 'about-experience',
@@ -10,7 +10,6 @@ import { OverlayService } from '../../services/overlay.service';
 })
 export class AboutExperienceComponent implements AfterViewInit {
     readonly #router: Router = inject(Router);
-    readonly #overlayService: OverlayService = inject(OverlayService);
 
     ngAfterViewInit(): void {
         gsap.from('.about-experience', {
@@ -36,7 +35,6 @@ export class AboutExperienceComponent implements AfterViewInit {
             return;
         }
 
-        await this.#overlayService.playCover();
         this.#router.navigateByUrl("/work/" + project);
     }
 }

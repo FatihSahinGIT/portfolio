@@ -2,7 +2,7 @@ import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { Router } from '@angular/router';
 import { bootstrapSunFill, bootstrapMoonFill } from '@ng-icons/bootstrap-icons';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { OverlayService } from '../../../services/overlay.service';
+
 
 @Component({
     selector: 'navbar',
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private overlayService: OverlayService
+
     ) {}
 
     ngOnInit(): void {
@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
             return;
         }
 
-        await this.overlayService.playCover();
+
         await this.router.navigateByUrl(path);
     }
 }

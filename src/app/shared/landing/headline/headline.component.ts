@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, inject } from '@angular/core';
 import { gsap } from 'gsap';
-import { OverlayService } from '../../services/overlay.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HeadlineComponent implements AfterViewInit {
   readonly #router: Router = inject(Router);
-  readonly #overlayService: OverlayService = inject(OverlayService);
+
 
   ngAfterViewInit(): void {
     const headlineEl = document.querySelector('.headline-animated');
@@ -91,7 +91,7 @@ export class HeadlineComponent implements AfterViewInit {
   public async navigateToWork(event: Event): Promise<void> {
     event.preventDefault();
 
-    await this.#overlayService.playCover();
+
     this.#router.navigateByUrl('/work');
   }
 }
