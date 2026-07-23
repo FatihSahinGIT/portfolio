@@ -1,7 +1,7 @@
 <div>
-  <section class="work-wrapper mt-20 grid h-max grid-cols-4 gap-x-10 md:grid-cols-12">
+  <section class="work-wrapper mt-10 grid grid-cols-4 md:mt-20 md:grid-cols-12">
     <work-information
-      class="col-span-full md:col-span-8"
+      class="col-span-full"
       [projectName]="projectSignal()?.project"
       [clientName]="projectSignal()?.name"
       [projectDate]="projectSignal()?.year"
@@ -9,21 +9,32 @@
       [projectUrl]="projectSignal()?.url"
     />
 
-    <work-images class="col-span-full my-10 md:col-span-9" [images]="projectSignal()?.images" />
+    <work-images class="col-span-full my-10" [image]="projectSignal()?.images" />
 
-    <work-text
-      class="col-span-full my-10 md:col-span-4 md:col-start-10"
-      [text]="projectSignal()?.texts?.introduction"
-    />
+    <work-text class="col-span-full" [text]="projectSignal()?.texts?.introduction" />
+
+    <div class="work-project-collage__wrapper col-span-full mt-10 grid gap-2 md:grid-cols-12">
+      <div class="card col-span-full h-max max-h-300 w-full overflow-hidden bg-gray-200">
+        <figure class="h-full w-full">
+          <img
+            class="block h-full min-w-full object-cover object-center"
+            [src]="projectSignal()?.images?.introduction?.url"
+            [alt]="projectSignal()?.images?.introduction?.figcaption"
+          />
+        </figure>
+      </div>
+      <div class="card 2xl:h-120 col-span-full h-40 w-full bg-gray-200 md:col-span-4 xl:h-80"></div>
+      <div class="card 2xl:h-120 col-span-full h-40 w-full bg-gray-200 md:col-span-8 xl:h-80"></div>
+    </div>
 
     <work-details
-      class="col-span-full my-10"
+      class="col-span-full my-10 lg:col-span-3"
       [headline]="'Task'"
       [text]="projectSignal()?.texts?.task"
     ></work-details>
 
     <work-details
-      class="col-span-full my-10"
+      class="col-span-full my-10 lg:col-span-4 lg:col-start-5"
       [headline]="'Outcome'"
       [text]="projectSignal()?.texts?.outcome"
     ></work-details>

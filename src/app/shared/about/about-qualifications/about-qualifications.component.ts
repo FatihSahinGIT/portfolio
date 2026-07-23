@@ -1,5 +1,12 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { gsap } from 'gsap/gsap-core';
+import qualificationsJson from '../../../../qualifications.json';
+
+interface Qualification {
+    title: string;
+    year: string;
+    url: string;
+}
 
 @Component({
     selector: 'about-qualifications',
@@ -7,6 +14,8 @@ import { gsap } from 'gsap/gsap-core';
     imports: []
 })
 export class AboutQualificationsComponent implements AfterViewInit {
+    readonly qualifications: Qualification[] = qualificationsJson.qualifications;
+
     ngAfterViewInit(): void {
         gsap.from('.about-qualifications', {
             duration: 1,

@@ -16,9 +16,6 @@ export class AboutCompetenciesComponent implements AfterViewInit {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.about-competencies',
-                start: 'top 50%',
-                end: 'bottom 20%',
-                toggleActions: 'play reverse play reverse',
                 once: false
             }
         });

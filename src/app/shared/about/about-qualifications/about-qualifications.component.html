@@ -1,52 +1,21 @@
-<section
-    class="about-qualifications md:col-9-4 xs:col-1-12 xs:row-2-12 xs:mt-4 md:mt-0"
-    aria-labelledby="qualifications-heading"
->
-    <div>
-        <h2 id="qualifications-heading" class="h1">Qualifications</h2>
-
-        <div class="mt-4.5">
-            <ul class="space-y-4">
-                <li class="flex justify-between about-qualification__item">
-                    <span
-                        ><a
-                            href="https://www.angulararchitects.io/"
-                            target="_blank"
-                            class="underline-offset-4 hover:underline hover:ease-in-out"
-                            >ANGULARarchitects</a
-                        ></span
-                    >
-                    <time datetime="2025">2025</time>
-                </li>
-                <li class="flex justify-between about-qualification__item">
-                    <span
-                        ><a
-                            href="https://angular.schule/"
-                            target="_blank"
-                            class="underline-offset-4 hover:underline hover:ease-in-out"
-                            >Angular Schule</a
-                        ></span
-                    >
-                    <time datetime="2024">2024</time>
-                </li>
-                <li class="flex justify-between about-qualification__item">
-                    <span
-                        ><a
-                            class="underline-offset-4 hover:underline hover:ease-in-out"
-                            href="https://www.bht-berlin.de/b-mi"
-                            target="_blank"
-                        >
-                            Bachelor of Science in Media Informatics</a
-                        ></span
-                    >
-                    <span>
-                        <time datetime="2017">2017</time>&ndash;<time
-                            datetime="2023"
-                            >2023</time
-                        >
-                    </span>
-                </li>
-            </ul>
-        </div>
+<div class="about-qualifications flex flex-col gap-4">
+  @for (qualification of qualifications; track qualification.title) {
+    <div class="about-qualifications__table">
+      <section class="flex justify-between border-b border-gray-200 pb-4">
+        @if (qualification.url) {
+          <a
+            [href]="qualification.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition-underline hover:underline"
+          >
+            {{ qualification.title }}
+          </a>
+        } @else {
+          <p>{{ qualification.title }}</p>
+        }
+        <p>{{ qualification.year }}</p>
+      </section>
     </div>
-</section>
+  }
+</div>

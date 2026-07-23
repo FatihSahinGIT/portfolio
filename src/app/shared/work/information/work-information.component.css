@@ -1,10 +1,1 @@
 @import 'tailwindcss';
-
-.work-information__date-label {
-    color: var(--text-muted);
-}
-
-
-.work-information__date-value {
-    color: var(--text);
-}

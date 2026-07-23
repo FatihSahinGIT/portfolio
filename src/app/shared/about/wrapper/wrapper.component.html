@@ -1,16 +1,177 @@
 <div>
   <section
-    class="about-wrapper mt-20 grid grid-cols-4 gap-10 md:col-span-12 md:grid-cols-12"
+    #aboutWrapper
+    class="about-wrapper mt-10 grid grid-cols-4 gap-10 md:col-span-12 md:mt-20 md:grid-cols-12 md:gap-y-10"
     aria-labelledby="about-name"
   >
-    <about-headline class="col-span-full md:col-span-8 md:col-start-1" />
+    <div
+      #stickyImage
+      class="about-headline__image col-span-full md:col-span-4 md:col-start-1 lg:col-span-4 xl:col-span-3"
+    >
+      <div class="about-headline__image-content h-full w-full">
+        <img
+          #stickyImageAsset
+          src="hero-images/portrait-1280.webp"
+          srcset="
+            hero-images/portrait-480.webp   480w,
+            hero-images/portrait-768.webp   768w,
+            hero-images/portrait-1024.webp 1024w,
+            hero-images/portrait-1280.webp 1280w,
+            hero-images/portrait-1536.webp 1536w,
+            hero-images/portrait-1920.webp 1920w,
+            hero-images/portrait-2560.webp 2560w
+          "
+          sizes="
+      (min-width: 1024px) 42vw,
+      100vw
+    "
+          alt=""
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
+    </div>
 
-    <about-qualifications class="col-span-full md:col-start-9" />
+    <div
+      class="about-location col-span-full md:col-span-3 md:col-start-5 lg:col-span-3 lg:col-start-5 xl:col-span-2 xl:col-start-6"
+    >
+      <h4 class="mb-2 text-sm tracking-tight text-gray-500">Location</h4>
+      <p class="max-w-prose text-base leading-relaxed tracking-tight md:text-xl">
+        Berlin, Germany.
+      </p>
+    </div>
 
-    <about-text class="col-span-full md:col-span-7" />
+    <div
+      class="about-intro col-span-full md:col-span-5 md:col-start-8 lg:col-span-full lg:col-start-8 xl:col-start-9"
+    >
+      <h4 class="mb-2 text-sm tracking-tight text-gray-500">About</h4>
+      <div class="flex flex-col gap-2">
+        <p class="max-w-prose text-base leading-relaxed tracking-tight md:text-xl">
+          I am Fatih Sahin, a frontend developer. I specialize in building modern, responsive web
+          applications with a strong focus on usability, performance, and thoughtful design.
+        </p>
 
-    <about-competencies class="col-span-full" />
+        <p class="mb-4 max-w-prose text-base leading-relaxed tracking-tight md:text-xl">
+          Driven by a passion for crafting intuitive user experiences, I enjoy working at the
+          intersection of design and code—turning ideas into seamless, interactive products. With a
+          strong commitment to accessibility, I aim to create interfaces that are inclusive,
+          efficient, and feel natural to use.
+        </p>
 
-    <about-experience class="col-span-full my-10"></about-experience>
+        <button class="w-max text-base text-gray-500">Read Resumé</button>
+      </div>
+    </div>
+
+    <div
+      #qualificationsBlock
+      class="about-qualifications col-span-full md:col-span-5 md:col-start-7 md:row-start-2 lg:col-span-full lg:col-start-8 xl:col-start-9"
+    >
+      <div class="about-qualifications__content">
+        <h4 class="mb-2 text-sm tracking-tight text-gray-500">Qualifications</h4>
+        <p class="mb-4 max-w-prose text-base leading-relaxed tracking-tight md:text-xl">
+          Continuously expanding my expertise through academic education and industry-focused
+          training. From earning a Bachelor of Science<sup class="ml-0.5 text-xs font-semibold"
+            >4</sup
+          >
+          to specialized certifications in Angular<sup class="ml-0.5 text-xs font-semibold">3</sup>,
+          accessibility<sup class="ml-0.5 text-xs font-semibold">2</sup>, and UX/UI design<sup
+            class="ml-0.5 text-xs font-semibold"
+            >1</sup
+          >, I’m committed to building well-crafted, user-centered digital experiences.
+        </p>
+
+        <div class="about-qualifications__list flex flex-col gap-2">
+          @for (qualification of qualifications; track qualification.title; let index = $index) {
+            <div class="about-qualifications__table">
+              <section class="group flex items-baseline gap-3 text-gray-400 transition">
+                <span class="min-w-3 text-xs leading-none" aria-hidden="true">{{ index + 1 }}</span>
+                @if (qualification.url) {
+                  <a
+                    [href]="qualification.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm leading-tight underline decoration-gray-300 underline-offset-4 transition hover:text-gray-950 hover:decoration-gray-950 focus:rounded-sm focus:text-gray-950 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 md:text-base"
+                  >
+                    {{ qualification.title }} - {{ qualification.year }}
+                  </a>
+                } @else {
+                  <p
+                    class="text-base leading-tight underline decoration-gray-300 underline-offset-4 group-focus:decoration-gray-950 md:text-xl"
+                  >
+                    {{ qualification.title }} - {{ qualification.year }}
+                  </p>
+                }
+              </section>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="about-expertise__list col-span-full md:col-span-3 md:col-start-4 md:row-start-2 lg:col-span-2 lg:col-start-5 xl:col-start-6"
+    >
+      <h4 class="mb-2 text-sm tracking-tight text-gray-500">Expertise</h4>
+      <ul class="mb-4 max-w-prose text-base leading-relaxed tracking-tight md:text-xl">
+        <li class="mb-2">Frontend Development</li>
+        <li class="mb-2">Accessibility</li>
+        <li>Design Systems</li>
+        <li>UX/UI Design</li>
+        <li>Collaboration & Communication</li>
+        <li>JIRA</li>
+        <li>Clean Code</li>
+        <li>CMS Management</li>
+      </ul>
+    </div>
+
+    <div class="col-span-full my-40 h-auto">
+      <div class="flex h-full flex-col items-start justify-center gap-4">
+        <div>
+          <h4 class="mb-2 text-sm tracking-tight text-gray-500">Approach</h4>
+        </div>
+
+        <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-3">
+          <div
+            class="about-card card shadow-s flex h-full flex-col items-center justify-center gap-4 rounded-md p-4"
+          >
+            <img src="about-images/approach/evaluate.svg" alt="" />
+            <div class="flex w-full flex-col justify-items-start gap-2">
+              <h5 class="text-base">Evaluate</h5>
+              <p class="text-sm font-light leading-relaxed tracking-tight">
+                I combine development with UX thinking: testing ideas, understanding user needs, and
+                shaping features before implementation.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="about-card card shadow-s flex h-full w-full flex-col items-center justify-center gap-4 rounded-md p-4"
+          >
+            <img src="about-images/approach/develop.svg" alt="" />
+
+            <div class="flex w-full flex-col justify-items-start gap-2">
+              <h5 class="text-base">Develop</h5>
+              <p class="text-sm font-light leading-relaxed tracking-tight">
+                I develop features carefully and cleanly, with attention to code quality,
+                maintainability, and complete implementation.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="about-card card shadow-s flex h-full w-full flex-col items-center justify-center gap-4 rounded-md p-4 transition"
+          >
+            <img src="about-images/approach/deploy.svg" alt="" />
+            <div class="flex w-full flex-col justify-items-start gap-2">
+              <h5 class="text-base">Deploy</h5>
+              <p class="text-sm font-light leading-relaxed tracking-tight">
+                I make sure features are prepared, reviewed, and shipped reliably into production.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <about-experience class="col-span-full md:col-span-12" />
   </section>
 </div>

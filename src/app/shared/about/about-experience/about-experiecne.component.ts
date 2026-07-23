@@ -20,9 +20,6 @@ export class AboutExperienceComponent implements AfterViewInit {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.about-experience',
-                start: 'top 100%',
-                end: 'bottom 20%',
-                toggleActions: 'play reverse play reverse',
                 once: false
             }
         });

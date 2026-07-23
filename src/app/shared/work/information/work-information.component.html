@@ -1,33 +1,29 @@
 <section class="work-information">
-    <header class="work-information__header flex flex-col xs:w-full md:w-max">
-        <h1>{{ projectName }}</h1>
-        <h2>{{ clientName }}</h2>
-    </header>
+  <header class="work-information__header flex flex-col gap-2 xs:w-full md:gap-4 lg:w-max">
+    <h1 class="font-light">{{ projectName }}</h1>
+    <h2 class="font-light">{{ clientName }}</h2>
+  </header>
 
-    <div class="work-information__date mt-10">
-        <dl
-            class="work-information__date-list m-0 flex justify-between gap-6 xs:flex-col md:flex-row"
-        >
-            <div #dateItem class="work-information__date-item flex flex-col">
-                <dt class="work-information__date-label">Timeframe</dt>
-                <dd class="work-information__date-value">
-                    <time datetime="2024-01">{{ projectDate }}</time>
-                </dd>
-            </div>
+  <div class="work-information__date mt-10">
+    <dl class="work-information__date-list m-0 flex justify-between gap-6 xs:flex-col md:flex-row">
+      <div #dateItem class="work-information__date-item flex flex-col">
+        <dt class="mb-2 text-sm tracking-tight text-gray-500">Year</dt>
+        <dd class="text-base">
+          <time datetime="2024-01">{{ projectDate }}</time>
+        </dd>
+      </div>
 
-            <div #dateItem class="work-information__date-item flex flex-col">
-                <dt class="work-information__date-label">Role</dt>
-                <dd class="work-information__date-value">{{ roleName }}</dd>
-            </div>
+      <div #dateItem class="work-information__date-item flex flex-col">
+        <dt class="mb-2 text-sm tracking-tight text-gray-500">Position</dt>
+        <dd class="text-base">{{ roleName }}</dd>
+      </div>
 
-            <div #dateItem class="work-information__date-item flex flex-col">
-                <dt class="work-information__date-label">Website</dt>
-                <dd class="work-information__date-value">
-                    <a href="{{ projectUrl }}" target="_blank">{{
-                        projectUrl
-                    }}</a>
-                </dd>
-            </div>
-        </dl>
-    </div>
+      <div #dateItem class="work-information__date-item flex flex-col">
+        <dt class="mb-2 text-sm tracking-tight text-gray-500">Website</dt>
+        <dd class="text-base">
+          <a href="{{ projectUrl }}" target="_blank">{{ projectUrl }}</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
 </section>

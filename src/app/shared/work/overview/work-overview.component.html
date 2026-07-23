@@ -1,29 +1,26 @@
-<div>
-  <div class="work-overview mb-25.5 mt-8 grid h-max grid-cols-4 gap-6 md:grid-cols-12 md:gap-14">
-    <div class="work-overview__headline col-span-full">
-      <h1 id="work-overview-heading">Things I have worked on</h1>
-      <h2 id="work-overview-subheading">
-        Projects shaped by clear requirements, collaboration, and iteration.
-      </h2>
-    </div>
-
-    @for (project of projects; track project; let i = $index) {
-      <div [class]="itemClasses(i)" class="work-overview__list">
-        <figure class="h-full w-full" (click)="navigateToProject($event, project.company)">
+<div id="work" class="work-overview__list mb-12 grid grid-cols-4 gap-x-20 gap-y-20 md:grid-cols-12">
+  @for (project of projects; track project.company) {
+    <figure [class]="project.images.overview.figureClass">
+      <a [routerLink]="['/work', project.company]" class="group block outline-none">
+        <div [class]="project.images.overview.imageContainerClass">
           <img
             [src]="project.images.overview.url"
-            class="h-[50vh] w-full cursor-pointer rounded-md object-cover md:h-auto"
-            [alt]="project.alttext || ''"
-            vo
+            [srcset]="getSrcset(project.images.overview.srcset)"
+            [sizes]="project.images.overview.sizes"
+            [alt]="project.images.overview.alt"
+            [class]="project.images.overview.imageClass"
           />
-          <figcaption
-            class="hover:text-underline mt-2 w-max cursor-pointer text-sm hover:underline hover:underline-offset-1 md:mt-3"
-            (click)="navigateToProject($event, project.name)"
-          >
+        </div>
+
+        <figcaption class="flex justify-between py-3 text-sm font-light">
+          <span class="transition-underline hover:underline">
             {{ project.images.overview.figcaption }}
-          </figcaption>
-        </figure>
-      </div>
-    }
-  </div>
+          </span>
+          <span class="transition-underline hover:underline">
+            {{ project.name }}
+          </span>
+        </figcaption>
+      </a>
+    </figure>
+  }
 </div>

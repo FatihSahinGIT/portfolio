@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
     content: [
-        './src/**/*.{html,ts}' // Ensure Angular templates & components are included
+        './src/**/*.{html,ts,json}' // Ensure Angular templates, components & JSON-driven classes are included
     ],
     theme: {
         extend: {},

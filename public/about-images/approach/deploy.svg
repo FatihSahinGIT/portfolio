@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Deploy">
+<rect width="240" height="240" fill="none"/>
+<rect x="72" y="168" width="96" height="18" fill="#050505"/>
+<rect x="108" y="60" width="24" height="84" fill="#050505"/>
+<rect x="84" y="84" width="24" height="24" fill="#050505"/>
+<rect x="132" y="84" width="24" height="24" fill="#050505"/>
+<rect x="72" y="108" width="24" height="24" fill="#050505"/>
+<rect x="144" y="108" width="24" height="24" fill="#050505"/>
+<rect x="96" y="144" width="48" height="24" fill="#050505"/>
+<rect x="84" y="192" width="72" height="12" fill="#050505"/>
+</svg>

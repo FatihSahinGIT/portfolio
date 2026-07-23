@@ -1,69 +1,37 @@
-import { AfterViewInit, Component, inject, Input } from '@angular/core';
-import { gsap } from 'gsap/gsap-core';
-import { projects } from '../../../../projects.json';
-import { Router } from '@angular/router';
-
+import { AfterViewInit, Component, ElementRef, inject, OnDestroy } from '@angular/core';
+import { gsap } from 'gsap';
+import projectsJson from '../../../../projects.json';
+import { Project, ProjectImageSource } from '../../../../interfaces/project.interface';
+import { Router, RouterLink } from '@angular/router';
+import { GsapService } from '../../services/gsap.service';
+import { workOverviewListVars } from './work-overview.gsap';
 
 @Component({
   selector: 'work-overview',
   templateUrl: './work-overview.component.html',
   styleUrl: './work-overview.component.css',
-  imports: [],
+  imports: [RouterLink],
 })
-export class WorkOverviewComponent implements AfterViewInit {
-  public readonly projects = projects;
+export class WorkOverviewComponent implements AfterViewInit, OnDestroy {
+  public readonly projects: Project[] = projectsJson.projects;
 
-  public itemClasses(index: number): string {
-    const total = this.projects.length;
-    // first or last always full width
-    if (index === 0) {
-      // no explicit height, fill available width and let image control aspect ratio
-      return 'work-overview__item col-span-full w-full';
-    }
-    // interior items are half width with alternating start columns
-    const colStart = index % 2 === 1 ? 1 : 7;
-    return `work-overview__item col-span-full w-full lg:col-span-6 lg:col-start-${colStart}`;
-  }
-
+  readonly #elementRef = inject(ElementRef<HTMLElement>);
   readonly #router: Router = inject(Router);
-
+  readonly #gsapService: GsapService = inject(GsapService);
+  #gsapContext?: gsap.Context;
 
   ngAfterViewInit(): void {
-    gsap.fromTo(
-      '#work-overview-heading',
-      { y: 5, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        ease: 'power2.inOut',
-        duration: 1,
-        delay: 0.5,
-      }
-    );
+    this.#gsapContext = this.#gsapService.context(this.#elementRef.nativeElement, () => {
+      gsap.fromTo('.work-overview__list', workOverviewListVars.from, workOverviewListVars.to);
+    });
+  }
 
-    gsap.fromTo(
-      '#work-overview-subheading',
-      { y: 5, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        ease: 'power2.inOut',
-        duration: 1,
-        delay: 0.75,
-      }
-    );
+  ngOnDestroy(): void {
+    this.#gsapContext?.revert();
+  }
 
-    gsap.fromTo(
-      '.work-overview__list',
-      { y: 5, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        ease: 'power2.inOut',
-        duration: 1,
-        delay: 0.75,
-      }
-    );
+  getSrcset(srcset: ProjectImageSource[]): string {
+    return srcset.map((source) => `${source.url} ${source.width}w`).join(', ');
   }
 
   public async navigateToProject(event: Event, project: string): Promise<void> {
@@ -72,7 +40,6 @@ export class WorkOverviewComponent implements AfterViewInit {
     if (this.#router.url === '/work/' + project) {
       return;
     }
-
 
     this.#router.navigateByUrl('/work/' + project);
   }

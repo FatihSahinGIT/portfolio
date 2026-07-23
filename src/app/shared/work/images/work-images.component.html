@@ -1,20 +1,21 @@
 <section class="work-images">
-    <div
-        class="work-images__container flex h-max gap-6 xs:flex-col xl:flex-row"
-    >
-        @for (image of deviceImages; track image.url) {
-            <figure class="work-images__figure xs:w-full xl:w-max">
-                <img
-                    class="work-images__img xs:h-auto md:h-auto md:max-w-full"
-                    [src]="image.url"
-                    [alt]="image.figcaption"
-                />
-                <figcaption
-                    class="work-images__figcaption mt-2 text-start text-sm"
-                >
-                    {{ image.figcaption }}
-                </figcaption>
-            </figure>
-        }
-    </div>
+  <div class="work-images__container h-auto w-full">
+    @if (image?.overview; as overview) {
+      <figure [class]="overview.figureClass">
+        <div class="max-h-260 overflow-hidden card">
+          <img
+            [src]="overview.url"
+            [attr.srcset]="getSrcset(overview.srcset)"
+            [attr.sizes]="overview.sizes"
+            [alt]="overview.alt"
+            [class]="overview.imageClass"
+          />
+        </div>
+
+        <figcaption class="mt-2 text-start text-sm">
+          {{ overview.figcaption }}
+        </figcaption>
+      </figure>
+    }
+  </div>
 </section>

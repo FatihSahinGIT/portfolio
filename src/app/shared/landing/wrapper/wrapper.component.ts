@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { HeadlineComponent } from '../headline/headline.component';
-import { SelectedWorkComponent } from "../selected-work/selected-work.component";
+
+import { WorkOverviewComponent } from '../../work/overview/work-overview.component';
 
 @Component({
-    selector: 'wrapper',
-    templateUrl: './wrapper.component.html',
-    imports: [HeadlineComponent, SelectedWorkComponent]
+  selector: 'wrapper',
+  templateUrl: './wrapper.component.html',
+  imports: [HeadlineComponent, WorkOverviewComponent],
 })
 export class WrapperComponent {}
