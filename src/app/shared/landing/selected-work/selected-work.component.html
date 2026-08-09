@@ -1,11 +1,11 @@
 <div>
-  <div class="selected-work grid grid-cols-4 gap-8 md:grid-cols-12">
+  <div class="selected-work grid grid-cols-4 gap-3 md:grid-cols-12">
     <div class="col-span-full">
       <h1 class="selected-work__heading">Selected Works</h1>
     </div>
 
     <div class="col-span-full">
-      <div class="selected-work__boxes flex gap-10 xs:flex-col lg:flex-row">
+      <div class="selected-work__boxes flex gap-3 xs:flex-col lg:flex-row">
         @for (work of selectedProjects; track work.company) {
           <selected-work-box
             [name]="work.name"

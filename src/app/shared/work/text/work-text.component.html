@@ -1,13 +1,9 @@
-<section class="work-text__container mt-10 flex h-full flex-col gap-2 md:gap-4 xl:mt-24">
-  <h4 class="text-sm tracking-tight text-gray-500">About</h4>
-
+<section class="work-text__container flex h-full flex-col gap-3">
+  <h4 class="tracking-tight text-gray-500">About</h4>
 
   @for (paragraph of text.split('\n\n'); track paragraph) {
-    <p class="work-text 2xl:max-w-2/3 text-base font-light md:text-2xl">
+    <p class="work-text xl:max-w-2/3 text-base font-light">
       {{ paragraph }}
     </p>
-}
-  <!-- <p class="work-text 2xl:max-w-2/3 text-base font-light md:text-2xl">
-    {{ text }}
-  </p> -->
+  }
 </section>

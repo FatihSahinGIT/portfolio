@@ -1,7 +1,6 @@
 @config '../tailwind.config.ts';
 @import 'tailwindcss';
 
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -88,14 +87,36 @@ body {
 
 h1,
 .h1 {
-  @apply text-3xl md:text-5xl xl:text-7xl;
-  @apply tracking-[-0.03em];
+  @apply text-3xl leading-tight tracking-[-0.03em] md:text-4xl;
 }
 
 h2,
 .h2 {
-  @apply text-xl md:text-3xl;
-  @apply tracking-[-0.02em];
+  @apply text-2xl leading-tight tracking-[-0.02em] md:text-3xl;
+}
+
+h3,
+.h3 {
+  @apply text-xl leading-snug md:text-2xl;
+}
+
+h4,
+.h4 {
+  @apply text-lg leading-snug md:text-xl;
+}
+
+h5,
+.h5 {
+  @apply text-base leading-snug md:text-lg;
+}
+
+h6,
+.h6 {
+  @apply text-base leading-snug;
+}
+
+p {
+  @apply text-base leading-relaxed;
 }
 
 :focus-visible {
@@ -121,4 +142,3 @@ h2,
 .card {
   background: var(--bg-card);
 }
-

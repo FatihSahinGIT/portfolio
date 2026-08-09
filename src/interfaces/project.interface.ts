@@ -27,6 +27,11 @@ export interface ProjectImageSource {
     width: number;
 }
 
+export interface ProjectResponsiveImage extends ProjectImage {
+    srcset: ProjectImageSource[];
+    sizes: string;
+}
+
 export interface ProjectOverviewImage extends ProjectImage {
     srcset: ProjectImageSource[];
     sizes: string;
@@ -39,6 +44,7 @@ export interface ProjectOverviewImage extends ProjectImage {
 export interface ProjectImages {
     overview: ProjectOverviewImage;
     selected: ProjectImage;
+    introduction?: ProjectResponsiveImage;
     smartphone?: ProjectImage;
     tablet?: ProjectImage;
     others?: ProjectImage[];

@@ -4,7 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import qualificationsJson from '../../../../qualifications.json';
 import { GsapService } from '../../services/gsap.service';
-import { aboutWrapperAnimations } from './wrapper.gsap';
+import { aboutCardsAnimation, aboutImageAnimation, aboutIntroAnimation } from './wrapper.gsap';
 import { AboutExperienceComponent } from '../about-experience/about-experiecne.component';
 
 interface Qualification {
@@ -36,24 +36,30 @@ export class WrapperComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.#gsapContext = this.#gsapService.context(this.aboutWrapper.nativeElement, () => {
-      const timeline = gsap.timeline();
+      const select = gsap.utils.selector(this.aboutWrapper.nativeElement);
 
-      aboutWrapperAnimations.forEach(({ target, from, to, position, scrollTrigger }) => {
-        if (scrollTrigger) {
-          gsap.fromTo(target, from, {
-            ...to,
-            scrollTrigger: {
-              trigger: target,
-              start: 'top 85%',
-              toggleActions: 'play none none none',
-              once: true,
-            },
-          });
-          return;
-        }
+      const imageElements = aboutImageAnimation.targets.flatMap((target) => select(target));
 
-        timeline.fromTo(target, from, to, position);
-      });
+      const introElements = aboutIntroAnimation.targets.flatMap((target) => select(target));
+
+      const cardElements = aboutCardsAnimation.targets.flatMap((target) => select(target));
+
+      gsap
+        .timeline()
+        .fromTo(imageElements, aboutImageAnimation.from, aboutImageAnimation.to)
+        .fromTo(introElements, aboutIntroAnimation.from, aboutIntroAnimation.to, '<0.2');
+
+      if (cardElements.length > 0) {
+        gsap.fromTo(cardElements, aboutCardsAnimation.from, {
+          ...aboutCardsAnimation.to,
+          scrollTrigger: {
+            trigger: cardElements[0],
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        });
+      }
 
       this.#setupStickyImage();
       this.#refreshScrollTriggerWhenImageIsReady();

@@ -1,4 +1,4 @@
-<div id="work" class="work-overview__list mb-12 grid grid-cols-4 gap-x-20 gap-y-20 md:grid-cols-12">
+<div id="work" class="work-overview__list mb-12 grid grid-cols-4 gap-3 md:grid-cols-12">
   @for (project of projects; track project.company) {
     <figure [class]="project.images.overview.figureClass">
       <a [routerLink]="['/work', project.company]" class="group block outline-none">

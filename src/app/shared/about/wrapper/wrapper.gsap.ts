@@ -1,64 +1,61 @@
-
-interface AboutWrapperAnimation {
-  target: string;
+interface AboutStaggerAnimation {
+  targets: string[];
   from: gsap.TweenVars;
   to: gsap.TweenVars;
-  position?: gsap.Position;
-  scrollTrigger?: boolean;
 }
 
+export const aboutImageAnimation = {
+  targets: ['.about-headline__image-content'],
+  from: {
+    y: 4,
+    autoAlpha: 0,
+  },
+  to: {
+    y: 0,
+    autoAlpha: 1,
+    duration: 1.6,
+    ease: 'power3.out',
+  },
+};
+
 const defaultFrom: gsap.TweenVars = {
-  y: 8,
-  opacity: 0,
+  y: 12,
+  autoAlpha: 0,
 };
 
 const defaultTo: gsap.TweenVars = {
   y: 0,
-  opacity: 1,
-  duration: 0.5,
-  ease: 'power2.inOut',
+  autoAlpha: 1,
+  duration: 1.15,
+  ease: 'power3.out',
 };
 
-export const aboutWrapperAnimations: AboutWrapperAnimation[] = [
-  {
-    target: '.about-headline__image-content',
-    from: defaultFrom,
-    to: {
-      ...defaultTo,
-      duration: 1,
+export const aboutIntroAnimation: AboutStaggerAnimation = {
+  targets: [
+    '.about-location',
+    '.about-intro',
+    '.about-expertise__list',
+    '.about-qualifications__content',
+  ],
+  from: defaultFrom,
+  to: {
+    ...defaultTo,
+    stagger: {
+      each: 0.22,
+      from: 'start',
     },
   },
-  {
-    target: '.about-location',
-    from: defaultFrom,
-    to: defaultTo,
-    position: '-=0.45',
-  },
-  {
-    target: '.about-intro',
-    from: defaultFrom,
-    to: defaultTo,
-    position: '-=0.35',
-  },
-  {
-    target: '.about-expertise__list',
-    from: defaultFrom,
-    to: defaultTo,
-    position: '-=0.3',
-  },
-  {
-    target: '.about-qualifications__content',
-    from: defaultFrom,
-    to: defaultTo,
-    position: '-=0.3',
-  },
-  {
-    target: '.card',
-    from: defaultFrom,
-    to: {
-      ...defaultTo,
-      stagger: 0.1,
+};
+
+export const aboutCardsAnimation: AboutStaggerAnimation = {
+  targets: ['.card'],
+  from: defaultFrom,
+  to: {
+    ...defaultTo,
+    duration: 0.9,
+    stagger: {
+      each: 0.18,
+      from: 'start',
     },
-    scrollTrigger: true,
   },
-];
+};

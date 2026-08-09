@@ -1,4 +1,4 @@
-<div class="about-qualifications flex flex-col gap-4">
+<div class="about-qualifications flex flex-col gap-3">
   @for (qualification of qualifications; track qualification.title) {
     <div class="about-qualifications__table">
       <section class="flex justify-between border-b border-gray-200 pb-4">
@@ -12,9 +12,9 @@
             {{ qualification.title }}
           </a>
         } @else {
-          <p>{{ qualification.title }}</p>
+          <p class="text-base">{{ qualification.title }}</p>
         }
-        <p>{{ qualification.year }}</p>
+        <p class="text-base">{{ qualification.year }}</p>
       </section>
     </div>
   }

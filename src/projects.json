@@ -42,15 +42,30 @@
           "figcaption": "Appointment booking service"
         },
         "introduction": {
-          "url": "/project-images/kv.digital/introduction/kv-2354.webp",
+          "url": "/project-images/kv.digital/introduction/kv-1436.webp",
+          "srcset": [
+            {
+              "url": "/project-images/kv.digital/introduction/kv-720.webp",
+              "width": 720
+            },
+            {
+              "url": "/project-images/kv.digital/introduction/kv-1436.webp",
+              "width": 1436
+            },
+            {
+              "url": "/project-images/kv.digital/introduction/kv-2872.webp",
+              "width": 2872
+            }
+          ],
+          "sizes": "100vw",
           "figcaption": "Appointment Search Page"
         },
         "smartphone": {
-          "url": "/project-images/kv.digital/smartphone/kvdigital-smartphone.webp",
+          "url": "/project-images/kv.digital/smartphone/kv-sm.webp",
           "figcaption": "eTerminservice"
         },
         "tablet": {
-          "url": "/project-images/kv.digital/tablet/kvdigital-tablet.webp",
+          "url": "/project-images/kv.digital/tablet/kv-tb.webp",
           "figcaption": "Map Search"
         },
         "others": []
@@ -160,7 +175,7 @@
               "width": 1312
             }
           ],
-          "sizes": "100vw",
+          "sizes": "(min-width: 768px) calc(50vw - 4rem), calc(100vw - 3rem)",
           "figcaption": "Website redesign",
           "alt": "Mindful Minds project overview",
           "figureClass": "col-span-full md:col-span-6",

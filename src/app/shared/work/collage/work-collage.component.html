@@ -1,0 +1,46 @@
+@if (images?.introduction; as introduction) {
+  <div class="card aspect-1436/621 col-span-full w-full overflow-hidden bg-gray-200">
+    <figure class="h-full w-full">
+      <img
+        class="block h-full w-full object-cover object-center"
+        [src]="introduction.url"
+        [srcset]="getSrcset(introduction.srcset)"
+        [sizes]="introduction.sizes"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        [alt]="introduction.figcaption"
+      />
+    </figure>
+  </div>
+}
+
+@if (images?.smartphone; as smartphone) {
+  <div class="card col-span-full w-full self-start overflow-hidden bg-gray-200 md:col-span-6">
+    <figure class="w-full">
+      <img
+        class="block h-auto w-full object-cover object-center"
+        [src]="smartphone.url"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        [alt]="smartphone.figcaption"
+      />
+    </figure>
+  </div>
+}
+
+@if (images?.tablet; as tablet) {
+  <div class="card col-span-full w-full self-start overflow-hidden bg-gray-200 md:col-span-6">
+    <figure class="w-full">
+      <img
+        class="block h-auto w-full object-contain"
+        [src]="tablet.url"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        [alt]="tablet.figcaption"
+      />
+    </figure>
+  </div>
+}

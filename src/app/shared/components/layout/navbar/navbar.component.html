@@ -1,17 +1,36 @@
 <nav
+  #navbar
   class="mb-8 flex items-center justify-between rounded-md pt-4"
   aria-label="Main navigation"
 >
-  <a href="/" aria-label="Home - Portfolio" class="inline-flex" (click)="navigate($event, '/')">
+  <a
+    href="/"
+    aria-label="Home - Portfolio"
+    class="navbar-logo inline-flex"
+    (click)="navigate($event, '/')"
+  >
     <img [src]="logoSrc()" alt="Portfolio Logo" class="h-8 md:h-12" />
   </a>
 
-  <ul class="flex items-center rounded-md xs:gap-2 md:gap-8 md:px-4 md:py-2">
-    <li><a class="hover:underline hover:underline-offset-3" href="/about" (click)="navigate($event, '/about')">About</a></li>
-    <li><a class="hover:underline hover:underline-offset-3" href="#work">Work</a></li>
+  <ul class="flex items-center gap-3 rounded-md md:px-4 md:py-2">
+    <li class="navbar-link">
+      <a
+        class="hover:underline-offset-3 hover:underline"
+        href="/about"
+        (click)="navigate($event, '/about')"
+        >About</a
+      >
+    </li>
+    <li class="navbar-link">
+      <a class="hover:underline-offset-3 hover:underline" href="#work">Work</a>
+    </li>
 
-    <li><a class="hover:underline hover:underline-offset-3" href="mailto:sahinspostfach@gmail.com">Contact</a></li>
-    <li>
+    <li class="navbar-link">
+      <a class="hover:underline-offset-3 hover:underline" href="mailto:sahinspostfach@gmail.com"
+        >Contact</a
+      >
+    </li>
+    <li class="navbar-link">
       <button
         type="button"
         (click)="toggleTheme()"
