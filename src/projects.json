@@ -61,11 +61,35 @@
           "figcaption": "Appointment Search Page"
         },
         "smartphone": {
-          "url": "/project-images/kv.digital/smartphone/kv-sm.webp",
+          "url": "/project-images/kv.digital/smartphone/kv.webp",
+          "srcset": [
+            {
+              "url": "/project-images/kv.digital/smartphone/kv-480.webp",
+              "width": 480
+            },
+            {
+              "url": "/project-images/kv.digital/smartphone/kv-768.webp",
+              "width": 768
+            },
+            {
+              "url": "/project-images/kv.digital/smartphone/kv-1024.webp",
+              "width": 1024
+            },
+            {
+              "url": "/project-images/kv.digital/smartphone/kv-1280.webp",
+              "width": 1280
+            },
+            {
+              "url": "/project-images/kv.digital/smartphone/kv.webp",
+              "width": 1440
+            }
+          ],
+          "sizes": "(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)",
           "figcaption": "eTerminservice"
         },
+
         "tablet": {
-          "url": "/project-images/kv.digital/tablet/kv-tb.webp",
+          "url": "/project-images/kv.digital/tablet/kv.webp",
           "figcaption": "Map Search"
         },
         "others": []

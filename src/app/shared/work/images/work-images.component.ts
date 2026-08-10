@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {
-  ProjectImage,
-  ProjectImages,
-  ProjectImageSource,
-} from '../../../../interfaces/project.interface';
+import { ProjectImage, ProjectImages } from '../../../../interfaces/project.interface';
 
 @Component({
   selector: 'work-images',
@@ -13,7 +9,7 @@ import {
 export class WorkImagesComponent {
   @Input() image: ProjectImages | null = null;
 
-  getSrcset(srcset: ProjectImageSource[]): string {
-    return srcset.map((source) => `${source.url} ${source.width}w`).join(', ');
+  getSrcset(srcset: ProjectImage['srcset']): string | null {
+    return srcset ? srcset.map((source) => `${source.url} ${source.width}w`).join(', ') : null;
   }
 }

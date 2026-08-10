@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, inject, OnDestroy } from '@angular/core';
 import { gsap } from 'gsap';
 import projectsJson from '../../../../projects.json';
-import { Project, ProjectImageSource } from '../../../../interfaces/project.interface';
+import { Project, ProjectImage } from '../../../../interfaces/project.interface';
 import { Router, RouterLink } from '@angular/router';
 import { GsapService } from '../../services/gsap.service';
 import { workOverviewListVars } from './work-overview.gsap';
@@ -30,8 +30,8 @@ export class WorkOverviewComponent implements AfterViewInit, OnDestroy {
     this.#gsapContext?.revert();
   }
 
-  getSrcset(srcset: ProjectImageSource[]): string {
-    return srcset.map((source) => `${source.url} ${source.width}w`).join(', ');
+  getSrcset(srcset: ProjectImage['srcset']): string | null {
+    return srcset ? srcset.map((source) => `${source.url} ${source.width}w`).join(', ') : null;
   }
 
   public async navigateToProject(event: Event, project: string): Promise<void> {

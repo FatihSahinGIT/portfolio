@@ -4,8 +4,8 @@
       <img
         class="block h-full w-full object-cover object-center"
         [src]="introduction.url"
-        [srcset]="getSrcset(introduction.srcset)"
-        [sizes]="introduction.sizes"
+        [attr.srcset]="getSrcset(introduction.srcset)"
+        [attr.sizes]="introduction.sizes ?? null"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
@@ -21,6 +21,8 @@
       <img
         class="block h-auto w-full object-cover object-center"
         [src]="smartphone.url"
+        [attr.srcset]="getSrcset(smartphone.srcset)"
+        [attr.sizes]="smartphone.sizes ?? null"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
