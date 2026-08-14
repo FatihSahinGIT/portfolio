@@ -1,13 +1,13 @@
-@import 'tailwindcss';
-
 .work-overview__company {
     color: var(--text);
-    @apply text-xs;
-    @apply font-medium;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
 }
 
 .work-overview__project {
     color: var(--text-muted);
-    @apply text-xs;
-    @apply font-medium;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
 }
