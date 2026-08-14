@@ -38,6 +38,8 @@
       <img
         class="block h-auto w-full object-contain"
         [src]="tablet.url"
+        [attr.srcset]="getSrcset(tablet.srcset)"
+        [attr.sizes]="tablet.sizes ?? null"
         loading="lazy"
         decoding="async"
         fetchpriority="low"

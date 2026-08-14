@@ -4,17 +4,21 @@
       <a [routerLink]="['/work', project.company]" class="group block outline-none">
         <div [class]="project.images.overview.imageContainerClass">
           <img
-            [src]="project.images.overview.url"
-            [srcset]="getSrcset(project.images.overview.srcset)"
-            [sizes]="project.images.overview.sizes"
-            [alt]="project.images.overview.alt"
-            [class]="project.images.overview.imageClass"
+            [src]="project.images.landingpage?.url ?? project.images.overview.url"
+            [attr.srcset]="
+              getSrcset(project.images.landingpage?.srcset ?? project.images.overview.srcset)
+            "
+            [attr.sizes]="
+              project.images.landingpage?.sizes ?? project.images.overview.sizes ?? null
+            "
+            [alt]="project.images.landingpage?.alt ?? project.images.overview.alt ?? ''"
+            [class]="project.images.landingpage?.imageClass ?? project.images.overview.imageClass"
           />
         </div>
 
         <figcaption class="flex justify-between py-3 text-sm font-light">
           <span class="transition-underline hover:underline">
-            {{ project.images.overview.figcaption }}
+            {{ project.images.landingpage?.figcaption ?? project.images.overview.figcaption }}
           </span>
           <span class="transition-underline hover:underline">
             {{ project.name }}

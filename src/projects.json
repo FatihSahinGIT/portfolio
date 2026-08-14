@@ -6,36 +6,68 @@
       "name": "kv.digital",
       "project": "Appointment booking service",
       "images": {
-        "overview": {
-          "url": "project-images/kv.digital/work-overview/wp-1024.webp",
+        "landingpage": {
+          "url": "project-images/kv.digital/landingpage/wp.webp",
           "srcset": [
             {
-              "url": "project-images/kv.digital/work-overview/wp-480.webp",
+              "url": "project-images/kv.digital/landingpage/wp-480.webp",
               "width": 480
             },
             {
-              "url": "project-images/kv.digital/work-overview/wp-768.webp",
+              "url": "project-images/kv.digital/landingpage/wp-768.webp",
               "width": 768
             },
             {
-              "url": "project-images/kv.digital/work-overview/wp-1024.webp",
+              "url": "project-images/kv.digital/landingpage/wp-1024.webp",
               "width": 1024
             },
             {
-              "url": "project-images/kv.digital/work-overview/wp-1600.webp",
+              "url": "project-images/kv.digital/landingpage/wp-1280.webp",
+              "width": 1280
+            },
+            {
+              "url": "project-images/kv.digital/landingpage/wp-1600.webp",
               "width": 1600
             },
             {
-              "url": "project-images/kv.digital/work-overview/wp-2354.webp",
+              "url": "project-images/kv.digital/landingpage/wp-2354.webp",
               "width": 2354
             }
           ],
-          "sizes": "100vw",
+          "sizes": "calc(100vw - 3rem)",
+          "figcaption": "Appointment booking service landing page",
+          "imageClass": "duration-400 block max-h-[inherit] w-full object-contain transition-all"
+        },
+        "overview": {
+          "url": "project-images/kv.digital/overview/wp-2354.webp",
+          "srcset": [
+            {
+              "url": "project-images/kv.digital/overview/wp-480.webp",
+              "width": 480
+            },
+            {
+              "url": "project-images/kv.digital/overview/wp-768.webp",
+              "width": 768
+            },
+            {
+              "url": "project-images/kv.digital/overview/wp-1024.webp",
+              "width": 1024
+            },
+            {
+              "url": "project-images/kv.digital/overview/wp-1600.webp",
+              "width": 1600
+            },
+            {
+              "url": "project-images/kv.digital/overview/wp-2354.webp",
+              "width": 2354
+            }
+          ],
+          "sizes": "calc(100vw - 3rem)",
           "figcaption": "116117 Terminservice",
           "alt": "KV Digital project overview",
           "figureClass": "col-span-full rounded-sm",
           "imageContainerClass": "max-h-170 overflow-hidden card",
-          "imageClass": "duration-400 block max-h-[inherit] w-full object-contain pt-6 transition-all hover:pt-12"
+          "imageClass": "duration-400 block max-h-[inherit] w-full object-cover transition-all"
         },
         "selected": {
           "url": "/project-images/kv.digital/selected/kv.digital.webp",
@@ -61,27 +93,27 @@
           "figcaption": "Appointment Search Page"
         },
         "smartphone": {
-          "url": "/project-images/kv.digital/smartphone/kv.webp",
+          "url": "/project-images/kv.digital/smartphone/wpm.webp",
           "srcset": [
             {
-              "url": "/project-images/kv.digital/smartphone/kv-480.webp",
+              "url": "/project-images/kv.digital/smartphone/wpm-480.webp",
               "width": 480
             },
             {
-              "url": "/project-images/kv.digital/smartphone/kv-768.webp",
+              "url": "/project-images/kv.digital/smartphone/wpm-768.webp",
               "width": 768
             },
             {
-              "url": "/project-images/kv.digital/smartphone/kv-1024.webp",
+              "url": "/project-images/kv.digital/smartphone/wpm-1024.webp",
               "width": 1024
             },
             {
-              "url": "/project-images/kv.digital/smartphone/kv-1280.webp",
-              "width": 1280
+              "url": "/project-images/kv.digital/smartphone/wpm-1600.webp",
+              "width": 1600
             },
             {
-              "url": "/project-images/kv.digital/smartphone/kv.webp",
-              "width": 1440
+              "url": "/project-images/kv.digital/smartphone/wpm-2354.webp",
+              "width": 2354
             }
           ],
           "sizes": "(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)",
@@ -89,7 +121,30 @@
         },
 
         "tablet": {
-          "url": "/project-images/kv.digital/tablet/kv.webp",
+          "url": "/project-images/kv.digital/tablet/wpt.webp",
+          "srcset": [
+            {
+              "url": "/project-images/kv.digital/tablet/wpt-480.webp",
+              "width": 480
+            },
+            {
+              "url": "/project-images/kv.digital/tablet/wpt-768.webp",
+              "width": 768
+            },
+            {
+              "url": "/project-images/kv.digital/tablet/wpt-1024.webp",
+              "width": 1024
+            },
+            {
+              "url": "/project-images/kv.digital/tablet/wpt-1600.webp",
+              "width": 1600
+            },
+            {
+              "url": "/project-images/kv.digital/tablet/wpt-2354.webp",
+              "width": 2354
+            }
+          ],
+          "sizes": "(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)",
           "figcaption": "Map Search"
         },
         "others": []

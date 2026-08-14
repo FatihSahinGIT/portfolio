@@ -2,7 +2,7 @@
   <div class="work-images__container h-auto w-full">
     @if (image?.overview; as overview) {
       <figure [class]="overview.figureClass">
-        <div class="max-h-160 card overflow-hidden">
+        <div class="xl:max-h-160 card 4xl:max-h-180 overflow-hidden">
           <img
             [src]="overview.url"
             [attr.srcset]="getSrcset(overview.srcset)"

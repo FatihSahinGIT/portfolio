@@ -30,6 +30,7 @@ export interface ProjectImage {
 
 export interface ProjectImages {
   overview: ProjectImage;
+  landingpage?: ProjectImage;
   selected: ProjectImage;
   introduction?: ProjectImage;
   smartphone?: ProjectImage;
