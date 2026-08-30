@@ -1,24 +1,21 @@
 <div id="work" class="work-overview__list mb-12 grid grid-cols-4 gap-3 md:grid-cols-12">
-  @for (project of projects; track project.company) {
-    <figure [class]="project.images.overview.figureClass">
+  @for (project of projects; let i = $index; track project.company) {
+    @let displayImage = project.images.landingpage ?? project.images.overview;
+    <figure class="col-span-full" [class]="i !== 0 ? 'md:col-span-6' : 'md:col-span-full'">
       <a [routerLink]="['/work', project.company]" class="group block outline-none">
-        <div [class]="project.images.overview.imageContainerClass">
+        <div class="max-h-200 card overflow-hidden">
           <img
-            [src]="project.images.landingpage?.url ?? project.images.overview.url"
-            [attr.srcset]="
-              getSrcset(project.images.landingpage?.srcset ?? project.images.overview.srcset)
-            "
-            [attr.sizes]="
-              project.images.landingpage?.sizes ?? project.images.overview.sizes ?? null
-            "
-            [alt]="project.images.landingpage?.alt ?? project.images.overview.alt ?? ''"
-            [class]="project.images.landingpage?.imageClass ?? project.images.overview.imageClass"
+            [src]="displayImage.url"
+            [attr.srcset]="getSrcset(displayImage.srcset)"
+            [attr.sizes]="displayImage.sizes ?? null"
+            [alt]="displayImage.alt ?? ''"
+            class="duration-400 block max-h-[inherit] w-full object-contain p-10 hover:p-12"
           />
         </div>
 
         <figcaption class="flex justify-between py-3 text-sm font-light">
           <span class="transition-underline hover:underline">
-            {{ project.images.landingpage?.figcaption ?? project.images.overview.figcaption }}
+            {{ displayImage.figcaption }}
           </span>
           <span class="transition-underline hover:underline">
             {{ project.name }}

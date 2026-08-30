@@ -12,11 +12,8 @@ export class HeadlineComponent implements AfterViewInit, OnDestroy {
   readonly #elementRef = inject(ElementRef<HTMLElement>);
   readonly #gsapService = inject(GsapService);
 
-  @ViewChild('subheadline', { static: true })
-  private subheadline!: ElementRef<HTMLElement>;
-
-  @ViewChild('separator', { static: true })
-  private separator!: ElementRef<HTMLHRElement>;
+  @ViewChild('headline', { static: true })
+  private headline!: ElementRef<HTMLElement>;
 
   private gsapContext?: gsap.Context;
 
@@ -28,9 +25,7 @@ export class HeadlineComponent implements AfterViewInit, OnDestroy {
         },
       });
 
-      timeline
-        .from(this.subheadline.nativeElement, subheadlineVars)
-        .from(this.separator.nativeElement, separatorVars, '<0.5');
+      timeline.from(this.headline.nativeElement, subheadlineVars);
     });
   }
 

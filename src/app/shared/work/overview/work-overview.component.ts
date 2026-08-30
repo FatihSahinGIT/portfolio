@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, inject, OnDestroy } from '@angular/core';
 import { gsap } from 'gsap';
-import projectsJson from '../../../../projects.json';
-import { Project, ProjectImage } from '../../../../interfaces/project.interface';
 import { Router, RouterLink } from '@angular/router';
 import { GsapService } from '../../services/gsap.service';
 import { workOverviewListVars } from './work-overview.gsap';
+import { projectCatalog } from '../../../content/projects/project-catalog';
+import { formatSrcset } from '../../../content/projects/project-image';
+import { ProjectImage } from '../../../content/projects/project.types';
 
 @Component({
   selector: 'work-overview',
@@ -13,7 +14,7 @@ import { workOverviewListVars } from './work-overview.gsap';
   imports: [RouterLink],
 })
 export class WorkOverviewComponent implements AfterViewInit, OnDestroy {
-  public readonly projects: Project[] = projectsJson.projects;
+  public readonly projects = projectCatalog;
 
   readonly #elementRef = inject(ElementRef<HTMLElement>);
   readonly #router: Router = inject(Router);
@@ -31,7 +32,7 @@ export class WorkOverviewComponent implements AfterViewInit, OnDestroy {
   }
 
   getSrcset(srcset: ProjectImage['srcset']): string | null {
-    return srcset ? srcset.map((source) => `${source.url} ${source.width}w`).join(', ') : null;
+    return formatSrcset(srcset);
   }
 
   public async navigateToProject(event: Event, project: string): Promise<void> {

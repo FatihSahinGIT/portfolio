@@ -1,14 +1,14 @@
 <section class="work-images">
   <div class="work-images__container h-auto w-full">
     @if (image?.overview; as overview) {
-      <figure [class]="overview.figureClass">
-        <div class="xl:max-h-160 card 4xl:max-h-180 overflow-hidden">
+      <figure class="col-span-full rounded-sm">
+        <div class="xl:max-h-160 card 2xl:max-h-280 overflow-hidden">
           <img
             [src]="overview.url"
             [attr.srcset]="getSrcset(overview.srcset)"
             [attr.sizes]="overview.sizes"
             [alt]="overview.alt"
-            [class]="overview.imageClass"
+            class="duration-400 block max-h-[inherit] w-full object-cover transition-all"
           />
         </div>
 

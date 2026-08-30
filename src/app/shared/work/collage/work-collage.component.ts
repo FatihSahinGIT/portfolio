@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-
-import { ProjectImage, ProjectImages } from '../../../../interfaces/project.interface';
+import { formatSrcset } from '../../../content/projects/project-image';
+import { ProjectImage, ProjectImages } from '../../../content/projects/project.types';
 
 @Component({
   selector: 'work-collage',
@@ -10,6 +10,6 @@ export class WorkCollageComponent {
   @Input() images: ProjectImages | null | undefined;
 
   protected getSrcset(srcset: ProjectImage['srcset']): string | null {
-    return srcset ? srcset.map((source) => `${source.url} ${source.width}w`).join(', ') : null;
+    return formatSrcset(srcset);
   }
 }
