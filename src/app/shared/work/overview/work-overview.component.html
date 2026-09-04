@@ -1,15 +1,23 @@
 <div id="work" class="work-overview__list mb-12 grid grid-cols-4 gap-3 md:grid-cols-12">
   @for (project of projects; let i = $index; track project.company) {
     @let displayImage = project.images.landingpage ?? project.images.overview;
-    <figure class="col-span-full" [class]="i !== 0 ? 'md:col-span-6' : 'md:col-span-full'">
+    <figure
+      class="project-image-section col-span-full"
+      [class]="i !== 0 ? 'md:col-span-6' : 'md:col-span-full'"
+    >
       <a [routerLink]="['/work', project.company]" class="group block outline-none">
-        <div class="max-h-200 card overflow-hidden">
+        <div class="card max-h-full overflow-hidden object-contain">
           <img
             [src]="displayImage.url"
             [attr.srcset]="getSrcset(displayImage.srcset)"
             [attr.sizes]="displayImage.sizes ?? null"
+            [attr.width]="displayImage.width ?? null"
+            [attr.height]="displayImage.height ?? null"
             [alt]="displayImage.alt ?? ''"
-            class="duration-400 block max-h-[inherit] w-full object-contain p-10 hover:p-12"
+            [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+            [attr.fetchpriority]="i === 0 ? 'high' : 'low'"
+            decoding="async"
+            class=""
           />
         </div>
 

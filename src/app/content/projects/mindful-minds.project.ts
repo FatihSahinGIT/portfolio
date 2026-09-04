@@ -1,4 +1,5 @@
 import { findProjectSummary } from './project-catalog';
+import { responsiveProjectImage } from './project-image';
 import { Project } from './project.types';
 
 const summary = findProjectSummary('mindful-minds');
@@ -11,14 +12,26 @@ export const mindfulMindsProject = {
   ...summary,
   images: {
     ...summary.images,
-    smartphone: {
-      url: '/project-images/mindful-minds/smartphone/mindful.webp',
+    smartphone: responsiveProjectImage({
+      url: '/project-images/mm/smartphone/mms-2354.webp',
+      srcsetBaseUrl: '/project-images/mm/smartphone/mms.webp',
+      originalWidth: 4000,
+      widths: [480, 780, 1024, 1280, 1600, 1920, 2354, 3200],
+      width: 4000,
+      height: 2667,
+      sizes: '(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)',
       figcaption: 'Refund Calculator',
-    },
-    tablet: {
-      url: '/project-images/mindful-minds/tablet/mindful.webp',
+    }),
+    tablet: responsiveProjectImage({
+      url: '/project-images/mm/tablet/mmt-2354.webp',
+      srcsetBaseUrl: '/project-images/mm/tablet/mmt.webp',
+      originalWidth: 4000,
+      widths: [480, 780, 1024, 1280, 1600, 1920, 2354, 3200],
+      width: 4000,
+      height: 2667,
+      sizes: '(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)',
       figcaption: 'Online Course Overview',
-    },
+    }),
     others: [],
   },
   role: 'Webdesigner',

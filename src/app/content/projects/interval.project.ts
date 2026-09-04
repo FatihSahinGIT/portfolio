@@ -1,4 +1,5 @@
 import { findProjectSummary } from './project-catalog';
+import { responsiveProjectImage } from './project-image';
 import { Project } from './project.types';
 
 const summary = findProjectSummary('interval');
@@ -12,17 +13,29 @@ export const intervalProject = {
   images: {
     ...summary.images,
     overview: {
-      url: '/project-images/interval/overview/iv.webp',
+      ...summary.images.overview,
       figcaption: 'InterVal Website Overview',
     },
-    smartphone: {
-      url: '/project-images/interval/smartphone/interval-smartphone.webp',
+    smartphone: responsiveProjectImage({
+      url: '/project-images/iv/smartphone/ivs-2354.webp',
+      srcsetBaseUrl: '/project-images/iv/smartphone/ivs.webp',
+      originalWidth: 4000,
+      widths: [480, 780, 1024, 1280, 1600, 1920, 2354, 3200],
+      width: 4000,
+      height: 2667,
+      sizes: '(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)',
       figcaption: 'Topic Area Overview',
-    },
-    tablet: {
-      url: '/project-images/interval/tablet/interval-tablet.webp',
+    }),
+    tablet: responsiveProjectImage({
+      url: '/project-images/iv/tablet/ivt-2354.webp',
+      srcsetBaseUrl: '/project-images/iv/tablet/ivt.webp',
+      originalWidth: 4000,
+      widths: [480, 780, 1024, 1280, 1600, 1920, 2354, 3200],
+      width: 4000,
+      height: 2667,
+      sizes: '(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)',
       figcaption: 'Publications Overview',
-    },
+    }),
     others: [],
   },
   role: 'Webdesigner',

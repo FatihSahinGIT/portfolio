@@ -6,20 +6,20 @@
             "project": "Appointment booking service",
             "images": {
                 "overview": {
-                    "url": "/project-images/kv.digital/overview/kvdigital.jpeg",
+                    "url": "/project-images/wp/overview/wp-2354.webp",
                     "figcaption": "Appointment booking service"
 
                 },
                 "selected": {
-                    "url": "/project-images/kv.digital/selected/kv.digital.webp",
+                    "url": "/project-images/wp/landingpage/wpl-1600.webp",
                     "figcaption": "Appointment booking service"
                 },
                 "smartphone": {
-                    "url": "/project-images/kv.digital/smartphone/kvdigital-smartphone.webp",
+                    "url": "/project-images/wp/smartphone/wps-2354.webp",
                     "figcaption": "eTerminservice"
                 },
                 "tablet": {
-                    "url": "/project-images/kv.digital/tablet/kvdigital-tablet.webp",
+                    "url": "/project-images/wp/tablet/wpt-2354.webp",
                     "figcaption": "Map Search"
                 },
                 "others": []
@@ -42,19 +42,19 @@
             "project": "Online Presence Redesign",
             "images": {
                 "overview": {
-                    "url": "/project-images/interval/overview/interval.jpeg",
+                    "url": "/project-images/iv/overview/ivo-2354.webp",
                     "figcaption": "Online Presence redesign"
                 },
                 "selected": {
-                    "url": "/project-images/interval/selected/interval.webp",
+                    "url": "/project-images/iv/landingpage/ivl-1600.webp",
                     "figcaption": "Online Presence redesign"
                 },
                 "smartphone": {
-                    "url": "/project-images/interval/smartphone/interval-smartphone.webp",
+                    "url": "/project-images/iv/smartphone/ivs-2354.webp",
                     "figcaption": "Topic Area Overview"
                 },
                 "tablet": {
-                    "url": "/project-images/interval/tablet/interval-tablet.webp",
+                    "url": "/project-images/iv/tablet/ivt-2354.webp",
                     "figcaption": "Publications Overview"
                 },
                 "others": []

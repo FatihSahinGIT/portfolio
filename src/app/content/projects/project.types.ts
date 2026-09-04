@@ -6,6 +6,8 @@ export interface ProjectImageSource {
 export interface ProjectImage {
   url: string;
   figcaption: string;
+  width?: number;
+  height?: number;
   srcset?: ProjectImageSource[];
   sizes?: string;
   alt?: string;

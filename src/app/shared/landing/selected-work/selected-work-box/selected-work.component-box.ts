@@ -1,5 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { formatSrcset } from '../../../../content/projects/project-image';
+import { ProjectImage } from '../../../../content/projects/project.types';
 
 
 @Component({
@@ -9,12 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SelectedWorkBoxComponent {
     @Input() name: string = '';
-    @Input() imageUrl: string = '';
-    @Input() imageAlt: string = '';
+    @Input({ required: true }) image!: ProjectImage;
     @Input() tools: string[] = [];
     @Input() projectUrl!: string;
 
     readonly #router = inject(Router);
+
+    protected readonly getSrcset = formatSrcset;
 
 
     public async navigateToProject(event: Event): Promise<void> {

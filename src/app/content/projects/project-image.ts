@@ -3,19 +3,28 @@ import { ProjectImage, ProjectImageSource } from './project.types';
 type ResponsiveProjectImage = Omit<ProjectImage, 'srcset'> & {
   widths: readonly number[];
   srcsetBaseUrl?: string;
+  originalUrl?: string;
+  originalWidth?: number;
 };
 
 export function responsiveProjectImage({
   widths,
   srcsetBaseUrl,
+  originalUrl,
+  originalWidth,
   ...image
 }: ResponsiveProjectImage): ProjectImage {
+  const baseUrl = srcsetBaseUrl ?? image.url;
+
   return {
     ...image,
-    srcset: widths.map((width) => ({
-      url: imageUrlAtWidth(srcsetBaseUrl ?? image.url, width),
-      width,
-    })),
+    srcset: [
+      ...widths.map((width) => ({
+        url: imageUrlAtWidth(baseUrl, width),
+        width,
+      })),
+      ...(originalWidth ? [{ url: originalUrl ?? baseUrl, width: originalWidth }] : []),
+    ],
   };
 }
 

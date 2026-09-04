@@ -148,3 +148,9 @@ p {
 .card {
   background: var(--bg-card);
 }
+
+/* Skip layout and paint work for project images until they approach the viewport. */
+.project-image-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}

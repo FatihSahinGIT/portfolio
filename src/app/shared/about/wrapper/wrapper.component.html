@@ -22,9 +22,15 @@
             hero-images/portrait-2560.webp 2560w
           "
           sizes="
-      (min-width: 1024px) 42vw,
-      100vw
-    "
+            (min-width: 1280px) 25vw,
+            (min-width: 768px) 33vw,
+            calc(100vw - 3rem)
+          "
+          width="3840"
+          height="5769"
+          loading="lazy"
+          fetchpriority="low"
+          decoding="async"
           alt=""
           class="h-full w-full object-cover object-center"
         />
@@ -131,7 +137,14 @@
           <div
             class="about-card card shadow-s flex h-full flex-col items-center justify-center gap-3 rounded-md p-4"
           >
-            <img src="about-images/approach/evaluate.svg" alt="" />
+            <img
+              src="about-images/approach/evaluate.svg"
+              width="240"
+              height="240"
+              loading="lazy"
+              decoding="async"
+              alt=""
+            />
             <div class="flex w-full flex-col justify-items-start gap-3">
               <h5>Evaluate</h5>
               <p class="text-base font-light leading-relaxed tracking-tight">
@@ -144,7 +157,14 @@
           <div
             class="about-card card shadow-s flex h-full w-full flex-col items-center justify-center gap-3 rounded-md p-4"
           >
-            <img src="about-images/approach/develop.svg" alt="" />
+            <img
+              src="about-images/approach/develop.svg"
+              width="240"
+              height="240"
+              loading="lazy"
+              decoding="async"
+              alt=""
+            />
 
             <div class="flex w-full flex-col justify-items-start gap-3">
               <h5>Develop</h5>
@@ -158,7 +178,14 @@
           <div
             class="about-card card shadow-s flex h-full w-full flex-col items-center justify-center gap-3 rounded-md p-4 transition"
           >
-            <img src="about-images/approach/deploy.svg" alt="" />
+            <img
+              src="about-images/approach/deploy.svg"
+              width="240"
+              height="240"
+              loading="lazy"
+              decoding="async"
+              alt=""
+            />
             <div class="flex w-full flex-col justify-items-start gap-3">
               <h5>Deploy</h5>
               <p class="text-base font-light leading-relaxed tracking-tight">

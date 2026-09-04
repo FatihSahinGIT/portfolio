@@ -1,11 +1,13 @@
 @if (images?.introduction; as introduction) {
-  <div class="card aspect-1436/621 col-span-full w-full overflow-hidden bg-gray-200">
+  <div class="project-image-section card aspect-1436/621 col-span-full w-full overflow-hidden bg-gray-200">
     <figure class="h-full w-full">
       <img
         class="block h-full w-full object-cover object-center"
         [src]="introduction.url"
         [attr.srcset]="getSrcset(introduction.srcset)"
         [attr.sizes]="introduction.sizes ?? null"
+        [attr.width]="introduction.width ?? null"
+        [attr.height]="introduction.height ?? null"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
@@ -16,13 +18,15 @@
 }
 
 @if (images?.smartphone; as smartphone) {
-  <div class="card col-span-full w-full self-start overflow-hidden bg-gray-200 md:col-span-6">
+  <div class="project-image-section card col-span-full w-full self-start overflow-hidden bg-gray-200 md:col-span-6">
     <figure class="w-full">
       <img
         class="block h-auto w-full object-cover object-center"
         [src]="smartphone.url"
         [attr.srcset]="getSrcset(smartphone.srcset)"
         [attr.sizes]="smartphone.sizes ?? null"
+        [attr.width]="smartphone.width ?? null"
+        [attr.height]="smartphone.height ?? null"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
@@ -33,13 +37,15 @@
 }
 
 @if (images?.tablet; as tablet) {
-  <div class="card col-span-full w-full self-start overflow-hidden bg-gray-200 md:col-span-6">
+  <div class="project-image-section card col-span-full w-full self-start overflow-hidden bg-gray-200 md:col-span-6">
     <figure class="w-full">
       <img
         class="block h-auto w-full object-contain"
         [src]="tablet.url"
         [attr.srcset]="getSrcset(tablet.srcset)"
         [attr.sizes]="tablet.sizes ?? null"
+        [attr.width]="tablet.width ?? null"
+        [attr.height]="tablet.height ?? null"
         loading="lazy"
         decoding="async"
         fetchpriority="low"

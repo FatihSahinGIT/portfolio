@@ -1,7 +1,10 @@
 import { responsiveProjectImage } from './project-image';
 import { ProjectSummary } from './project.types';
 
-const HALF_WIDTH_SIZES = '(min-width: 768px) calc(50vw - 4rem), calc(100vw - 3rem)';
+const RESPONSIVE_WIDTHS = [480, 780, 1024, 1280, 1600, 1920, 2354, 3200] as const;
+const LANDINGPAGE_WIDTHS = [...RESPONSIVE_WIDTHS, 3200, 4000, 4800] as const;
+const FULL_WIDTH_SIZES = 'calc(100vw - 3rem)';
+const HALF_WIDTH_SIZES = '(min-width: 768px) calc(50vw - 2rem), calc(100vw - 3rem)';
 
 export const projectCatalog: ProjectSummary[] = [
   {
@@ -12,23 +15,37 @@ export const projectCatalog: ProjectSummary[] = [
     tools: ['Angular', 'Figma', 'Storybook', 'SonarQube', 'Jenkins'],
     images: {
       landingpage: responsiveProjectImage({
-        url: 'project-images/kv.digital/landingpage/wp.webp',
-        widths: [480, 768, 1024, 1280, 1600, 2354],
-        sizes: 'calc(100vw - 3rem)',
+        url: '/project-images/wp/landingpage/wpl-2354.webp',
+        srcsetBaseUrl: '/project-images/wp/landingpage/wpl.webp',
+        originalWidth: 7225,
+        widths: LANDINGPAGE_WIDTHS,
+        width: 7225,
+        height: 5339,
+        sizes: FULL_WIDTH_SIZES,
         figcaption: 'Appointment booking service landing page',
       }),
       overview: responsiveProjectImage({
-        url: 'project-images/kv.digital/overview/wp-2354.webp',
-        srcsetBaseUrl: 'project-images/kv.digital/overview/wp.webp',
-        widths: [480, 768, 1024, 1600, 2354],
-        sizes: 'calc(100vw - 3rem)',
+        url: '/project-images/wp/overview/wp-2354.webp',
+        srcsetBaseUrl: '/project-images/wp/overview/wpo.webp',
+        originalUrl: '/project-images/wp/overview/wp.webp',
+        originalWidth: 4000,
+        widths: RESPONSIVE_WIDTHS,
+        width: 4000,
+        height: 2667,
+        sizes: FULL_WIDTH_SIZES,
         figcaption: '116117 Terminservice',
         alt: 'KV Digital project overview',
       }),
-      selected: {
-        url: '/project-images/kv.digital/selected/kv.digital.webp',
+      selected: responsiveProjectImage({
+        url: '/project-images/wp/landingpage/wpl-1600.webp',
+        srcsetBaseUrl: '/project-images/wp/landingpage/wpl.webp',
+        originalWidth: 7225,
+        widths: LANDINGPAGE_WIDTHS,
+        width: 7225,
+        height: 5339,
+        sizes: HALF_WIDTH_SIZES,
         figcaption: 'Appointment booking service',
-      },
+      }),
     },
   },
   {
@@ -38,17 +55,38 @@ export const projectCatalog: ProjectSummary[] = [
     project: 'Online Presence Redesign',
     tools: ['Gutenberg', 'CSS', 'Figma', 'HTML', 'CMS'],
     images: {
-      overview: responsiveProjectImage({
-        url: 'project-images/interval/work-overview/iv.webp',
-        widths: [480, 768, 1024, 1280, 1536],
-        sizes: '100vw',
+      landingpage: responsiveProjectImage({
+        url: '/project-images/iv/landingpage/ivl-1600.webp',
+        srcsetBaseUrl: '/project-images/iv/landingpage/ivl.webp',
+        originalWidth: 5464,
+        widths: LANDINGPAGE_WIDTHS,
+        width: 5464,
+        height: 6600,
+        sizes: HALF_WIDTH_SIZES,
         figcaption: 'Website redesign',
         alt: 'InterVal project overview',
       }),
-      selected: {
-        url: '/project-images/interval/selected/interval.webp',
+      overview: responsiveProjectImage({
+        url: '/project-images/iv/overview/ivo-2354.webp',
+        srcsetBaseUrl: '/project-images/iv/overview/ivo.webp',
+        originalWidth: 4000,
+        widths: RESPONSIVE_WIDTHS,
+        width: 4000,
+        height: 2667,
+        sizes: FULL_WIDTH_SIZES,
+        figcaption: 'Website redesign',
+        alt: 'InterVal project overview',
+      }),
+      selected: responsiveProjectImage({
+        url: '/project-images/iv/landingpage/ivl-1600.webp',
+        srcsetBaseUrl: '/project-images/iv/landingpage/ivl.webp',
+        originalWidth: 5464,
+        widths: LANDINGPAGE_WIDTHS,
+        width: 5464,
+        height: 6600,
+        sizes: HALF_WIDTH_SIZES,
         figcaption: 'Online Presence redesign',
-      },
+      }),
     },
   },
   {
@@ -58,14 +96,38 @@ export const projectCatalog: ProjectSummary[] = [
     project: 'Restructuring and Redesign',
     tools: ['Elementor', 'CSS', 'JavaScript', 'HTML', 'CMS'],
     images: {
-      overview: responsiveProjectImage({
-        url: 'project-images/mindful-minds/work-overview/mm.webp',
-        widths: [320, 480, 768, 1024, 1312],
+      landingpage: responsiveProjectImage({
+        url: '/project-images/mm/landingpage/mml-1600.webp',
+        srcsetBaseUrl: '/project-images/mm/landingpage/mml.webp',
+        originalWidth: 5464,
+        widths: LANDINGPAGE_WIDTHS,
+        width: 5464,
+        height: 8192,
         sizes: HALF_WIDTH_SIZES,
         figcaption: 'Website redesign',
         alt: 'Mindful Minds project overview',
       }),
-      selected: { url: '', figcaption: '' },
+      overview: responsiveProjectImage({
+        url: '/project-images/mm/overview/mmo-2354.webp',
+        srcsetBaseUrl: '/project-images/mm/overview/mmo.webp',
+        originalWidth: 4000,
+        widths: RESPONSIVE_WIDTHS,
+        width: 4000,
+        height: 2667,
+        sizes: FULL_WIDTH_SIZES,
+        figcaption: 'Website redesign',
+        alt: 'Mindful Minds project overview',
+      }),
+      selected: responsiveProjectImage({
+        url: '/project-images/mm/landingpage/mml-1600.webp',
+        srcsetBaseUrl: '/project-images/mm/landingpage/mml.webp',
+        originalWidth: 5464,
+        widths: LANDINGPAGE_WIDTHS,
+        width: 5464,
+        height: 8192,
+        sizes: HALF_WIDTH_SIZES,
+        figcaption: 'Website redesign',
+      }),
     },
   },
 ];

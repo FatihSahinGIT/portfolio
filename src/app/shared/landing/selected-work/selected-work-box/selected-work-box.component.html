@@ -13,16 +13,22 @@
     </ul>
   </section>
 
-  <figure class="selected-work-item__image flex flex-col gap-3">
+  <figure class="project-image-section selected-work-item__image flex flex-col gap-3">
     <img
-      [src]="imageUrl"
-      [alt]="imageAlt"
+      [src]="image.url"
+      [attr.srcset]="getSrcset(image.srcset)"
+      [attr.sizes]="image.sizes ?? null"
+      [attr.width]="image.width ?? null"
+      [attr.height]="image.height ?? null"
+      [alt]="image.alt ?? image.figcaption"
+      loading="lazy"
+      decoding="async"
       class="selected-work-item__img object-cover"
     />
     <figcaption>
       <span class="selected-work-box__figcaption-company-name">{{ name }}</span>
       -
-      <span class="selected-work-box__figcaption-image-alt">{{ imageAlt }}</span>
+      <span class="selected-work-box__figcaption-image-alt">{{ image.figcaption }}</span>
     </figcaption>
   </figure>
 </article>
