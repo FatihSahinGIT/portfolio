@@ -8,6 +8,7 @@ import {
   signal,
   ViewChild,
   WritableSignal,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { bootstrapSunFill, bootstrapMoonFill } from '@ng-icons/bootstrap-icons';
@@ -21,6 +22,7 @@ import { navbarLinkAnimation } from './navbar.animation';
   templateUrl: './navbar.component.html',
   imports: [NgIcon],
   providers: [provideIcons({ bootstrapSunFill, bootstrapMoonFill })],
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {

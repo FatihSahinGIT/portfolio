@@ -6,6 +6,7 @@ import {
   OnInit,
   signal,
   WritableSignal,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { gsap } from 'gsap';
 
@@ -23,6 +24,7 @@ import { Project } from '../project.interface';
 @Component({
   selector: 'app-project-detail-page',
   templateUrl: './project-detail-page.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ProjectInformationComponent,
     ProjectGalleryComponent,

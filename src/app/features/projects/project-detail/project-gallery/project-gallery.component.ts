@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { formatSrcset } from '../../project-image';
 import { ProjectImage, ProjectImages } from '../../project.interface';
 
 @Component({
   selector: 'app-project-gallery',
   templateUrl: './project-gallery.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [],
 })
 export class ProjectGalleryComponent {

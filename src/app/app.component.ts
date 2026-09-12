@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import Lenis from 'lenis';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
@@ -12,6 +12,7 @@ import { FooterComponent } from './layout/footer/footer.component';
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   providers: [provideIcons({ bootstrapArrowRight, bootstrapArrowLeft })],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit, OnDestroy {

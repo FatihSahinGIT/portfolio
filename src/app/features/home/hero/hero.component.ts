@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import { GsapService } from '../../../core/animation/gsap.service';
 import { separatorVars, subheadlineVars } from './hero.animation';
@@ -6,6 +14,7 @@ import { separatorVars, subheadlineVars } from './hero.animation';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements AfterViewInit, OnDestroy {

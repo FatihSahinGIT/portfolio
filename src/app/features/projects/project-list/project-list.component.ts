@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import { Router, RouterLink } from '@angular/router';
 import { GsapService } from '../../../core/animation/gsap.service';
@@ -10,6 +17,7 @@ import { ProjectImage } from '../project.interface';
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [RouterLink],
 })
 export class ProjectListComponent implements AfterViewInit, OnDestroy {

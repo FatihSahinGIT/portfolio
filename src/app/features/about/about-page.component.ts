@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+  inject,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -23,6 +31,7 @@ const STICKY_TOP_OFFSET = 80;
   selector: 'app-about-page',
   templateUrl: './about-page.component.html',
   styleUrls: ['./about-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [AboutExperienceComponent],
 })
 export class AboutPageComponent implements AfterViewInit, OnDestroy {
