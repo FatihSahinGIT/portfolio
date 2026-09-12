@@ -28,6 +28,26 @@
                             {
                                 "glob": "**/*",
                                 "input": "public"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/layout/navbar/assets",
+                                "output": "nav-logo"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/features/about/assets/portrait",
+                                "output": "hero-images"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/features/about/assets/approach",
+                                "output": "about-images/approach"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/features/projects/assets",
+                                "output": "project-images"
                             }
                         ],
                         "styles": ["src/styles.css"],
@@ -82,6 +102,26 @@
                             {
                                 "glob": "**/*",
                                 "input": "public"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/layout/navbar/assets",
+                                "output": "nav-logo"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/features/about/assets/portrait",
+                                "output": "hero-images"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/features/about/assets/approach",
+                                "output": "about-images/approach"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "src/app/features/projects/assets",
+                                "output": "project-images"
                             }
                         ],
                         "styles": ["src/styles.css"],

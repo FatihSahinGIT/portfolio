@@ -1,0 +1,42 @@
+@if (projectSignal(); as project) {
+  <div>
+    <section class="work-wrapper mb-20 grid grid-cols-4 gap-4 md:mt-10 md:grid-cols-12">
+      <app-project-information
+        class="col-span-full"
+        [projectName]="project.project"
+        [clientName]="project.name"
+        [projectDate]="project.year"
+        [roleName]="project.role"
+        [projectUrl]="project.url"
+      />
+
+      <app-project-gallery
+        class="col-span-full"
+        [image]="project.images"
+        [projectCompany]="project.company"
+      />
+
+      <app-project-introduction
+        class="col-span-full my-10 flex lg:my-80"
+        [text]="project.texts.introduction"
+      />
+
+      <app-project-collage
+        class="work-project-collage__wrapper col-span-full grid grid-cols-subgrid gap-y-4"
+        [images]="project.images"
+      />
+
+      <app-project-section
+        class="col-span-full my-10 lg:col-span-6 lg:my-80"
+        [headline]="'Task'"
+        [text]="project.texts.task"
+      ></app-project-section>
+
+      <app-project-section
+        class="col-span-full my-10 lg:col-span-6 lg:my-80"
+        [headline]="'Outcome'"
+        [text]="project.texts.outcome"
+      ></app-project-section>
+    </section>
+  </div>
+}

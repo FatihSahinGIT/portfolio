@@ -5,15 +5,14 @@ import { provideIcons } from '@ng-icons/core';
 import { bootstrapArrowLeft, bootstrapArrowRight } from '@ng-icons/bootstrap-icons';
 import { filter, Subject, takeUntil } from 'rxjs';
 
-import { NavbarComponent } from './shared/components/layout/navbar/navbar.component';
-import { FooterComponent } from './shared/components/layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   providers: [provideIcons({ bootstrapArrowRight, bootstrapArrowLeft })],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit, OnDestroy {
   #lenis!: Lenis;
